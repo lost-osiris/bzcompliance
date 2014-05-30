@@ -1,0 +1,3232 @@
+libehca,unmapped,
+bnx2fc,unmapped,
+bnx2i,unmapped,
+bnx2x,unmapped,
+cc-eal4-config-rhel62,unmapped,
+cnic,unmapped,
+compat-locales-sap,unmapped,
+dvipdfm,unmapped,
+dvipdfmx,unmapped,
+esound,unmapped,
+glibc32,unmapped,
+glibc64,unmapped,
+gnome-vfsmm26,unmapped,
+gtkglext,unmapped,
+hpsa,unmapped,
+hpwdt,unmapped,
+ht2html,unmapped,
+iasl,unmapped,
+igb,unmapped,
+igb-kmod,unmapped,
+ixgbe,unmapped,
+jakarta-commons-beanutils,unmapped,
+jlex,unmapped,
+jrefactory,unmapped,
+kernel-ksb,unmapped,
+libgnomemm26,unmapped,
+mlx4_en,unmapped,
+mlx4_ib,unmapped,
+pch_gbe,unmapped,
+redhat-release-client,unmapped,
+redhat-release-server,unmapped,
+389-ds-base,SBR-Idm,,
+ConsoleKit,SBR-Services,,
+ElectricFence,SBR-Tools,,
+GConf2,SBR-Desktop,,
+ImageMagick,SBR-Desktop,,
+MAKEDEV,SBR-Shells,,
+ModemManager,SBR-Desktop,,
+MySQL-python,SBR-Services,,
+NetworkManager,SBR-Services,,
+NetworkManager-openswan,SBR-Services,,
+ORBit2,SBR-Desktop,,
+OpenEXR,SBR-Desktop,,
+OpenIPMI,SBR-Services,,
+PackageKit,SBR-Anaconda,,
+PyGreSQL,SBR-Services,,
+PyPAM,SBR-Shells,SBR-Idm,
+PyQt4,SBR-Shells,,
+PyXML,SBR-Shells,,
+SDL,SBR-Desktop,,
+SOAPpy,SBR-Shells,,
+TurboGears2,SBR-Desktop,,
+Xaw3d,SBR-Desktop,,
+abrt,SBR-Desktop,,
+abyssinica-fonts,SBR-Desktop,,
+acpid,SBR-Services,,
+aide,SBR-Services,,
+akonadi,SBR-Desktop,,
+alacarte,SBR-Desktop,,
+alsa-lib,SBR-Desktop,,
+alsa-utils,SBR-Desktop,,
+amanda,SBR-Services,,
+amtu,SBR-Shells,,
+anaconda-yum-plugins,SBR-Anaconda,,
+ant,SBR-Tools,,
+apache-tomcat-apis,SBR-Webservers,,
+apr,SBR-Services,,
+apr-util,SBR-Services,,
+arptables_jf,SBR-Shells,,
+arpwatch,SBR-Shells,,
+arts,SBR-Desktop,,
+aspell,SBR-Shells,,
+at,SBR-Services,,
+at-spi,SBR-Desktop,,
+atk,SBR-Desktop,,
+atlas,SBR-Tools,,
+atmel-firmware,SBR-Kernel,,
+attr,SBR-Filesystem,,
+audiofile,SBR-Desktop,,
+audit,SBR-Services,,
+audit-viewer,SBR-Services,,
+augeas,SBR-Services,,
+authconfig,SBR-Shells,,
+authd,SBR-Services,,
+autoconf,SBR-Tools,,
+autofs,SBR-Filesystem,,
+automake,SBR-Tools,,
+automoc,SBR-Tools,,
+avahi,SBR-Services,,
+avalon-framework,SBR-Tools,,
+avalon-logkit,SBR-Tools,,
+axis,SBR-Webservers,,
+b43-openfwwf,SBR-Kernel,,
+babel,SBR-Shells,,
+babl,SBR-Desktop,,
+bash,SBR-Shells,,
+batik,SBR-Tools,,
+bc,SBR-Shells,,
+bcel,SBR-Tools,,
+bfa-firmware,SBR-Storage,,
+bind,SBR-Services,,
+bind-dyndb-ldap,SBR-Services,,
+binutils,SBR-Shells,,
+biosdevname,SBR-Shells,SBR-Kernel,
+bison,SBR-Tools,,
+blktrace,SBR-Storage,,
+bltk,SBR-Services,,
+bluez,SBR-Shells,,
+boost,SBR-Services,SBR-Tools,
+bridge-utils,SBR-Kernel,SBR-Shells,
+brltty,SBR-Services,,
+bsf,SBR-Tools,,
+btrfs-progs,SBR-Filesystem,,
+busybox,SBR-Desktop,,
+byacc,SBR-Tools,,
+bzip2,SBR-Shells,,
+bzr,SBR-Shells,,
+c-ares,SBR-Services,,
+c2050,SBR-Services,,
+c2070,SBR-Services,,
+cachefilesd,SBR-Storage,SBR-Services,
+cairo,SBR-Desktop,,
+cairomm,SBR-Desktop,,
+cas,SBR-Shells,SBR-Kernel,
+cdrdao,SBR-Shells,,
+celt051,SBR-Nontechnical,,
+certmonger,SBR-Idm,,
+check,SBR-Tools,SBR-Shells,
+checkpolicy,SBR-Shells,,
+cheese,SBR-Desktop,,
+chkconfig,SBR-Shells,SBR-Services,
+chrpath,SBR-Tools,,
+cifs-utils,SBR-Filesystem,,
+cim-schema,SBR-Tools,,
+cjet,SBR-Services,,
+classpathx-jaf,SBR-Tools,,
+classpathx-mail,SBR-Tools,,
+clutter,SBR-Desktop,,
+cmake,SBR-Tools,,
+compat-dapl,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+compat-db,SBR-Services,,
+compat-expat1,SBR-Services,SBR-Desktop,
+compat-gcc-34,SBR-Tools,,
+compat-glibc,SBR-Tools,,
+compat-libgfortran-41,SBR-Tools,,
+compat-libtermcap,SBR-Shells,,
+compat-openldap,SBR-Idm,,
+compat-readline5,SBR-Shells,,
+compiz,SBR-Desktop,,
+conman,SBR-Shells,,
+control-center,SBR-Desktop,,
+coolkey,SBR-Idm,,
+coreutils,SBR-Shells,SBR-Filesystem,
+corosync,SBR-Clusterha,,
+cpio,SBR-Shells,,
+cpuspeed,SBR-Services,SBR-Kernel,
+cracklib,SBR-Idm,,
+crash,SBR-Kernel,,
+crda,SBR-Services,SBR-Kernel,
+createrepo,SBR-Anaconda,,
+cronie,SBR-Services,,
+crontabs,SBR-Services,,
+crypto-utils,SBR-Services,SBR-Idm,
+cryptsetup-luks,SBR-Storage,,
+ctags,SBR-Shells,SBR-Tools,
+ctdb,SBR-Idm,,
+cups,SBR-Services,,
+curl,SBR-Shells,,
+cvs,SBR-Tools,,
+cyrus-imapd,SBR-Services,,
+cyrus-sasl,SBR-Services,SBR-Idm,
+dash,SBR-Shells,,
+db4,SBR-Services,,
+dbus-c++,SBR-Desktop,,
+dbus-glib,SBR-Desktop,,
+dbus-python,SBR-Desktop,,
+dcraw,SBR-Shells,SBR-Desktop,
+dejagnu,SBR-Tools,SBR-Shells,
+deltarpm,SBR-Anaconda,,
+desktop-effects,SBR-Desktop,,
+desktop-file-utils,SBR-Desktop,,
+devhelp,SBR-Desktop,,
+device-mapper-multipath,SBR-Storage,,
+dhcp,SBR-Services,,
+dialog,SBR-Shells,,
+diffstat,SBR-Shells,,
+diffutils,SBR-Shells,,
+dmidecode,SBR-Shells,SBR-Kernel,
+dmraid,SBR-Storage,,
+dmz-cursor-themes,SBR-Desktop,,
+dnsmasq,SBR-Services,,
+docbook-dtds,SBR-Lowvolume,,
+docbook-simple,SBR-Lowvolume,,
+docbook-slides,SBR-Lowvolume,,
+docbook-style-dsssl,SBR-Lowvolume,,
+docbook-style-xsl,SBR-Lowvolume,,
+docbook-utils,SBR-Lowvolume,,
+docbook5-schemas,SBR-Lowvolume,,
+docbook5-style-xsl,SBR-Lowvolume,,
+dos2unix,SBR-Shells,,
+dosfstools,SBR-Filesystem,SBR-Shells,
+dovecot,SBR-Services,,
+doxygen,SBR-Shells,SBR-Tools,
+dropwatch,SBR-Kernel,SBR-Shells,
+dstat,SBR-Services,,
+dtach,SBR-Shells,,
+dump,SBR-Filesystem,SBR-Shells,
+dumpet,SBR-Storage,SBR-Shells,
+dvd+rw-tools,SBR-Storage,SBR-Shells,
+e2fsprogs,SBR-Filesystem,,
+ebtables,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ecj,SBR-Tools,,
+eclipse-birt,SBR-Desktop,SBR-Middleware,
+eclipse-callgraph,SBR-Desktop,SBR-Middleware,
+eclipse-cdt,SBR-Desktop,SBR-Middleware,
+eclipse-changelog,SBR-Desktop,SBR-Middleware,
+eclipse-dtp,SBR-Desktop,SBR-Middleware,
+eclipse-emf,SBR-Desktop,SBR-Middleware,
+eclipse-gef,SBR-Desktop,SBR-Middleware,
+eclipse-linuxprofilingframework,SBR-Desktop,SBR-Middleware,
+eclipse-mylyn,SBR-Desktop,SBR-Middleware,
+eclipse-nls,SBR-Desktop,SBR-Middleware,
+eclipse-oprofile,SBR-Desktop,SBR-Middleware,
+eclipse-rpm-editor,SBR-Desktop,SBR-Middleware,
+eclipse-rse,SBR-Desktop,SBR-Middleware,
+eclipse-subclipse,SBR-Desktop,SBR-Middleware,
+eclipse-valgrind,SBR-Desktop,SBR-Middleware,
+ed,SBR-Shells,,
+edac-utils,SBR-Kernel,,
+efax,SBR-Services,,
+efibootmgr,SBR-Lowvolume,,
+eggdbus,SBR-Desktop,,
+eject,SBR-Shells,,
+ekiga,SBR-Desktop,,
+elfutils,SBR-Tools,,
+elinks,SBR-Shells,,
+enscript,SBR-Services,,
+environment-modules,SBR-Shells,,
+esc,SBR-Idm,,
+ethtool,SBR-Shells,,
+evince,SBR-Desktop,,
+evolution,SBR-Desktop,,
+evolution-data-server,SBR-Desktop,,
+evolution-exchange,SBR-Desktop,,
+evolution-mapi,SBR-Desktop,,
+exempi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+exiv2,SBR-Shells,,
+expat,SBR-Services,,
+expect,SBR-Shells,,
+farsight2,SBR-Desktop,,
+fcoe-utils,SBR-Shells,,
+febootstrap,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+fence-agents,SBR-Clusterha,,
+fence-virt,SBR-Clusterha,,
+fetchmail,SBR-Services,,
+file,SBR-Shells,,
+file-roller,SBR-Desktop,,
+filesystem,SBR-Shells,,
+findutils,SBR-Shells,,
+finger,SBR-Idm,,
+fipscheck,SBR-Services,,
+firefox,SBR-Desktop,,
+firstaidkit,SBR-Shells,,
+firstboot,SBR-Anaconda,,
+flac,SBR-Desktop,,
+flex,SBR-Tools,,
+flute,SBR-Tools,,
+foghorn,SBR-Desktop,SBR-Services,
+fontconfig,SBR-Desktop,,
+fprintd,SBR-Services,,
+ftp,SBR-Shells,,
+fuse,SBR-Filesystem,SBR-Kernel,
+gawk,SBR-Shells,,
+gedit-plugins,SBR-Desktop,,
+crash-trace-command,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+dvgrab,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+stem-gnome-theme,SBR-Desktop,,
+xlive-texmf,SBR-Desktop,,
+xlive-texmf-errata,SBR-Desktop,,
+ilead-ssh2,SBR-Tools,,
+data,SBR-Shells,,
+ev,SBR-Services,,
+bitmap-fonts,unmapped,
+un-core-fonts,SBR-Desktop,,
+vim,SBR-Shells,,
+xmlrpc3,SBR-Tools,,
+xorg-x11-drv-geode,SBR-Desktop,,
+xorg-x11-drv-neomagic,SBR-Desktop,,
+xorg-x11-fonts,SBR-Desktop,,
+automake15,unmapped,
+automake16,unmapped,
+be2net,unmapped,
+be2net-kmod,unmapped,
+bnx2,unmapped,
+gcc-libraries,unmapped,
+jakarta-commons-digester,unmapped,
+java-1.4.2-ibm-sap,unmapped,
+libatomic_ops,unmapped,
+libgnomeuimm26,unmapped,
+libibverbs-rocee,unmapped,
+libmlx4-rocee,unmapped,
+mingw32-iconv,unmapped,
+mingw32-runtime,unmapped,
+mingw32-w32api,unmapped,
+mlx4_core,unmapped,
+perl-Makefile,unmapped,
+ppc64-diag,unmapped,
+preupgrade-assistant,unmapped,
+preupgrade-assistant-contents,unmapped,
+python-argparse,unmapped,
+ras-utils,unmapped,
+redhat-support-lib,unmapped,
+rhel-client-i386-ec2-starter,unmapped,
+rhel-client-x86_64-ec2-starter,unmapped,
+rhel-computenode-x86_64-ec2-starter,unmapped,
+rhel-guest-image,unmapped,
+rhel-server-i386-p2v,unmapped,
+rhel-server-ppc64-ec2-starter,unmapped,
+rhel-server-s390x-ec2-starter,unmapped,
+rhel-workstation-i386-ec2-starter,unmapped,
+rhel-workstation-i386-live,unmapped,
+rhel-workstation-x86_64-ec2-starter,unmapped,
+rhel-workstation-x86_64-live,unmapped,
+rhev-hypervisor,unmapped,
+ruby-dbus,unmapped,
+rubygem-virt-p2v,unmapped,
+sapconf,unmapped,
+snd_core,unmapped,
+snd_hda,unmapped,
+snd-hda,unmapped,
+spice-win,unmapped,
+tetex-tex4ht,unmapped,
+tg3,unmapped,
+thermostat1,unmapped,
+vios-proxy,unmapped,
+virt-p2v,unmapped,
+xdoclet,unmapped,
+xdvipdfmx,unmapped,
+xjavadoc,unmapped,
+cmpi-bindings,unmapped,
+fake-build-provides,unmapped,
+fedfs-utils,unmapped,
+gnome-shell-extensions,unmapped,
+gnu-free-fonts,unmapped,
+goland,unmapped,
+golang-github-gorilla-context,unmapped,
+golang-github-gorilla-mux,unmapped,
+golang-github-kr-pty,unmapped,
+golang-github-syndtr-gocapability,unmapped,
+golang-googlecode-net,unmapped,
+golang-googlecode-sqlite,unmapped,
+google-noto-fonts,unmapped,
+ipxe,unmapped,
+jing-trang,unmapped,
+libmlx5,unmapped,
+libzfcphbaapi,unmapped,
+maven2,unmapped,
+mdds,unmapped,
+mingw-binutils,unmapped,
+brasero,SBR-Desktop,,
+dbus-qt,SBR-Services,,
+eog,SBR-Desktop,,
+gnome-mag,SBR-Desktop,,
+redhat-release-computenode,unmapped,
+smc-fonts,unmapped,
+zaf,unmapped,
+foomatic,SBR-Services,,
+foomatic-db,SBR-Services,,
+fop,SBR-Services,SBR-Tools,
+freeipmi,SBR-Services,,
+freeradius,SBR-Services,,
+freetype,SBR-Desktop,,
+gamin,SBR-Desktop,,
+gc,SBR-Tools,,
+gcalctool,SBR-Desktop,,
+gcc,SBR-Tools,,
+gconf-editor,SBR-Desktop,,
+gconfmm26,SBR-Desktop,,
+gd,SBR-Desktop,,
+gdb,SBR-Tools,,
+gdbm,SBR-Services,,
+gdm,SBR-Desktop,,
+gedit,SBR-Desktop,,
+gegl,SBR-Desktop,,
+geoclue,SBR-Desktop,,
+gettext,SBR-Shells,,
+ggz-base-libs,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ghostscript,SBR-Services,,
+ghostscript-fonts,SBR-Services,,
+giflib,SBR-Desktop,,
+gimp,SBR-Desktop,,
+gimp-data-extras,SBR-Desktop,,
+gimp-help,SBR-Desktop,,
+git,SBR-Tools,,
+glade3,SBR-Desktop,,
+glib2,SBR-Desktop,,
+glibc,SBR-Tools,,
+glibmm24,SBR-Desktop,,
+gmp,SBR-Services,,
+gnome-applets,SBR-Desktop,,
+gnome-backgrounds,SBR-Desktop,,
+gnome-bluetooth,SBR-Desktop,,
+gnome-common,SBR-Desktop,,
+gnome-desktop,SBR-Desktop,,
+gnome-devel-docs,SBR-Desktop,,
+gnome-disk-utility,SBR-Desktop,,
+gnome-doc-utils,SBR-Desktop,,
+gnome-games,SBR-Desktop,,
+gnome-icon-theme,SBR-Desktop,,
+gnome-keyring,SBR-Desktop,,
+gnome-media,SBR-Desktop,,
+gnome-menus,SBR-Desktop,,
+gnome-packagekit,SBR-Desktop,,
+gnome-panel,SBR-Desktop,,
+gnome-pilot,SBR-Desktop,,
+gnome-pilot-conduits,SBR-Desktop,,
+gnome-power-manager,SBR-Desktop,,
+gnome-python2,SBR-Desktop,,
+gnome-python2-desktop,SBR-Desktop,,
+gnome-python2-extras,SBR-Desktop,,
+gnome-screensaver,SBR-Desktop,,
+gnome-session,SBR-Desktop,,
+gnome-system-monitor,SBR-Desktop,,
+gnome-terminal,SBR-Desktop,,
+gnome-themes,SBR-Desktop,,
+gnome-user-docs,SBR-Desktop,,
+gnome-user-share,SBR-Desktop,,
+gnome-utils,SBR-Desktop,,
+gnome-vfs2,SBR-Desktop,,
+gnote,SBR-Desktop,,
+gnupg2,SBR-Shells,,
+gnuplot,SBR-Shells,,
+gnutls,SBR-Services,,
+gok,SBR-Desktop,,
+gpgme,SBR-Shells,,
+gpm,SBR-Services,,
+grep,SBR-Shells,,
+groff,SBR-Shells,,
+grub,SBR-Shells,,
+grubby,SBR-Shells,,
+gsl,SBR-Services,,
+gsm,SBR-Services,,
+gssdp,SBR-Services,,
+gstreamer,SBR-Desktop,,
+gstreamer-plugins-bad-free,SBR-Desktop,,
+gstreamer-plugins-base,SBR-Desktop,,
+gstreamer-plugins-good,SBR-Desktop,,
+gstreamer-python,SBR-Desktop,,
+gthumb,SBR-Desktop,,
+gtk+extra,SBR-Desktop,,
+gtk-doc,SBR-Desktop,,
+gtk2,SBR-Desktop,,
+gtk2-engines,SBR-Desktop,,
+gtkhtml2,SBR-Desktop,,
+gtkhtml3,SBR-Desktop,,
+gtkmm24,SBR-Desktop,,
+gtksourceview2,SBR-Desktop,,
+gtkspell,SBR-Desktop,,
+gucharmap,SBR-Desktop,,
+guile,SBR-Tools,,
+gupnp,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gutenprint,SBR-Services,,
+gvfs,SBR-Desktop,,
+gzip,SBR-Shells,,
+hal,SBR-Desktop,,
+hamcrest,unmapped,
+hardlink,unmapped,
+hdparm,SBR-Shells,,
+hesinfo,SBR-Services,,
+hesiod,SBR-Services,,
+hicolor-icon-theme,SBR-Desktop,,
+hivex,SBR-Shells,,
+hmaccalc,SBR-Shells,,
+hplip,SBR-Services,,
+hsqldb,SBR-Tools,,
+htdig,SBR-Services,,
+httpd,SBR-Webservers,,
+hunspell,SBR-Desktop,,
+hunspell-af,SBR-Desktop,,
+hunspell-ar,SBR-Desktop,,
+hunspell-as,SBR-Desktop,,
+hunspell-az,SBR-Desktop,,
+hunspell-be,SBR-Desktop,,
+hunspell-ber,SBR-Desktop,,
+hunspell-bg,SBR-Desktop,,
+hunspell-bn,SBR-Desktop,,
+hunspell-br,SBR-Desktop,,
+hunspell-ca,SBR-Desktop,,
+hunspell-cop,SBR-Desktop,,
+hunspell-csb,SBR-Desktop,,
+hunspell-cy,SBR-Desktop,,
+hunspell-da,SBR-Desktop,,
+hunspell-de,SBR-Desktop,,
+hunspell-el,SBR-Desktop,,
+hunspell-en,SBR-Desktop,,
+hunspell-eo,SBR-Desktop,,
+hunspell-es,SBR-Desktop,,
+hunspell-et,SBR-Desktop,,
+hunspell-eu,SBR-Desktop,,
+hunspell-fa,SBR-Desktop,,
+hunspell-fj,SBR-Desktop,,
+hunspell-fo,SBR-Desktop,,
+hunspell-fr,SBR-Desktop,,
+hunspell-fur,SBR-Desktop,,
+hunspell-fy,SBR-Desktop,,
+hunspell-ga,SBR-Desktop,,
+hunspell-gd,SBR-Desktop,,
+hunspell-gl,SBR-Desktop,,
+hunspell-gv,SBR-Desktop,,
+hunspell-hil,SBR-Desktop,,
+hunspell-hr,SBR-Desktop,,
+hunspell-hsb,SBR-Desktop,,
+hunspell-hu,SBR-Desktop,,
+hunspell-hy,SBR-Desktop,,
+hunspell-ia,SBR-Desktop,,
+hunspell-id,SBR-Desktop,,
+hunspell-is,SBR-Desktop,,
+hunspell-it,SBR-Desktop,,
+hunspell-kk,SBR-Desktop,,
+hunspell-km,SBR-Desktop,,
+hunspell-kn,SBR-Desktop,,
+hunspell-ko,SBR-Desktop,,
+hunspell-ku,SBR-Desktop,,
+hunspell-la,SBR-Desktop,,
+hunspell-lt,SBR-Desktop,,
+hunspell-mai,SBR-Desktop,,
+hunspell-mg,SBR-Desktop,,
+hunspell-mi,SBR-Desktop,,
+hunspell-mk,SBR-Desktop,,
+hunspell-ml,SBR-Desktop,,
+hunspell-mn,SBR-Desktop,,
+hunspell-ms,SBR-Desktop,,
+hunspell-mt,SBR-Desktop,,
+hunspell-nds,SBR-Desktop,,
+hunspell-nl,SBR-Desktop,,
+hunspell-nr,SBR-Desktop,,
+hunspell-nso,SBR-Desktop,,
+hunspell-ny,SBR-Desktop,,
+hunspell-oc,SBR-Desktop,,
+hunspell-or,SBR-Desktop,,
+hunspell-pl,SBR-Desktop,,
+hunspell-pt,SBR-Desktop,,
+hunspell-ro,SBR-Desktop,,
+hunspell-ru,SBR-Desktop,,
+hunspell-rw,SBR-Desktop,,
+hunspell-sc,SBR-Desktop,,
+hunspell-si,SBR-Desktop,,
+hunspell-sk,SBR-Desktop,,
+hunspell-sl,SBR-Desktop,,
+hunspell-so,SBR-Desktop,,
+hunspell-sq,SBR-Desktop,,
+hunspell-sr,SBR-Desktop,,
+hunspell-ss,SBR-Desktop,,
+hunspell-st,SBR-Desktop,,
+hunspell-sv,SBR-Desktop,,
+hunspell-sw,SBR-Desktop,,
+hunspell-te,SBR-Desktop,,
+hunspell-tet,SBR-Desktop,,
+hunspell-th,SBR-Desktop,,
+hunspell-tk,SBR-Desktop,,
+hunspell-tl,SBR-Desktop,,
+hunspell-tn,SBR-Desktop,,
+hunspell-ts,SBR-Desktop,,
+hunspell-uk,SBR-Desktop,,
+hunspell-ur,SBR-Desktop,,
+hunspell-uz,SBR-Desktop,,
+hunspell-ve,SBR-Desktop,,
+hunspell-vi,SBR-Desktop,,
+hunspell-wa,SBR-Desktop,,
+hunspell-xh,SBR-Desktop,,
+hunspell-zu,SBR-Desktop,,
+hwdata,SBR-Lowvolume,,
+hwloc,SBR-Tools,SBR-Shells,
+hyphen,SBR-Desktop,,
+hyphen-as,SBR-Desktop,,
+hyphen-bg,SBR-Desktop,,
+hyphen-bn,SBR-Desktop,,
+hyphen-ca,SBR-Desktop,,
+hyphen-cy,SBR-Desktop,,
+hyphen-da,SBR-Desktop,,
+hyphen-de,SBR-Desktop,,
+hyphen-el,SBR-Desktop,,
+hyphen-es,SBR-Desktop,,
+hyphen-eu,SBR-Desktop,,
+hyphen-fa,SBR-Desktop,,
+hyphen-fr,SBR-Desktop,,
+hyphen-ga,SBR-Desktop,,
+hyphen-gl,SBR-Desktop,,
+hyphen-gu,SBR-Desktop,,
+hyphen-hi,SBR-Desktop,,
+hyphen-hsb,SBR-Desktop,,
+hyphen-hu,SBR-Desktop,,
+hyphen-ia,SBR-Desktop,,
+hyphen-id,SBR-Desktop,,
+hyphen-is,SBR-Desktop,,
+hyphen-it,SBR-Desktop,,
+hyphen-kn,SBR-Desktop,,
+hyphen-lt,SBR-Desktop,,
+hyphen-mi,SBR-Desktop,,
+hyphen-ml,SBR-Desktop,,
+hyphen-mn,SBR-Desktop,,
+hyphen-mr,SBR-Desktop,,
+hyphen-nl,SBR-Desktop,,
+hyphen-or,SBR-Desktop,,
+hyphen-pa,SBR-Desktop,,
+hyphen-pl,SBR-Desktop,,
+hyphen-pt,SBR-Desktop,,
+hyphen-ro,SBR-Desktop,,
+hyphen-ru,SBR-Desktop,,
+hyphen-sa,SBR-Desktop,,
+hyphen-sk,SBR-Desktop,,
+hyphen-sl,SBR-Desktop,,
+hyphen-sv,SBR-Desktop,,
+hyphen-ta,SBR-Desktop,,
+hyphen-te,SBR-Desktop,,
+hyphen-uk,SBR-Desktop,,
+ibus,SBR-Desktop,,
+ibus-anthy,SBR-Desktop,,
+ibus-chewing,SBR-Desktop,,
+ibus-hangul,SBR-Desktop,,
+ibus-m17n,SBR-Desktop,,
+ibus-pinyin,SBR-Desktop,,
+ibus-qt,SBR-Desktop,,
+ibus-rawcode,SBR-Desktop,,
+ibus-sayura,SBR-Desktop,,
+ibus-table,SBR-Desktop,,
+ibus-table-cangjie,SBR-Desktop,,
+ibus-table-erbi,SBR-Desktop,,
+ibus-table-wubi,SBR-Desktop,,
+ibutils,SBR-Storage,,
+icedtea-web,SBR-Desktop,SBR-Middleware,
+icu4j,unmapped,
+im-chooser,SBR-Desktop,,
+imake,SBR-Tools,,
+imsettings,SBR-Desktop,,
+indent,SBR-Tools,,
+infiniband-diags,SBR-Storage,,
+infinipath-psm,SBR-Lowvolume,,
+initscripts,SBR-Shells,,
+inkscape,SBR-Desktop,,
+intltool,SBR-Desktop,,
+iok,SBR-Desktop,,
+iotop,SBR-Shells,,
+ipmitool,SBR-Shells,,
+iproute,SBR-Shells,,
+iptables,SBR-Networking,,
+iptraf,SBR-Shells,,
+iptstate,SBR-Shells,,
+ipvsadm,SBR-Networking,,
+ipw2100-firmware,SBR-Networking,,
+ipw2200-firmware,SBR-Networking,,
+irqbalance,SBR-Services,SBR-Kernel,
+irssi,SBR-Shells,SBR-Desktop,
+iscsi-initiator-utils,SBR-Storage,,
+isdn4k-utils,SBR-Shells,SBR-Services,
+isns-utils,SBR-Storage,,
+iso-codes,SBR-Lowvolume,,
+isomd5sum,SBR-Shells,,
+iw,SBR-Lowvolume,,
+iwl5000-firmware,SBR-Lowvolume,,
+iwl5150-firmware,SBR-Lowvolume,,
+iwl6000-firmware,SBR-Lowvolume,,
+jadetex,SBR-Shells,,
+jakarta-commons-codec,SBR-Middleware,SBR-Webservers,
+jakarta-commons-collections,SBR-Middleware,SBR-Webservers,
+jakarta-commons-daemon,SBR-Middleware,SBR-Webservers,
+jakarta-commons-dbcp,SBR-Middleware,SBR-Webservers,
+jakarta-commons-discovery,SBR-Middleware,SBR-Webservers,
+jakarta-commons-el,SBR-Middleware,SBR-Webservers,
+jakarta-commons-httpclient,SBR-Middleware,SBR-Webservers,
+jakarta-commons-io,SBR-Middleware,SBR-Webservers,
+jakarta-commons-lang,SBR-Middleware,SBR-Webservers,
+jakarta-commons-logging,SBR-Middleware,SBR-Webservers,
+jakarta-commons-net,SBR-Middleware,SBR-Webservers,
+jakarta-commons-pool,SBR-Middleware,SBR-Webservers,
+jakarta-oro,SBR-Middleware,SBR-Webservers,
+jasper,SBR-Lowvolume,,
+java_cup,SBR-Tools,,
+jdepend,SBR-Lowvolume,,
+jdom,SBR-Lowvolume,,
+jetty-eclipse,SBR-Middleware,,
+jline,SBR-Lowvolume,,
+jna,SBR-Lowvolume,,
+jomolhari-fonts,SBR-Desktop,,
+jpackage-utils,SBR-Lowvolume,,
+jsch,SBR-Lowvolume,,
+jss,SBR-Lowvolume,,
+junit,SBR-Lowvolume,,
+junit4,SBR-Lowvolume,,
+jwhois,SBR-Lowvolume,,
+jzlib,SBR-Lowvolume,,
+k3b,SBR-Desktop,,
+kabi-yum-plugins,SBR-Lowvolume,,
+kasumi,SBR-Desktop,,
+kbd,SBR-Shells,,
+kcoloredit,SBR-Desktop,,
+kde-i18n,SBR-Desktop,,
+kde-l10n,SBR-Desktop,,
+kde-settings,SBR-Desktop,,
+kdeaccessibility,SBR-Desktop,,
+kdeadmin,SBR-Desktop,,
+kdeartwork,SBR-Desktop,,
+kdebase,SBR-Desktop,,
+kdebase-runtime,SBR-Desktop,,
+kdebindings,SBR-Desktop,,
+kdegraphics,SBR-Desktop,,
+kdelibs,SBR-Desktop,,
+kdelibs-experimental,SBR-Desktop,,
+kdelibs3,SBR-Desktop,,
+kdemultimedia,SBR-Desktop,,
+kdenetwork,SBR-Desktop,,
+kdepim,SBR-Desktop,,
+kdepim-runtime,SBR-Desktop,,
+kdepimlibs,SBR-Desktop,,
+kdeplasma-addons,SBR-Desktop,,
+kdesdk,SBR-Desktop,,
+kdeutils,SBR-Desktop,,
+kdewebdev,SBR-Desktop,,
+kernel,SBR-Kernel,,
+kexec-tools,SBR-Kernel,,
+keyutils,SBR-Kernel,SBR-Shells,
+kiconedit,SBR-Desktop,,
+kipi-plugins,SBR-Desktop,,
+kmid,SBR-Desktop,,
+konq-plugins,SBR-Desktop,,
+krb5-auth-dialog,SBR-Idm,,
+ksig,SBR-Desktop,,
+ksshaskpass,SBR-Desktop,,
+lapack,SBR-Lowvolume,,
+latencytop,SBR-Lowvolume,,
+latrace,SBR-Tools,SBR-Shells,
+ldapjdk,SBR-Lowvolume,,
+lftp,SBR-Shells,,
+libICE,SBR-Desktop,,
+libIDL,SBR-Services,,
+libSM,SBR-Desktop,,
+libX11,SBR-Desktop,,
+libXScrnSaver,SBR-Desktop,,
+libXau,SBR-Desktop,,
+libXaw,SBR-Desktop,,
+libXcomposite,SBR-Desktop,,
+libXcursor,SBR-Desktop,,
+libXdamage,SBR-Desktop,,
+libXdmcp,SBR-Desktop,,
+libXext,SBR-Desktop,,
+libXfixes,SBR-Desktop,,
+libXfont,SBR-Desktop,,
+libXft,SBR-Desktop,,
+libXi,SBR-Desktop,,
+libXinerama,SBR-Desktop,,
+libXmu,SBR-Desktop,,
+libXp,SBR-Desktop,,
+libXpm,SBR-Desktop,,
+libXrandr,SBR-Desktop,,
+libXrender,SBR-Desktop,,
+libXres,SBR-Desktop,,
+libXt,SBR-Desktop,,
+libXtst,SBR-Desktop,,
+libXv,SBR-Desktop,,
+libXvMC,SBR-Desktop,,
+libXxf86dga,SBR-Desktop,,
+libXxf86misc,SBR-Desktop,,
+libXxf86vm,SBR-Desktop,,
+libaio,SBR-Storage,,
+libao,SBR-Desktop,,
+libarchive,SBR-Lowvolume,,
+libart_lgpl,SBR-Desktop,,
+libasyncns,SBR-Tools,,
+libatasmart,SBR-Lowvolume,SBR-Storage,
+libavc1394,SBR-Lowvolume,,
+libbonobo,SBR-Desktop,,
+libbonoboui,SBR-Desktop,,
+libburn,SBR-Shells,,
+libcacard,SBR-Lowvolume,,
+libcanberra,SBR-Lowvolume,,
+libcap,SBR-Lowvolume,,
+libcap-ng,SBR-Lowvolume,,
+libcdio,SBR-Lowvolume,,
+libcgroup,SBR-Lowvolume,,
+libchewing,SBR-Lowvolume,,
+libcmpiutil,SBR-Lowvolume,,
+libconfig,SBR-Lowvolume,,
+libcroco,SBR-Desktop,,
+libcxgb3,SBR-Lowvolume,,
+libcxgb4,SBR-Lowvolume,,
+libdaemon,SBR-Services,,
+libdbi,SBR-Lowvolume,,
+libdbi-drivers,SBR-Lowvolume,,
+libdc1394,SBR-Desktop,,
+libdiscid,SBR-Lowvolume,,
+libdmx,SBR-Desktop,,
+libdrm,SBR-Desktop,,
+libdv,SBR-Desktop,,
+libdvdread,SBR-Lowvolume,,
+libedit,SBR-Tools,,
+libertas-usb8388-firmware,SBR-Lowvolume,,
+libesmtp,SBR-Services,,
+libevent,SBR-Services,,
+libexif,SBR-Desktop,,
+libffi,SBR-Tools,,
+libfontenc,SBR-Desktop,,
+libfonts,SBR-Tools,,
+libformula,SBR-Lowvolume,,
+libfprint,SBR-Desktop,,
+libgail-gnome,SBR-Desktop,,
+libgcrypt,SBR-Lowvolume,,
+libglade2,SBR-Desktop,,
+libglademm24,SBR-Desktop,,
+libgnome,SBR-Desktop,,
+libgnomecanvas,SBR-Desktop,,
+libgnomekbd,SBR-Desktop,,
+libgnomeui,SBR-Desktop,,
+libgpg-error,SBR-Shells,,
+libgphoto2,SBR-Desktop,,
+libgpod,SBR-Desktop,,
+libgsf,SBR-Shells,,
+libgssglue,SBR-Idm,,
+libgtop2,SBR-Desktop,,
+libguestfs,SBR-Virtualization,,
+libgweather,SBR-Desktop,,
+libgxim,SBR-Desktop,,
+libhangul,SBR-Desktop,,
+libhbaapi,SBR-Storage,,
+libhbalinux,SBR-Storage,,
+libhugetlbfs,SBR-Tools,,
+libibcm,SBR-Storage,,
+libibcommon,SBR-Storage,,
+libibmad,SBR-Storage,,
+libibumad,SBR-Storage,,
+libibverbs,SBR-Storage,,
+libical,SBR-Desktop,,
+libidn,SBR-Tools,,
+libiec61883,SBR-Lowvolume,,
+libieee1284,SBR-Lowvolume,,
+libimobiledevice,SBR-Desktop,,
+libipathverbs,SBR-Storage,,
+libiptcdata,SBR-Lowvolume,SBR-Desktop,
+libisofs,SBR-Storage,SBR-Shells,
+liblayout,SBR-Lowvolume,,
+libloader,SBR-Tools,,
+libmatchbox,SBR-Desktop,,
+libmemcached,SBR-Services,,
+libmng,SBR-Lowvolume,SBR-Desktop,
+libmpcdec,SBR-Lowvolume,,
+libmsn,SBR-Desktop,,
+libmthca,SBR-Storage,,
+libmtp,SBR-Lowvolume,SBR-Desktop,
+libmusicbrainz,SBR-Desktop,,
+libmusicbrainz3,SBR-Desktop,,
+libnes,SBR-Storage,,
+libnetfilter_conntrack,SBR-Shells,,
+libnfnetlink,SBR-Shells,,
+libnice,SBR-Lowvolume,,
+libnih,SBR-Tools,,
+libnl,SBR-Tools,,
+libnotify,SBR-Desktop,,
+libntlm,SBR-Idm,,
+libogg,SBR-Desktop,,
+liboil,SBR-Tools,,
+libopenraw,SBR-Lowvolume,SBR-Desktop,
+libotf,SBR-Desktop,,
+libpanelappletmm,SBR-Desktop,,
+libpcap,SBR-Shells,,
+libpciaccess,SBR-Lowvolume,,
+libplist,SBR-Lowvolume,,
+libpng,SBR-Desktop,,
+libproxy,SBR-Services,,
+librelp,SBR-Services,,
+librepository,SBR-Lowvolume,,
+librsvg2,SBR-Desktop,,
+libsamplerate,SBR-Lowvolume,,
+libselinux,SBR-Shells,,
+libsemanage,SBR-Shells,,
+libsepol,SBR-Shells,,
+libsexy,SBR-Desktop,,
+libshout,SBR-Services,,
+libsmi,SBR-Services,,
+libsndfile,SBR-Lowvolume,,
+libsoup,SBR-Desktop,,
+libspectre,SBR-Desktop,,
+libssh2,SBR-Services,,
+libtalloc,SBR-Tools,,
+libtar,SBR-Shells,,
+libtasn1,SBR-Shells,,
+libtdb,SBR-Tools,,
+libtevent,SBR-Tools,,
+libtextcat,SBR-Tools,,
+libthai,SBR-Tools,,
+libtheora,SBR-Desktop,,
+libtiff,SBR-Desktop,,
+libtirpc,SBR-Tools,,
+libtool,SBR-Tools,,
+libtopology,SBR-Shells,,
+libusb,SBR-Tools,,
+libusb1,SBR-Tools,,
+libuser,SBR-Shells,,
+libutempter,SBR-Shells,,
+libv4l,SBR-Lowvolume,,
+libvirt,SBR-Virtualization,,
+libvirt-cim,SBR-Virtualization,,
+libvirt-java,SBR-Virtualization,,
+libvisual,SBR-Desktop,,
+libvncserver,SBR-Services,,
+libvorbis,SBR-Desktop,,
+libvpx,SBR-Desktop,,
+libwmf,SBR-Lowvolume,,
+libwnck,SBR-Desktop,,
+libwpd,SBR-Desktop,,
+libwpg,SBR-Desktop,,
+libwvstreams,SBR-Tools,,
+libxcb,SBR-Desktop,,
+libxkbfile,SBR-Desktop,,
+libxklavier,SBR-Desktop,,
+libxml2,SBR-Services,,
+libxslt,SBR-Services,,
+lklug-fonts,SBR-Services,,
+lksctp-tools,SBR-Kernel,SBR-Low Volume,
+lldpad,SBR-Lowvolume,,
+lm_sensors,SBR-Services,,
+lockdev,SBR-Services,,
+log4cpp,SBR-Tools,,
+log4j,SBR-Tools,,
+logrotate,SBR-Services,,
+logwatch,SBR-Services,,
+lohit-assamese-fonts,SBR-Desktop,,
+lohit-bengali-fonts,SBR-Desktop,,
+lohit-devanagari-fonts,SBR-Desktop,,
+lohit-gujarati-fonts,SBR-Desktop,,
+lohit-kannada-fonts,SBR-Desktop,,
+lohit-malayalam-fonts,SBR-Desktop,,
+lohit-oriya-fonts,SBR-Desktop,,
+lohit-punjabi-fonts,SBR-Desktop,,
+lohit-tamil-fonts,SBR-Desktop,,
+lohit-telugu-fonts,SBR-Desktop,,
+lpg,SBR-Tools,,
+lpsolve,SBR-Tools,,
+lrzsz,SBR-Services,,
+lslk,SBR-Shells,,
+lsof,SBR-Shells,,
+lsscsi,SBR-Shells,,
+ltrace,SBR-Shells,,
+lua,SBR-Tools,,
+lucene,SBR-Lowvolume,SBR-Services,
+lvm2,SBR-Storage,,
+lynx,SBR-Desktop,,
+lzo,SBR-Tools,,
+lzop,SBR-Tools,,
+m2crypto,SBR-Services,,
+m4,SBR-Tools,,
+m17n-contrib,SBR-Lowvolume,,
+m17n-db,SBR-Lowvolume,,
+m17n-lib,SBR-Desktop,,
+madan-fonts,SBR-Lowvolume,,
+mailcap,SBR-Services,,
+mailman,SBR-Services,,
+make,SBR-Tools,,
+makebootfat,SBR-Lowvolume,,
+man,SBR-Shells,,
+man-pages,SBR-Shells,,
+man-pages-cs,SBR-Shells,,
+man-pages-es,SBR-Shells,,
+man-pages-fr,SBR-Shells,,
+man-pages-it,SBR-Shells,,
+man-pages-overrides,SBR-Shells,,
+man-pages-pl,SBR-Shells,,
+man-pages-ru,SBR-Shells,,
+man-pages-uk,SBR-Shells,,
+matchbox-window-manager,SBR-Desktop,,
+mc,SBR-Shells,,
+mcelog,SBR-Shells,,
+mcpp,SBR-Tools,,
+mcstrans,SBR-Shells,,
+mdadm,SBR-Storage,,
+meanwhile,SBR-Desktop,,
+memcached,SBR-Services,,
+mercurial,SBR-Services,,
+metacity,SBR-Desktop,,
+mgetty,SBR-Services,,
+microcode_ctl,SBR-Kernel,,
+min12xxw,SBR-Shells,,
+mingetty,SBR-Services,,
+minicom,SBR-Shells,,
+mipv6-daemon,SBR-Services,,
+mkbootdisk,SBR-Storage,,
+mlocate,SBR-Shells,,
+mobile-broadband-provider-info,SBR-Desktop,,
+mod_auth_kerb,SBR-Webservers,SBR-Idm,
+mod_auth_mysql,SBR-Webservers,,
+mod_auth_pgsql,SBR-Webservers,,
+mod_authz_ldap,SBR-Webservers,SBR-Idm,
+mod_dnssd,SBR-Webservers,,
+mod_nss,SBR-Webservers,,
+mod_perl,SBR-Webservers,,
+mod_revocator,SBR-Webservers,,
+mod_wsgi,SBR-Webservers,,
+module-init-tools,SBR-Kernel,,
+mousetweaks,SBR-Desktop,,
+mozilla-filesystem,SBR-Desktop,,
+mpfr,SBR-Tools,,
+mpich2,SBR-Services,,
+mrtg,SBR-Services,,
+mstflint,SBR-Desktop,,
+mt-st,SBR-Storage,,
+mtools,SBR-Shells,,
+mtr,SBR-Shells,,
+mtx,SBR-Storage,,
+mutt,SBR-Shells,,
+mvapich,SBR-Services,,
+mvapich2,SBR-Services,,
+mx4j,SBR-Services,,
+mysql,SBR-Services,,
+mysql-connector-java,SBR-Services,,
+mysql-connector-odbc,SBR-Services,,
+mythes-bg,SBR-Lowvolume,,
+mythes-ca,SBR-Lowvolume,,
+mythes-cs,SBR-Lowvolume,,
+mythes-da,SBR-Lowvolume,,
+mythes-de,SBR-Lowvolume,,
+mythes-el,SBR-Lowvolume,,
+mythes-en,SBR-Lowvolume,,
+mythes-es,SBR-Lowvolume,,
+mythes-fr,SBR-Lowvolume,,
+mythes-ga,SBR-Lowvolume,,
+mythes-hu,SBR-Lowvolume,,
+mythes-it,SBR-Lowvolume,,
+mythes-mi,SBR-Lowvolume,,
+mythes-nl,SBR-Lowvolume,,
+mythes-pl,SBR-Lowvolume,,
+mythes-pt,SBR-Lowvolume,,
+mythes-ro,SBR-Lowvolume,,
+mythes-ru,SBR-Lowvolume,,
+mythes-sk,SBR-Lowvolume,,
+mythes-sl,SBR-Lowvolume,,
+mythes-sv,SBR-Lowvolume,,
+mythes-uk,SBR-Lowvolume,,
+nano,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+nasm,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+nautilus-open-terminal,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+nc,unmapped,
+ncompress,unmapped,
+neon,SBR-Lowvolume,,
+net-snmp,SBR-Services,,
+net-tools,SBR-Networking,,
+netcf,unmapped,
+nfs-utils,SBR-Filesystem,,
+nfs-utils-lib,SBR-Filesystem,,
+nfs4-acl-tools,SBR-Filesystem,,
+nmap,SBR-Shells,,
+notification-daemon,SBR-Services,,
+notify-python,SBR-Services,,
+nspluginwrapper,SBR-Desktop,,
+nspr,SBR-Tools,,
+nss,SBR-Idm,,
+nss-pam-ldapd,SBR-Idm,,
+nss-softokn,SBR-Idm,,
+nss-util,SBR-Idm,,
+nss_compat_ossl,SBR-Idm,,
+nss_db,SBR-Idm,,
+ntp,SBR-Services,,
+numactl,SBR-Shells,,
+numpy,SBR-Tools,,
+nuxwdog,SBR-Services,,
+obex-data-server,SBR-Desktop,,
+obexd,SBR-Desktop,,
+objectweb-asm,SBR-Tools,,
+oddjob,SBR-Desktop,,
+omping,SBR-Shells,,
+opal,SBR-Lowvolume,,
+openchange,SBR-Desktop,,
+opencryptoki,SBR-Idm,,
+opencv,SBR-Tools,,
+openhpi,SBR-Services,,
+openhpi-subagent,SBR-Services,,
+openjade,SBR-Lowvolume,,
+openjpeg,SBR-Tools,,
+openldap,SBR-Idm,,
+openmotif,SBR-Desktop,,
+openmotif22,SBR-Desktop,,
+openobex,SBR-Desktop,,
+openscap,SBR-Idm,,
+opensm,SBR-Shells,,
+opensp,SBR-Lowvolume,,
+openssh,SBR-Services,,
+openssl,SBR-Services,,
+openssl098e,SBR-Services,,
+openswan,SBR-Services,,
+oprofile,SBR-Tools,,
+orca,SBR-Desktop,,
+osutil,SBR-Tools,,
+oxygen-icon-theme,SBR-Desktop,,
+pacemaker,SBR-Clusterha,,
+pakchois,SBR-Services,,
+pam,SBR-Idm,,
+pam_krb5,SBR-Idm,,
+pam_passwdqc,SBR-Idm,,
+pam_pkcs11,SBR-Idm,,
+pango,SBR-Tools,,
+pangomm,SBR-Tools,,
+papi,SBR-Tools,,
+paps,SBR-Lowvolume,,
+parted,SBR-Shells,,
+passivetex,SBR-Tools,,
+passwd,SBR-Shells,,
+patch,SBR-Tools,,
+patchutils,SBR-Tools,,
+pax,SBR-Shells,,
+pbm2l2030,SBR-Desktop,,
+pciutils,SBR-Shells,,
+pcre,SBR-Tools,,
+pcsc-lite,SBR-Services,,
+pentaho-libxml,SBR-Tools,,
+pentaho-reporting-flow-engine,SBR-Tools,,
+perftest,SBR-Shells,,
+perl,SBR-Tools,,
+perl-Authen-SASL,SBR-Tools,,
+perl-BSD-Resource,SBR-Tools,,
+perl-Bit-Vector,SBR-Tools,,
+perl-CGI-Session,SBR-Tools,SBR-Webservers,
+perl-Cache-Memcached,SBR-Tools,,
+perl-Carp-Clan,SBR-Tools,,
+perl-Class-MethodMaker,SBR-Tools,,
+perl-Class-Singleton,SBR-Tools,,
+perl-Config-General,SBR-Tools,,
+perl-Convert-ASN1,SBR-Tools,,
+perl-Crypt-OpenSSL-Bignum,SBR-Tools,,
+perl-Crypt-OpenSSL-RSA,SBR-Tools,,
+perl-Crypt-OpenSSL-Random,SBR-Tools,,
+perl-Crypt-PasswdMD5,SBR-Tools,,
+perl-Crypt-SSLeay,SBR-Tools,,
+perl-DBD-MySQL,SBR-Tools,,
+perl-DBD-Pg,SBR-Tools,,
+perl-DBD-SQLite,SBR-Tools,,
+perl-DBI,SBR-Tools,,
+perl-DBIx-Simple,SBR-Tools,,
+perl-Date-Calc,SBR-Tools,,
+perl-Date-Manip,SBR-Tools,,
+perl-DateTime,SBR-Tools,,
+perl-Devel-Symdump,SBR-Tools,,
+perl-Digest-HMAC,SBR-Tools,,
+perl-Digest-SHA1,SBR-Tools,,
+perl-Encode-Detect,SBR-Tools,,
+perl-FreezeThaw,SBR-Tools,,
+perl-Frontier-RPC,SBR-Tools,,
+perl-GSSAPI,SBR-Tools,,
+perl-HTML-Parser,SBR-Tools,,
+perl-HTML-Tagset,SBR-Tools,,
+perl-IO-Socket-INET6,SBR-Tools,,
+perl-IO-Socket-SSL,SBR-Tools,,
+perl-IO-String,SBR-Tools,,
+perl-LDAP,SBR-Tools,,
+perl-List-MoreUtils,SBR-Tools,,
+perl-Mail-DKIM,SBR-Tools,,
+perl-MailTools,SBR-Tools,,
+perl-Mozilla-LDAP,SBR-Tools,,
+perl-Net-DNS,SBR-Tools,,
+perl-Net-LibIDN,SBR-Tools,,
+perl-Net-SSLeay,SBR-Tools,,
+perl-Net-Telnet,SBR-Tools,,
+perl-NetAddr-IP,SBR-Tools,,
+perl-Newt,SBR-Tools,,
+perl-Params-Validate,SBR-Tools,,
+perl-Perlilog,SBR-Tools,,
+perl-Pod-Coverage,SBR-Tools,,
+perl-SGMLSpm,SBR-Tools,,
+perl-SNMP_Session,SBR-Tools,,
+perl-Socket6,SBR-Tools,,
+perl-String-CRC32,SBR-Tools,,
+perl-Sys-Virt,SBR-Tools,,
+perl-Term-ProgressBar,SBR-Tools,,
+perl-TermReadKey,SBR-Tools,,
+perl-Test-Pod,SBR-Tools,,
+perl-Test-Pod-Coverage,SBR-Tools,,
+perl-Text-Iconv,SBR-Tools,,
+perl-TimeDate,SBR-Tools,,
+perl-URI,SBR-Tools,,
+perl-XML-DOM,SBR-Tools,,
+perl-XML-DOM-XPath,SBR-Tools,,
+perl-XML-Dumper,SBR-Tools,,
+perl-XML-Filter-BufferText,SBR-Tools,,
+perl-XML-Grove,SBR-Tools,,
+perl-XML-LibXML,SBR-Tools,,
+perl-XML-NamespaceSupport,SBR-Tools,,
+perl-XML-Parser,SBR-Tools,,
+perl-XML-RegExp,SBR-Tools,,
+perl-XML-SAX,SBR-Tools,,
+perl-XML-SAX-Writer,SBR-Tools,,
+perl-XML-Twig,SBR-Tools,,
+perl-XML-Writer,SBR-Tools,,
+perl-XML-XPath,SBR-Tools,,
+perl-XML-XPathEngine,SBR-Tools,,
+perl-libintl,SBR-Tools,,
+perl-libwww-perl,SBR-Tools,,
+perl-libxml-perl,SBR-Tools,,
+pessulus,SBR-Desktop,,
+pexpect,SBR-Shells,,
+php,SBR-Webservers,,
+php-pear,SBR-Webservers,,
+php-pecl-apc,SBR-Webservers,,
+php-pecl-memcache,SBR-Webservers,,
+pidgin,SBR-Desktop,,
+pilot-link,SBR-Desktop,,
+pinentry,SBR-Desktop,,
+pinfo,SBR-Shells,,
+pixman,SBR-Desktop,,
+pkgconfig,SBR-Tools,,
+planner,SBR-Desktop,,
+plymouth,SBR-Desktop,,
+pm-utils,SBR-Shells,,
+pnm2ppa,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+policycoreutils,SBR-Shells,,
+polkit,SBR-Shells,,
+polkit-gnome,SBR-Desktop,,
+poppler,SBR-Desktop,,
+poppler-data,SBR-Desktop,,
+popt,SBR-Tools,,
+portreserve,SBR-Services,,
+postfix,SBR-Services,,
+postgresql,SBR-Services,,
+postgresql-jdbc,SBR-Services,,
+pothana2000-fonts,SBR-Desktop,,
+powertop,SBR-Shells,,
+ppl,SBR-Tools,,
+ppp,SBR-Services,,
+pptp,SBR-Shells,,
+prelink,SBR-Tools,,
+printer-filters,SBR-Lowvolume,,
+procmail,SBR-Shells,,
+procps,SBR-Shells,,
+psacct,SBR-Shells,,
+psutils,SBR-Services,,
+pth,SBR-Tools,,
+ptlib,SBR-Tools,,
+ptouch-driver,SBR-Services,,
+pulseaudio,SBR-Desktop,,
+pyOpenSSL,SBR-Shells,SBR-Tools,
+pycairo,SBR-Desktop,SBR-Shells,
+pychart,SBR-Shells,,
+pygobject2,SBR-Desktop,SBR-Shells,
+pygpgme,SBR-Shells,,
+pygtk2,SBR-Desktop,SBR-Shells,
+pygtksourceview,SBR-Desktop,SBR-Shells,
+pykickstart,SBR-Shells,,
+pyorbit,SBR-Desktop,SBR-Shells,
+pyparted,SBR-Storage,SBR-Shells,
+python,SBR-Shells,,
+python-Coherence,SBR-Lowvolume,SBR-Shells,
+python-beaker,SBR-Shells,SBR-Tools,
+python-cheetah,SBR-Shells,SBR-Tools,
+python-configobj,SBR-Shells,SBR-Tools,
+python-crypto,SBR-Shells,,
+python-cryptsetup,SBR-Storage,SBR-Shells,
+python-dateutil,SBR-Shells,,
+python-decorator,SBR-Shells,,
+python-decoratortools,SBR-Shells,,
+python-dmidecode,SBR-Shells,,
+python-docs,SBR-Shells,,
+python-enchant,SBR-Desktop,SBR-Shells,
+python-ethtool,SBR-Shells,,
+python-formencode,SBR-Shells,SBR-Tools,
+python-fpconst,SBR-Shells,,
+python-genshi,SBR-Shells,,
+python-gtkextra,SBR-Desktop,SBR-Shells,
+python-imaging,SBR-Desktop,SBR-Shells,
+python-iniparse,SBR-Shells,,
+python-iwlib,SBR-Shells,,
+python-kerberos,SBR-Shells,,
+python-krbV,SBR-Shells,,
+python-ldap,SBR-Shells,,
+python-louie,SBR-Shells,,
+python-lxml,SBR-Shells,,
+python-mako,SBR-Shells,,
+python-markdown,SBR-Shells,,
+python-markupsafe,SBR-Shells,,
+python-matplotlib,SBR-Shells,,
+python-meh,SBR-Shells,,
+python-memcached,SBR-Shells,,
+python-myghty,SBR-Shells,,
+python-netaddr,SBR-Shells,,
+python-nose,SBR-Shells,,
+python-nss,SBR-Shells,,
+python-paramiko,SBR-Shells,,
+python-paste,SBR-Shells,,
+python-paste-deploy,SBR-Shells,,
+python-paste-script,SBR-Shells,,
+python-peak-rules,SBR-Shells,,
+python-peak-util-addons,SBR-Shells,,
+python-peak-util-assembler,SBR-Shells,,
+python-peak-util-extremes,SBR-Shells,,
+python-peak-util-symbols,SBR-Shells,,
+python-prioritized-methods,SBR-Shells,,
+python-psycopg2,SBR-Shells,,
+python-pyasn1,SBR-Shells,,
+python-pyblock,SBR-Shells,,
+python-pycurl,SBR-Shells,,
+python-pygments,SBR-Shells,,
+python-pylons,SBR-Shells,,
+python-qpid,SBR-Mrg,,
+python-reportlab,SBR-Shells,,
+python-repoze-tm2,SBR-Shells,,
+python-repoze-what,SBR-Shells,,
+python-repoze-what-plugins-sql,SBR-Shells,,
+python-repoze-what-pylons,SBR-Shells,,
+python-repoze-what-quickstart,SBR-Shells,,
+python-repoze-who,SBR-Shells,,
+python-repoze-who-friendlyform,SBR-Shells,,
+python-repoze-who-plugins-sa,SBR-Shells,,
+python-repoze-who-testutil,SBR-Shells,,
+python-rhsm,SBR-Shells,,
+python-routes,SBR-Shells,,
+python-setuptools,SBR-Shells,,
+python-sexy,SBR-Shells,,
+python-simplejson,SBR-Shells,,
+python-slip,SBR-Shells,,
+python-sqlalchemy,SBR-Shells,,
+python-tempita,SBR-Shells,,
+python-toscawidgets,SBR-Shells,,
+python-transaction,SBR-Shells,,
+python-turbojson,SBR-Shells,,
+python-tw-forms,SBR-Shells,,
+python-twisted,SBR-Shells,,
+python-twisted-conch,SBR-Shells,,
+python-twisted-core,SBR-Shells,,
+python-twisted-lore,SBR-Shells,,
+python-twisted-mail,SBR-Shells,,
+python-twisted-names,SBR-Shells,,
+python-twisted-news,SBR-Shells,,
+python-twisted-runner,SBR-Shells,,
+python-twisted-web,SBR-Shells,,
+python-twisted-words,SBR-Shells,,
+python-urlgrabber,SBR-Shells,,
+python-virtinst,SBR-Shells,,
+python-webflash,SBR-Shells,,
+python-webhelpers,SBR-Shells,,
+python-webob,SBR-Shells,,
+python-webtest,SBR-Shells,,
+python-zope-interface,SBR-Shells,,
+python-zope-sqlalchemy,SBR-Shells,,
+pywebkitgtk,SBR-Shells,SBR-Desktop,
+pyxdg,SBR-Shells,SBR-Desktop,
+pyxf86config,SBR-Shells,SBR-Desktop,
+qca-ossl,SBR-Desktop,SBR-Tools,
+qca2,SBR-Desktop,,
+qdox,SBR-Tools,,
+qemu-kvm,SBR-Virtualization,,
+qimageblitz,SBR-Desktop,,
+ql23xx-firmware,SBR-Storage,,
+ql2100-firmware,SBR-Storage,,
+ql2200-firmware,SBR-Storage,,
+ql2400-firmware,SBR-Storage,,
+ql2500-firmware,SBR-Storage,,
+qperf,SBR-Lowvolume,,
+qpid-cpp,SBR-Mrg,,
+qpid-qmf,SBR-Mrg,,
+qpid-tests,SBR-Mrg,,
+qpid-tools,SBR-Mrg,,
+qt,SBR-Desktop,,
+qt3,SBR-Desktop,,
+quagga,SBR-Lowvolume,,
+quota,SBR-Filesystem,,
+radvd,SBR-Lowvolume,,
+raptor,SBR-Tools,,
+rarian,SBR-Tools,,
+rasqal,SBR-Tools,,
+rcs,SBR-Tools,,
+rdate,SBR-Lowvolume,,
+rdesktop,SBR-Desktop,,
+rdist,SBR-Lowvolume,,
+rdma,SBR-Lowvolume,,
+rds-tools,SBR-Lowvolume,,
+readahead,SBR-Shells,,
+readline,SBR-Shells,,
+redhat-lsb,SBR-Lowvolume,,
+redhat-rpm-config,SBR-Lowvolume,,
+redland,SBR-Lowvolume,,
+regexp,SBR-Tools,,
+resource-agents,SBR-Clusterha,,
+rfkill,SBR-Lowvolume,,
+rhdb-utils,SBR-Tools,,
+rhino,SBR-Tools,,
+rhn-client-tools,SBR-Sysmgmt,,
+rhnlib,SBR-Sysmgmt,,
+rhnsd,SBR-Sysmgmt,,
+rhythmbox,SBR-Desktop,,
+rome,SBR-Tools,,
+rootfiles,SBR-Lowvolume,,
+rp-pppoe,SBR-Shells,,
+rpcbind,SBR-Services,,
+rpm,SBR-Anaconda,,
+rpmdevtools,SBR-Anaconda,,
+rpmlint,SBR-Anaconda,,
+rrdtool,SBR-Tools,,
+rsh,SBR-Shells,,
+rsync,SBR-Shells,,
+rsyslog,SBR-Services,,
+rt61pci-firmware,SBR-Kernel,,
+rt73usb-firmware,SBR-Kernel,,
+rtkit,SBR-Lowvolume,,
+ruby,SBR-Shells,,
+ruby-qpid,SBR-Mrg,,
+rusers,SBR-Shells,,
+rwho,SBR-Shells,,
+saab-fonts,SBR-Desktop,,
+sabayon,SBR-Desktop,,
+sac,SBR-Tools,,
+samba,SBR-Idm,,
+samba4,SBR-Idm,,
+sane-backends,SBR-Desktop,,
+sane-frontends,SBR-Desktop,,
+saslwrapper,SBR-Idm,,
+sat4j,SBR-Tools,,
+saxon,SBR-Tools,,
+sblim-cim-client,SBR-Services,,
+sblim-cim-client2,SBR-Services,,
+sblim-cmpi-base,SBR-Services,,
+sblim-cmpi-devel,SBR-Services,,
+sblim-cmpi-dhcp,SBR-Services,,
+sblim-cmpi-dns,SBR-Services,,
+sblim-cmpi-fsvol,SBR-Services,,
+sblim-cmpi-network,SBR-Services,,
+sblim-cmpi-nfsv3,SBR-Services,,
+sblim-cmpi-nfsv4,SBR-Services,,
+sblim-cmpi-params,SBR-Services,,
+sblim-cmpi-samba,SBR-Services,,
+sblim-cmpi-sysfs,SBR-Services,,
+sblim-cmpi-syslog,SBR-Services,,
+sblim-gather,SBR-Services,,
+sblim-indication_helper,SBR-Services,,
+sblim-sfcb,SBR-Services,,
+sblim-sfcc,SBR-Services,,
+sblim-smis-hba,SBR-Services,,
+sblim-tools-libra,SBR-Services,,
+sblim-wbemcli,SBR-Services,,
+scenery-backgrounds,SBR-Nontechnical,,
+screen,SBR-Shells,,
+scrub,SBR-Shells,,
+scsi-target-utils,SBR-Storage,,
+sdparm,SBR-Storage,,
+seabios,SBR-Lowvolume,,
+seahorse,SBR-Desktop,,
+seahorse-plugins,SBR-Desktop,,
+sed,SBR-Tools,,
+seekwatcher,SBR-Shells,,
+selinux-policy,SBR-Shells,,
+sendmail,SBR-Services,,
+setools,SBR-Shells,,
+setroubleshoot,SBR-Shells,,
+setroubleshoot-plugins,SBR-Shells,,
+setserial,SBR-Shells,,
+setup,SBR-Lowvolume,,
+setuptool,SBR-Shells,,
+sg3_utils,SBR-Shells,,
+sgml-common,SBR-Lowvolume,,
+sgpio,SBR-Lowvolume,,
+shadow-utils,SBR-Idm,,
+shared-mime-info,SBR-Lowvolume,,
+sigar,SBR-Tools,,
+sil-padauk-fonts,SBR-Desktop,,
+sinjdoc,SBR-Tools,,
+sip,SBR-Tools,,
+slang,SBR-Tools,,
+slapi-nis,SBR-Idm,,
+slf4j,SBR-Tools,,
+smartmontools,SBR-Storage,,
+smp_utils,SBR-Shells,,
+soprano,SBR-Lowvolume,,
+sos,SBR-Lowvolume,,
+sound-juicer,SBR-Desktop,,
+sound-theme-freedesktop,SBR-Desktop,,
+spamassassin,SBR-Services,,
+speex,SBR-Lowvolume,,
+spice-client,SBR-Desktop,,
+spice-server,SBR-Desktop,,
+spice-vdagent,SBR-Desktop,,
+spice-xpi,SBR-Desktop,,
+sqlite,SBR-Tools,,
+squashfs-tools,SBR-Filesystem,,
+squid,SBR-Services,,
+srptools,SBR-Storage,,
+sssd,SBR-Idm,,
+star,SBR-Shells,,
+startup-notification,SBR-Desktop,,
+stix-fonts,SBR-Desktop,,
+strace,SBR-Tools,,
+strigi,SBR-Desktop,,
+stunnel,SBR-Services,,
+subscription-manager,SBR-Sysmgmt,,
+subversion,SBR-Tools,,
+sudo,SBR-Idm,,
+svnkit,SBR-Tools,,
+svrcore,SBR-Tools,,
+swig,SBR-Tools,,
+symlinks,SBR-Lowvolume,,
+sysfsutils,SBR-Tools,,
+syslinux,SBR-Lowvolume,,
+sysstat,SBR-Shells,,
+system-config-date,SBR-Shells,,
+system-config-date-docs,SBR-Shells,,
+system-config-firewall,SBR-Shells,,
+system-config-kdump,SBR-Shells,,
+system-config-keyboard,SBR-Shells,,
+system-config-kickstart,SBR-Shells,,
+system-config-language,SBR-Shells,,
+system-config-lvm,SBR-Shells,,
+system-config-network,SBR-Shells,,
+system-config-printer,SBR-Shells,,
+system-config-services,SBR-Shells,,
+system-config-services-docs,SBR-Shells,,
+system-config-users,SBR-Shells,,
+system-config-users-docs,SBR-Shells,,
+system-icon-theme,SBR-Desktop,,
+system-setup-keyboard,SBR-Desktop,,
+systemtap,SBR-Tools,,
+t1lib,SBR-Desktop,,
+taglib,SBR-Desktop,,
+talk,SBR-Shells,,
+tar,SBR-Shells,,
+taskjuggler,SBR-Desktop,,
+tcl,SBR-Tools,,
+tcl-pgtcl,SBR-Tools,,
+tcp_wrappers,SBR-Shells,,
+tcpdump,SBR-Shells,,
+tcsh,SBR-Shells,,
+telnet,SBR-Services,,
+terminus-fonts,SBR-Desktop,,
+texinfo,SBR-Desktop,,
+tftp,SBR-Shells,,
+thunderbird,SBR-Desktop,,
+tibetan-machine-uni-fonts,SBR-Desktop,,
+tidy,SBR-Desktop,,
+tigervnc,SBR-Desktop,,
+time,SBR-Tools,,
+tix,SBR-Tools,,
+tk,SBR-Tools,,
+tmpwatch,SBR-Services,,
+tn5250,SBR-Shells,,
+tog-pegasus,SBR-Services,,
+tokyocabinet,SBR-Tools,,
+tomcat6,SBR-Webservers,,
+tomcatjss,SBR-Webservers,,
+totem,SBR-Desktop,,
+totem-pl-parser,SBR-Desktop,,
+tpm-tools,SBR-Shells,,
+trace-cmd,SBR-Shells,,
+traceroute,SBR-Shells,,
+transfig,SBR-Desktop,,
+tree,SBR-Shells,,
+trousers,SBR-Shells,,
+tsclient,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+ttmkfdir,SBR-Desktop,,
+tunctl,SBR-Services,,
+tuned,SBR-Services,,
+udftools,SBR-Filesystem,,
+udisks,SBR-Storage,,
+unicap,SBR-Lowvolume,,
+unique,SBR-Tools,,
+units,SBR-Desktop,,
+unix2dos,SBR-Lowvolume,,
+unixODBC,SBR-Tools,,
+unzip,SBR-Shells,,
+upstart,SBR-Shells,,
+urlview,SBR-Shells,,
+urw-fonts,SBR-Desktop,,
+usbmuxd,SBR-Services,,
+usbutils,SBR-Shells,,
+usermode,SBR-Shells,,
+ustr,SBR-Tools,,
+util-linux-ng,SBR-Shells,,
+uuid,SBR-Tools,,
+valgrind,SBR-Tools,,
+vconfig,SBR-Shells,,
+velocity,SBR-Tools,,
+vemana2000-fonts,SBR-Desktop,,
+vgabios,SBR-Lowvolume,,
+vinagre,SBR-Desktop,,
+vino,SBR-Desktop,,
+virt-manager,SBR-Virtualization,,
+virt-top,SBR-Virtualization,,
+virt-v2v,SBR-Virtualization,,
+virt-viewer,SBR-Virtualization,,
+virt-what,SBR-Virtualization,,
+vlock,SBR-Shells,,
+volume_key,SBR-Storage,,
+vorbis-tools,SBR-Desktop,,
+vsftpd,SBR-Services,,
+vte,SBR-Desktop,,
+w3m,SBR-Shells,,
+wacomexpresskeys,SBR-Desktop,,
+watchdog,SBR-Services,,
+wavpack,SBR-Desktop,,
+webalizer,SBR-Shells,,
+webkitgtk,SBR-Desktop,,
+werken-xpath,SBR-Tools,,
+wget,SBR-Shells,,
+which,SBR-Shells,,
+wireshark,SBR-Lowvolume,,
+words,SBR-Lowvolume,,
+wpa_supplicant,SBR-Services,,
+wqy-zenhei-fonts,SBR-Lowvolume,,
+ws-commons-util,SBR-Tools,SBR-Middleware,
+ws-jaxme,SBR-Tools,SBR-Middleware,
+wsdl4j,SBR-Tools,SBR-Middleware,
+wsmancli,SBR-Lowvolume,,
+wvdial,SBR-Lowvolume,,
+x86info,SBR-Lowvolume,,
+x3270,SBR-Desktop,,
+xalan-j2,SBR-Tools,SBR-Middleware,
+xcb-util,SBR-Desktop,,
+xchat,SBR-Desktop,,
+xdelta,SBR-Lowvolume,,
+xdg-user-dirs,SBR-Desktop,,
+xdg-user-dirs-gtk,SBR-Desktop,,
+xdg-utils,SBR-Desktop,,
+xerces-j2,SBR-Tools,SBR-Middleware,
+xferstats,SBR-Lowvolume,,
+xfig,SBR-Desktop,,
+xfsdump,SBR-Filesystem,,
+xfsprogs,SBR-Filesystem,,
+xguest,SBR-Desktop,,
+xinetd,SBR-Services,,
+xkeyboard-config,SBR-Desktop,,
+xml-commons-apis,SBR-Tools,SBR-Middleware,
+xml-commons-resolver,SBR-Tools,SBR-Middleware,
+xmldb-api,SBR-Tools,,
+xmlgraphics-commons,SBR-Tools,,
+xmlrpc-c,SBR-Tools,,
+xmlto,SBR-Lowvolume,,
+xmltoman,SBR-Lowvolume,,
+xorg-x11-apps,SBR-Desktop,,
+xorg-x11-docs,SBR-Desktop,,
+xorg-x11-drivers,SBR-Desktop,,
+xorg-x11-drv-acecad,SBR-Desktop,,
+xorg-x11-drv-aiptek,SBR-Desktop,,
+xorg-x11-drv-apm,SBR-Desktop,,
+xorg-x11-drv-ast,SBR-Desktop,,
+xorg-x11-drv-ati,SBR-Desktop,,
+xorg-x11-drv-cirrus,SBR-Desktop,,
+xorg-x11-drv-dummy,SBR-Desktop,,
+xorg-x11-drv-elographics,SBR-Desktop,,
+xorg-x11-drv-evdev,SBR-Desktop,,
+xorg-x11-drv-fbdev,SBR-Desktop,,
+xorg-x11-drv-fpit,SBR-Desktop,,
+xorg-x11-drv-glint,SBR-Desktop,,
+xorg-x11-drv-hyperpen,SBR-Desktop,,
+xorg-x11-drv-i128,SBR-Desktop,,
+xorg-x11-drv-i740,SBR-Desktop,,
+xorg-x11-drv-intel,SBR-Desktop,,
+xorg-x11-drv-keyboard,SBR-Desktop,,
+xorg-x11-drv-mach64,SBR-Desktop,,
+xorg-x11-drv-mga,SBR-Desktop,,
+xorg-x11-drv-mouse,SBR-Desktop,,
+xorg-x11-drv-mutouch,SBR-Desktop,,
+xorg-x11-drv-nouveau,SBR-Desktop,,
+xorg-x11-drv-nv,SBR-Desktop,,
+xorg-x11-drv-openchrome,SBR-Desktop,,
+xorg-x11-drv-penmount,SBR-Desktop,,
+xorg-x11-drv-qxl,SBR-Desktop,,
+xorg-x11-drv-r128,SBR-Desktop,,
+xorg-x11-drv-rendition,SBR-Desktop,,
+xorg-x11-drv-s3virge,SBR-Desktop,,
+xorg-x11-drv-savage,SBR-Desktop,,
+xorg-x11-drv-siliconmotion,SBR-Desktop,,
+xorg-x11-drv-sis,SBR-Desktop,,
+xorg-x11-drv-sisusb,SBR-Desktop,,
+xorg-x11-drv-synaptics,SBR-Desktop,,
+xorg-x11-drv-tdfx,SBR-Desktop,,
+xorg-x11-drv-trident,SBR-Desktop,,
+xorg-x11-drv-v4l,SBR-Desktop,,
+xorg-x11-drv-vesa,SBR-Desktop,,
+xorg-x11-drv-void,SBR-Desktop,,
+xorg-x11-drv-voodoo,SBR-Desktop,,
+xorg-x11-drv-wacom,SBR-Desktop,,
+xorg-x11-drv-xgi,SBR-Desktop,,
+xorg-x11-font-utils,SBR-Desktop,,
+xorg-x11-proto-devel,SBR-Desktop,,
+xorg-x11-server-utils,SBR-Desktop,,
+xorg-x11-twm,SBR-Desktop,,
+xorg-x11-utils,SBR-Desktop,,
+xorg-x11-xauth,SBR-Desktop,,
+xorg-x11-xdm,SBR-Desktop,,
+xorg-x11-xinit,SBR-Desktop,,
+xorg-x11-xkb-utils,SBR-Desktop,,
+xrestop,SBR-Desktop,,
+xsane,SBR-Desktop,,
+xsettings-kde,SBR-Desktop,,
+xulrunner,SBR-Desktop,,
+xvattr,SBR-Desktop,,
+xz,SBR-Lowvolume,,
+yajl,SBR-Tools,,
+yelp,SBR-Desktop,,
+yp-tools,SBR-Services,,
+ypbind,SBR-Services,,
+ypserv,SBR-Idm,,
+yum,SBR-Anaconda,,
+yum-metadata-parser,SBR-Anaconda,,
+yum-presto,SBR-Anaconda,,
+yum-rhn-plugin,SBR-Sysmgmt,SBR-Anaconda,
+yum-utils,SBR-Anaconda,,
+zd1211-firmware,SBR-Lowvolume,,
+zenity,SBR-Desktop,,
+zip,SBR-Lowvolume,,
+zlib,SBR-Tools,SBR-Low Volume,
+zsh,SBR-Shells,,
+aic94xx-firmware,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+autoconf213,unmapped,
+b43-fwcutter,unmapped,
+basesystem,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+bea-stax,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+btparser,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ca-certificates,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+castor,unmapped,
+cdparanoia,unmapped,
+compat-opensm-libs,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+cpufrequtils,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+crash-gcore-command,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+cvsps,unmapped,
+dev86,unmapped,
+epydoc,unmapped,
+espeak,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+fcoe-target-utils,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+freeglut,unmapped,
+gnuchess,unmapped,
+gob2,unmapped,
+gperf,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+gprolog,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+haproxy,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+hunspell-gu,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-mr,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-ne,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-pa,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-ta,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+ipa-gothic-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+ipa-mincho-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+ipa-pgothic-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+ipa-pmincho-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+iwl1000-firmware,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+iwl100-firmware,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+iwl3945-firmware,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+iwl4965-firmware,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+iwl6000g2a-firmware,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+iwl6050-firmware,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+jakarta-taglibs-standard,unmapped,
+java-1.6.0-openjdk,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+java-1.7.0-openjdk,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+javassist,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+jflex,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+jtidy,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+jython,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+ksh,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+ladspa,unmapped,
+latex2html,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+less,unmapped,
+libEMF,unmapped,
+libgdata,unmapped,
+libgnomeprint22,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libpaper,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libreadline-java,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+libreoffice,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+libuninameslist,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libvoikko,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libwacom,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mailx,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+malaga,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+malaga-suomi-voikko,unmapped,
+man-pages-ja,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+man-pages-ko,unmapped,
+mesa-dri1-drivers,unmapped,
+mesa-private-llvm,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mingw32-binutils,unmapped,
+mingw32-gcc,SBR-Services,,
+mingw32-libgpg-error,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mingw32-nsis,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+mingw32-pthreads,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+objectweb-anttask,(Mapped) SBR-Services,(Mapped) SBR-Desktop
+ocaml-curses,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+ocaml-extlib,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ocaml-fileutils,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ocaml-libvirt,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+openhpi32,unmapped,
+openslp,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+p11-kit,unmapped,
+pbm2l7k,(Mapped) SBR-Services,(Mapped) SBR-Shells
+pcmciautils,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Algorithm-Diff,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-AppConfig,SBR-Nontechnical,SBR-Networking,
+perl-Archive-Zip,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-B-Keywords,(Mapped) SBR-Shells,(Mapped) SBR-Services
+perl-Business-ISBN,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Business-ISBN-Data,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Class-Accessor,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Class-Data-Inheritable,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Class-Inspector,unmapped,
+perl-Class-Trigger,(Mapped) SBR-Middleware,(Mapped) SBR-Services
+perl-Config-Simple,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-Convert-BinHex,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-CSS-Tiny,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Data-OptList,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-DateTime-Format-DateParse,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-DateTime-Format-Mail,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-DateTime-Format-W3CDTF,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Devel-Cycle,unmapped,
+perl-Devel-Leak,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Devel-StackTrace,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Digest-BubbleBabble,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Email-Date-Format,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Exception-Class,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-File-Copy-Recursive,unmapped,
+perl-File-Find-Rule,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-File-Find-Rule-Perl,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-File-HomeDir,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-File-pushd,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-File-Remove,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-File-Slurp,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-File-Which,unmapped,
+perl-GD-Barcode,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-GDGraph,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-GDGraph3d,unmapped,
+perl-GDTextUtil,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Hook-LexWrap,unmapped,
+perl-HTML-Format,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-HTML-Tree,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Image-Base,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Image-Xbm,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Image-Xpm,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-IO-stringy,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-IO-Tty,unmapped,
+perl-JSON,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+ant-contrib,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+b43-tools,(Mapped) SBR-Kernel,(Mapped) SBR-Shells
+bwidget,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+byzanz,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+cgdcbxd,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+cscope,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+freerdp,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gnu-efi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+graphviz,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+hal-info,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+i2c-tools,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+kio_sysinfo,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+koji,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+libvirt-snmp,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+mesa-libGLw,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mingw32-dlfcn,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mingw32-libgcrypt,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+mingw32-portablexdr,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mingw32-srvany,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+mingw32-zlib,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+nkf,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+ocaml-calendar,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+openvswitch,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+ovirt-node,(Mapped) SBR-Shells,(Mapped) SBR-Middleware
+perl-Config-Tiny,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Font-AFM,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Image-Info,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Net-SMTP-SSL,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-XML-RSS,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xorg-x11-xtrans-devel,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kde-print-manager,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+c94xx-firmware,SBR-Storage,,
+aconda,SBR-Anaconda,,
+dhat-menus,SBR-Lowvolume,,
+dhat-release-client,SBR-Lowvolume,,
+dhat-release-computenode,SBR-Lowvolume,,
+dhat-release-server,SBR-Lowvolume,,
+gothic-fonts,SBR-Desktop,,
+comcpl,SBR-Desktop,,
+reless-tools,SBR-Lowvolume,,
+ltex,SBR-Lowvolume,,
+rg-x11-drv-vmmouse,SBR-Desktop,,
+rg-x11-drv-vmware,SBR-Desktop,,
+erm,SBR-Lowvolume,,
+f,SBR-Lowvolume,,
+bacula,SBR-Services,,
+lsvpd,unmapped,
+luci,unmapped,
+memtest86+,SBR-Shells,,
+mesa,SBR-Desktop,,
+mpitests,SBR-Services,,
+tpbm,unmapped,
+openais,SBR-Services,,
+openoffice-lv,SBR-Desktop,,
+openssl-ibmca,SBR-Services,,
+openwsman,SBR-Services,,
+paktype-fonts,SBR-Desktop,,
+perl-Error,SBR-Tools,,
+piranha,SBR-Networking,,
+powerpc-utils,SBR-Shells,,
+ppc64-utils,SBR-Shells,,
+rgmanager,SBR-Clusterha,,
+ricci,SBR-Clusterha,,
+s390utils,SBR-Lowvolume,,
+samyak-fonts,SBR-Desktop,,
+servicelog,SBR-Lowvolume,,
+sysvinit,SBR-Shells,,
+thai-scalable-fonts,SBR-Desktop,,
+xorg-x11-server,SBR-Desktop,,
+yaboot,SBR-Lowvolume,SBR-Anaconda,
+adaptx,unmapped,
+automake14,unmapped,
+xorg-x11-drv-glamor,unmapped,
+apache-commons-validator,unmapped,
+mingw-crt,unmapped,
+mingw-filesystem,unmapped,
+mingw-gcc,unmapped,
+mingw-headers,unmapped,
+mingw-pthreads,unmapped,
+msv,unmapped,
+nhn-nanum-fonts,unmapped,
+powerpc-utils-python,unmapped,
+resteasy-base,unmapped,
+shim-signed,unmapped,
+virtio-win,unmapped,
+xml-commons-apis12,unmapped,
+cups-pk-helper,SBR-Services,,
+dbus,SBR-Desktop,,
+gtk-vnc,SBR-Desktop,,
+kdebase-workspace,SBR-Desktop,,
+nafees-web-naskh-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+openct,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+asciidoc,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+cloud-init,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+facter,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+mingw32-gettext,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mingw32-glib2,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mingw32-sigar,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+numad,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+ocaml-findlib,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-ExtUtils-MakeMaker-Coverage,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-IPC-Run3,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Test-NoWarnings,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+publican,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+rubygem-gettext,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+rubygems,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+snappy,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+wdaemon,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+at-spi2-core,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+codehaus-parent,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+cpptest,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+acl,unmapped,
+perl-Locale-Maketext-Gettext,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Makefile-DOM,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Makefile-Parser,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-MIME-Lite,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-MIME-Types,unmapped,
+perl-Module-Find,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-Module-Info,unmapped,
+perl-Module-Install,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Module-ScanDeps,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Number-Compare,(Mapped) SBR-Lowvolume,(Mapped) SBR-Tools
+perl-Object-Deadly,(Mapped) SBR-Services,(Mapped) SBR-Tools
+perl-Package-Generator,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-PadWalker,unmapped,
+perl-Params-Util,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-PDF-Reuse,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Perl-Critic,unmapped,
+perl-Perl-MinimumVersion,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Pod-POM,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Pod-Spell,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-PPI,(Mapped) SBR-Tools,(Mapped) SBR-Services
+perl-PPI-HTML,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-prefork,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Readonly,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Readonly-XS,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Spiffy,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-String-Format,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Sub-Exporter,unmapped,
+perl-Sub-Install,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Sub-Uplevel,unmapped,
+perl-Syntax-Highlight-Engine-Kate,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Taint-Runtime,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Task-Weaken,unmapped,
+perl-Test-Base,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-ClassAPI,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-CPAN-Meta,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-Deep,unmapped,
+perl-Test-Differences,unmapped,
+perl-Test-Exception,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-Inter,unmapped,
+perl-Test-Manifest,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Test-MinimumVersion,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-MockObject,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Test-Object,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-Output,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Test-Script,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-SubCalls,(Mapped) SBR-Shells,(Mapped) SBR-Services
+perl-Test-Taint,unmapped,
+perl-Test-Tester,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-Warn,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-TeX-Hyphen,unmapped,
+perl-Text-Diff,unmapped,
+perl-Text-Glob,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Text-Reform,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Text-Unidecode,unmapped,
+perl-Tie-IxHash,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Time-modules,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Tree-DAG_Node,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-UNIVERSAL-can,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-UNIVERSAL-isa,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-WWW-Curl,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-XML-LibXSLT,unmapped,
+perl-XML-Stream,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-XML-TokeParser,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-XML-TreeBuilder,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-YAML,unmapped,
+pygtkglext,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+Pyrex,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-dtopt,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+python-elixir,unmapped,
+python-gudev,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-jinja2,unmapped,
+python-paver,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-rtslib,unmapped,
+python-sphinx,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-turbokid,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-zope-filesystem,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+recode,unmapped,
+Red_Hat_Enterprise_Linux-Release_Notes-6-as-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-bn-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-de-DE,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-es-ES,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+Red_Hat_Enterprise_Linux-Release_Notes-6-fr-FR,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+Red_Hat_Enterprise_Linux-Release_Notes-6-gu-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-hi-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-it-IT,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+Red_Hat_Enterprise_Linux-Release_Notes-6-ja-JP,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-kn-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-ko-KR,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-ml-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-mr-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-or-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-pa-IN,(Mapped) SBR-Shells,(Mapped) SBR-Virtualization
+Red_Hat_Enterprise_Linux-Release_Notes-6-pt-BR,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-ru-RU,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+Red_Hat_Enterprise_Linux-Release_Notes-6-ta-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-te-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-zh-CN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-6-zh-TW,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+redhat-indexhtml,unmapped,
+redhat-logos,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+redhat-menus,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+redhat-support-lib-python,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+redhat-support-tool,unmapped,
+ruby-augeas,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+rubygem-atk,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+rubygem-flexmock,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+rubygem-gdk_pixbuf2,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+rubygem-glib2,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+rubygem-gtk2,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+rubygem-pango,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+rubygem-pkg-config,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+rubygem-rake-compiler,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+sblim-testsuite,(Mapped) SBR-Services,(Mapped) SBR-Storage
+scipy,unmapped,
+subscription-manager-migration-data,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+suitesparse,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+tbb,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+teckit,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+texlive,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+texlive-texmf,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+texlive-texmf-errata,(Mapped) SBR-Tools,(Mapped) SBR-Services
+udev,(Mapped) SBR-Shells,(Mapped) SBR-Services
+usbredir,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+vigra,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+vlgothic-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+wordnet,unmapped,
+xerces-c,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xhtml1-dtds,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+xhtml2fo-style-xsl,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+xmltex,(Mapped) SBR-Tools,(Mapped) SBR-Services
+xorg-sgml-doctools,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+xorg-x11-xbitmaps,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+xqilla,unmapped,
+xterm,unmapped,
+abattis-cantarell-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+accountsservice,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+aether,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+alsa-firmware,(Mapped) SBR-Shells,(Mapped) SBR-Lowvolume
+ant-antunit,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+aopalliance,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+apache-commons-beanutils,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+apache-commons-collections,unmapped,
+apache-commons-configuration,unmapped,
+apache-commons-dbcp,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+apache-commons-jxpath,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+apache-commons-logging,unmapped,
+apache-rat,unmapped,
+args4j,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+atinject,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+at-spi2-atk,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+baobab,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+base64coder,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+beust-jcommander,(Mapped) SBR-Tools,(Mapped) SBR-Services
+buildnumber-maven-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+byteman,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+chrony,unmapped,
+clutter-gst2,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+cogl,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+color-filesystem,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+compat-gcc-44,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+cups-filters,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+dbusmenu-qt,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+dragon,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+easymock,unmapped,
+easymock2,unmapped,
+felix-bundlerepository,(Mapped) SBR-Shells,(Mapped) SBR-Anaconda
+felix-framework,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+felix-osgi-foundation,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+felix-osgi-obr,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+felix-shell,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+felix-utils,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+festival-freebsoft-utils,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+frei0r-plugins,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+fribidi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+fusesource-pom,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+geronimo-annotation,(Mapped) SBR-Services,(Mapped) SBR-Tools
+geronimo-osgi-support,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+ghostscript-chinese,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gjs,unmapped,
+glassfish-dtd-parser,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+glassfish-jaxb-api,(Mapped) SBR-Tools,(Mapped) SBR-Services
+glassfish-jsp-api,unmapped,
+gl-manpages,(Mapped) SBR-Desktop,
+gnome-calculator,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gnome-clocks,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gnome-color-manager,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gnome-contacts,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+gnome-desktop3,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gnome-getting-started-docs,unmapped,
+gnome-icon-theme-extras,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+gnome-icon-theme-symbolic,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gnome-initial-setup,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gnome-online-accounts,unmapped,
+gnome-screenshot,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gnome-themes-standard,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gnome-video-effects,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gnome-weather,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gnu-getopt,unmapped,
+google-crosextra-caladea-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+google-crosextra-carlito-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+google-guice,unmapped,
+grantlee,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+grilo,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+grilo-plugins,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gssproxy,(Mapped) SBR-Tools,(Mapped) SBR-Services
+gstreamer1-plugins-base,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gtksourceview3,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+guava,unmapped,
+gubbi-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+gwenview,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+hostname,unmapped,
+httpcomponents-project,unmapped,
+hunspell-ak,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-am,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-ast,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-cv,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-dsb,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-grc,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-haw,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-ht,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-ky,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-lb,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-ln,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-mos,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-om,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-qu,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-quh,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-se,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-shs,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-smj,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-ti,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-tpi,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hunspell-yi,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+hyphen-fo,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+hyphen-grc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+hyphen-ku,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+hyphen-tk,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ibus-kkc,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+ibus-libpinyin,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+ibus-table-chinese,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+ibus-typing-booster,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+istack-commons,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+jandex,(Mapped) SBR-Tools,(Mapped) SBR-Lowvolume
+jansi,unmapped,
+jansi-native,unmapped,
+javamail,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+jboss-annotations-1.1-api,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+jboss-interceptors-1.1-api,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+jboss-jaxrpc-1.1-api,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+jboss-servlet-2.5-api,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+jboss-specs-parent,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+jetty-artifact-remote-resources,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+jetty-assembly-descriptors,(Mapped) SBR-Middleware,(Mapped) SBR-Tools
+jetty-distribution-remote-resources,(Mapped) SBR-Tools,(Mapped) SBR-Middleware
+joda-convert,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+joda-time,unmapped,
+kaccessible,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+kate,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kcalc,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+kcharselect,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+kcolorchooser,(Mapped) SBR-Desktop,
+kde-base-artwork,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kdegraphics-strigi-analyzer,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+kdegraphics-thumbnailers,(Mapped) SBR-Lowvolume,(Mapped) SBR-Tools
+kde-plasma-networkmanagement,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+kde-wallpapers,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+keytool-maven-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kgamma,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+kmag,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+kmix,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kolourpaint,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+konsole,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kross-interpreters,unmapped,
+kruler,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+ksaneplugin,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ksnapshot,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+langtable,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+lcms2,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libbluray,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libcdio-paranoia,unmapped,
+libcmis,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libee,unmapped,
+libgdither,unmapped,
+libgee,unmapped,
+libgee06,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libkdcraw,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+liblangtag,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+liblockfile,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+liblognorm,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+liblouis,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libmbim,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libmicrohttpd,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libnl3,unmapped,
+libpipeline,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libpng12,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libqmi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libreoffice-voikko,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libseccomp,unmapped,
+libserializer,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+libstoragemgmt,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libusbx,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libverto,unmapped,
+libvirt-sandbox,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+libwnck3,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+linuxconsoletools,unmapped,
+linux-firmware,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+log4cxx,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+lohit-marathi-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+lohit-nepali-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+lorax,unmapped,
+man-pages-zh-CN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-antrun-plugin,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+maven-archiver,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+maven-artifact-resolver,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+maven-assembly-plugin,unmapped,
+maven-changes-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-clean-plugin,unmapped,
+maven-compiler-plugin,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+maven-dependency-analyzer,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+maven-dependency-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-deploy-plugin,(Mapped) SBR-Shells,(Mapped) SBR-Anaconda
+maven-downloader,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+maven-file-management,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-gpg-plugin,unmapped,
+maven-install-plugin,unmapped,
+maven-invoker,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+maven-invoker-plugin,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+maven-jarsigner-plugin,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+maven-plugins-pom,(Mapped) SBR-Lowvolume,(Mapped) SBR-Services
+maven-plugin-testing,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+maven-project-info-reports-plugin,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+maven-remote-resources-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+maven-reporting-impl,unmapped,
+maven-repository-builder,(Mapped) SBR-Shells,(Mapped) SBR-Services
+maven-shared,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+maven-shared-jar,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+maven-site-plugin,(Mapped) SBR-Shells,(Mapped) SBR-Services
+maven-surefire,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+maven-verifier,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+maven-wagon,unmapped,
+maven-war-plugin,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+mod_security_crs,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mozjs17,unmapped,
+mutter,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mythes-ne,(Mapped) SBR-Lowvolume,
+navilu-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+network-manager-applet,(Mapped) SBR-Shells,(Mapped) SBR-Services
+okular,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+openlmi-providers,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+open-vm-tools,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+opus,unmapped,
+oscap-anaconda-addon,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+overpass-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+oxygen-gtk,(Mapped) SBR-Desktop,
+oxygen-gtk2,unmapped,
+oxygen-gtk3,unmapped,
+paktype-naqsh-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+paktype-naskh-basic-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+paktype-tehreer-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+paratype-pt-sans-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-App-cpanminus,unmapped,
+perl-autodie,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Browser-Open,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Capture-Tiny,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Class-ISA,unmapped,
+perl-Class-Load,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Compress-Raw-Bzip2,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-constant,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-CPAN-Changes,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-CPAN-Meta-Requirements,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-CPANPLUS-Dist-Build,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Crypt-CBC,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Crypt-DES,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Data-Dumper,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Data-Peek,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-DateTime-TimeZone,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-DB_File,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Devel-EnforceEncapsulation,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Dist-CheckConflicts,unmapped,
+perl-Email-Address,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Encode-Locale,unmapped,
+perl-Env,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Exporter,unmapped,
+perl-ExtUtils-Manifest,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-FCGI,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-File-CheckTree,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-File-Inplace,unmapped,
+perl-File-Listing,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-File-Temp,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Getopt-Long,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-HTML-FormatText-WithLinks,unmapped,
+perl-HTML-FormatText-WithLinks-AndTables,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-HTTP-Cookies,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-HTTP-Daemon,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-HTTP-Date,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-HTTP-Tiny,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Inline,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Inline-Files,unmapped,
+perl-IO-CaptureOutput,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-IO-Compress,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-IO-HTML,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-IO-Socket-IP,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-JSON-PP,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Locale-Codes,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-local-lib,unmapped,
+perl-Log-Message,unmapped,
+perl-Log-Message-Simple,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-LWP-MediaTypes,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-LWP-Protocol-https,unmapped,
+perl-Mixin-Linewise,unmapped,
+perl-Module-Build,unmapped,
+perl-Module-Implementation,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Module-Load,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Module-Manifest,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Module-Metadata,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Module-Pluggable,unmapped,
+perl-Module-Runtime,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Mozilla-CA,unmapped,
+perl-Net-Daemon,unmapped,
+perl-Net-DNS-Resolver-Programmable,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Package-DeprecationManager,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Package-Stash,unmapped,
+perl-Package-Stash-XS,unmapped,
+perl-Parallel-Iterator,unmapped,
+perl-parent,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Parse-CPAN-Meta,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-PathTools,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Perl-Critic-More,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Perl-OSType,unmapped,
+perl-Pod-Checker,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Pod-Coverage-TrustPod,unmapped,
+perl-Pod-Eventual,unmapped,
+perl-Pod-LaTeX,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Pod-Parser,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-Pod-Plainer,unmapped,
+perl-Pod-Usage,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-PPIx-Regexp,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Scalar-List-Utils,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Sort-Versions,unmapped,
+perl-Storable,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-String-ShellQuote,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-String-Similarity,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Switch,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Sys-CPU,unmapped,
+perl-Sys-MemInfo,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Sys-Syslog,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Test-DistManifest,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-Fatal,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Test-Harness,unmapped,
+perl-Test-HasVersion,unmapped,
+perl-Test-Requires,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-Simple,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Test-Synopsis,unmapped,
+perl-Test-Vars,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-Without-Module,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Text-CharWidth,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Text-CSV_XS,(Mapped) SBR-Tools,(Mapped) SBR-Services
+perl-Text-ParseWords,unmapped,
+perl-Text-Soundex,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Text-WrapI18N,unmapped,
+perl-Thread-Queue,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-threads-shared,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Time-Local,unmapped,
+perl-Tk,unmapped,
+perl-Try-Tiny,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-version,unmapped,
+perl-Version-Requirements,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-WWW-RobotRules,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-XML-Catalog,unmapped,
+perl-XML-Handler-YAWriter,(Mapped) SBR-Tools,(Mapped) SBR-Services
+perl-XML-SAX-Base,unmapped,
+perl-XML-XQL,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+plexus-ant-factory,(Mapped) SBR-Tools,(Mapped) SBR-Services
+plexus-bsh-factory,(Mapped) SBR-Tools,(Mapped) SBR-Services
+plexus-build-api,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-cipher,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+plexus-classworlds,unmapped,
+plexus-component-api,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-io,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+plexus-sec-dispatcher,(Mapped) SBR-Services,(Mapped) SBR-Shells
+pngnq,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+polkit-kde,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+procps-ng,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+pyliblzma,unmapped,
+pyparsing,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+pytest,(Mapped) SBR-Shells,(Mapped) SBR-Services
+python-augeas,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-backports,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-backports-ssl_match_hostname,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-chardet,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-cups,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-IPy,unmapped,
+python-kitchen,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+python-setproctitle,unmapped,
+realmd,unmapped,
+redhat-access-gui,unmapped,
+Red_Hat_Enterprise_Linux-Release_Notes-7-as-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-bn-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-de-DE,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-es-ES,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+Red_Hat_Enterprise_Linux-Release_Notes-7-fr-FR,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+Red_Hat_Enterprise_Linux-Release_Notes-7-gu-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-hi-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-it-IT,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+Red_Hat_Enterprise_Linux-Release_Notes-7-ja-JP,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-kn-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-ko-KR,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-ml-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-mr-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-or-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-pa-IN,(Mapped) SBR-Shells,(Mapped) SBR-Virtualization
+Red_Hat_Enterprise_Linux-Release_Notes-7-pt-BR,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-ru-RU,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+Red_Hat_Enterprise_Linux-Release_Notes-7-ta-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-te-IN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-zh-CN,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Red_Hat_Enterprise_Linux-Release_Notes-7-zh-TW,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+redhat-upgrade-dracut,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+rubygem-bundler,unmapped,
+rubygem-net-http-persistent,unmapped,
+rubygem-thor,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+scannotation,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+shared-desktop-ontologies,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+sil-nuosu-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+skkdic,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+socat,unmapped,
+sonatype-plugins-parent,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+stax2-api,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+strongimcv,unmapped,
+supermin,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+svgpart,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+system-storage-manager,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+targetcli,(Mapped) SBR-Shells,(Mapped) SBR-Storage
+telepathy-mission-control,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+tncfhh,unmapped,
+txw2,(Mapped) SBR-Tools,(Mapped) SBR-Lowvolume
+ucs-miscfixed-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+unique3,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+unoconv,unmapped,
+vala,unmapped,
+webrtc-audio-processing,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+weld-parent,unmapped,
+woodstox-core,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+wqy-microhei-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xcb-util-image,unmapped,
+yelp-xsl,(Mapped) SBR-Desktop,(Mapped) SBR-Lowvolume
+zziplib,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+antlr,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+ccid,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+compat-libcap1,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ctapi-common,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+dapl,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+fakechroot,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+fakeroot,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+festival,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+flightrecorder,(Mapped) SBR-Shells,(Mapped) SBR-Services
+geronimo-specs,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gupnp-igd,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ibsim,(Mapped) SBR-Storage,(Mapped) SBR-Shells
+icu,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+iprutils,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+jcommon-serializer,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+lcms,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+libbase,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libmlx4,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libraw1394,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+librdmacm,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+nautilus,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+nautilus-sendto,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+ncurses,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+netlabel_tools,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+newt,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+openmpi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+a2ps,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+autotrace,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+byaccj,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+clutter-gtk,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+compat-openmpi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+cppunit,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+cpupowerutils,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+device-mapper-persistent-data,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+dirmngr,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+dracut,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ecryptfs-utils,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+emacs,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+emacs-auctex,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+fftw,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+fontforge,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+glpk,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+glusterfs,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+gypsy,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+html2ps,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+hypervkvpd,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+ibacm,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+icon-naming-utils,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+iputils,(Mapped) SBR-Shells,(Mapped) SBR-Services
+ivtv-firmware,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+javacc,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+jigdo,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+kabi-whitelists,(Mapped) SBR-Shells,(Mapped) SBR-Services
+kde-filesystem,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+keepalived,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+ledmon,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+libassuan,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libc-client,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libgnomecanvasmm26,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libgnomecups,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libgnomeprintui22,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libid3tag,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libitm,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libjpeg-turbo,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libksba,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libldb,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libmnl,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libpst,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+libqb,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libreport,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libspiro,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libunistring,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libXevie,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libyaml,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libzip,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+linuxdoc-tools,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+linuxptp,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+media-player-info,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+migrationtools,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+mingw32-boost,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+mingw32-bzip2,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+mingw32-expat,(Mapped) SBR-Tools,(Mapped) SBR-Services
+mingw32-filesystem,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+mingw32-pcre,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+mingw32-readline,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+mingw32-termcap,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mksh,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+mpage,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+mtdev,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ocaml,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ocaml-csv,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+ocaml-gettext,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ocaml-xml-light,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+oniguruma,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+pam_ldap,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Devel-Cover,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Font-TTF,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-GD,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Image-Size,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-IPC-Run,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Locale-PO,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-MIME-tools,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Net-Jabber,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Net-XMPP,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-PAR-Dist,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Parse-RecDescent,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Parse-Yapp,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Probe-Perl,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-SOAP-Lite,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-Template-Toolkit,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-Test-Memory-Cycle,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-Perl-Critic,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Test-Prereq,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-Test-Spelling,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-Text-Autoformat,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Text-PDF,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perltidy,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Unicode-Map8,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Unicode-String,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-XML-Simple,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-YAML-Syck,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-YAML-Tiny,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+plotutils,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+postgresql-odbc,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+ps_mem,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+psmisc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+pstoedit,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+pungi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+PyOpenGL,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-boto,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-coverage,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-docutils,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-ipaddr,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-kid,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+python-linux-procfs,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-mutagen,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-prettytable,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-schedutils,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-simpleparse,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+python-suds,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-turbocheetah,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-urwid,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-wsgiproxy,(Mapped) SBR-Shells,(Mapped) SBR-Services
+pytz,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+pywbem,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+PyYAML,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+qwt,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+redhat-bookmarks,(Mapped) SBR-Shells,(Mapped) SBR-Services
+Red_Hat_Enterprise_Linux-Release_Notes-6-en-US,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+redhat-release-workstation,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+rng-tools,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+rubygem-cairo,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+sanlock,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+scons,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+sgabios,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+sharutils,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+sox,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+spice-gtk,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+spice-protocol,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+system-gnome-theme,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+tclx,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+texi2html,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+trilead-ssh2,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+tuna,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+tzdata,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+vhostmd,(Mapped) SBR-Services,(Mapped) SBR-Tools
+virt-who,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+wireless-tools,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xcb-proto,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xorg-x11-drv-modesetting,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xorg-x11-drv-vmmouse,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xorg-x11-drv-vmware,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xorg-x11-glamor,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xorg-x11-util-macros,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+yap,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+abrt-java-connector,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+acpica-tools,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+adcli,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+advancecomp,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+alsa-tools,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+apache-commons-cli,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+apache-commons-codec,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+apache-commons-compress,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+apache-commons-daemon,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+apache-commons-digester,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+apache-commons-exec,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+apache-commons-io,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+apache-commons-jexl,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+apache-commons-lang,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+apache-commons-lang3,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+apache-commons-net,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+apache-commons-parent,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+apache-commons-pool,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+apache-commons-vfs,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+apache-ivy,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+apache-parent,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+apache-resource-bundles,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+aqute-bnd,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+atkmm,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+attica,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+audiocd-kio,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+autogen,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+bash-completion,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+bluedevil,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+bogofilter,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+cal10n,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+caribou,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+cdi-api,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+cglib,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+cjkuni-ukai-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+cjkuni-uming-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+cobertura,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+codemodel,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+colord,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+colord-gtk,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+colord-kde,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+Cython,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+dblatex,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+dconf,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+dlm,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+dnssec-trigger,(Mapped) SBR-Services,(Mapped) SBR-Shells
+docker,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+docker-io,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+dom4j,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+dotconf,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+dwz,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+dyninst,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+empathy,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+evolution-ews,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+exec-maven-plugin,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+farstream,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+farstream02,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+felix-osgi-compendium,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+felix-osgi-core,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+felix-parent,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+filebench,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+flite,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+fltk,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+folks,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+fonts-tweak-tool,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+fonttools,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+forge-parent,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+fros,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+fuseiso,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gavl,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gdisk,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+geronimo-jaxrpc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+geronimo-jms,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+geronimo-jta,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+geronimo-parent-poms,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+gfs2-utils,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+glassfish-el,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+glassfish-el-api,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+glassfish-jsp,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+glew,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+glib-networking,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gnome-abrt,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gnome-boxes,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gnome-dictionary,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gnome-documents,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gnome-shell,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gnome-system-log,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+gnome-tweak-tool,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+gobject-introspection,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+graphite2,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+groovy,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+grub2,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+gsettings-desktop-schemas,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gstreamer1,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gstreamer1-plugins-bad-free,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gstreamer1-plugins-good,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gtk3,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gtkmm30,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gtkspell3,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gupnp-av,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gupnp-dlna,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+harfbuzz,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+hawtjni,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+highlight,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+httpcomponents-client,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+httpcomponents-core,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+httpunit,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+hyperv-daemons,(Mapped) SBR-Services,(Mapped) SBR-Shells
+icoutils,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+iniparser,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+iptraf-ng,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+isorelax,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+itstool,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+jackson,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+jai-imageio-core,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+jansson,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+jarjar,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+java-atk-wrapper,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+javacc-maven-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+jaxen,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+jbigkit,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+jboss-parent,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+jboss-servlet-3.0-api,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+jboss-transaction-1.1-api,(Mapped) SBR-Tools,(Mapped) SBR-Middleware
+jdependency,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+jettison,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+jetty-build-support,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+jetty-test-policy,(Mapped) SBR-Shells,(Mapped) SBR-Lowvolume
+jetty-toolchain,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+jetty-version-maven-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+json-c,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+json-glib,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+jsoup,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+jsr-305,(Mapped) SBR-Tools,(Mapped) SBR-Services
+jsr-311,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+juk,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+kamera,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kcm-gtk,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kcm_touchpad,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+kde-baseapps,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+kde-runtime,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kde-workspace,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+kdf,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+keybinder3,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kgpg,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+konkretcmpi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kscreen,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+kwallet,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+kxml,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+ldns,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libbluedevil,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libcdr,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libchamplain,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libcryptui,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libdb4,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libdmapsharing,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libdnet,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libdvdnav,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libdwarf,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libeasyfc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libecap,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libestr,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libexttextcat,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libgexiv2,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libgovirt,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libgusb,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libgxps,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libiodbc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libiscsi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libkcddb,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libkcompactdisc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libkexiv2,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libkipi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libkkc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libksane,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libkscreen,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libmodman,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libmspub,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libmusicbrainz5,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libmwaw,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libmx,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libndp,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libnfsidmap,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+liboauth,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libofa,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+liborcus,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libosinfo,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libpeas,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libpfm,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libpwquality,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libquvi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+LibRaw,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libreswan,(Mapped) SBR-Shells,(Mapped) SBR-Services
+libsecret,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libsrtp,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libtnc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libtranslit,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libvisio,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libwebp,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libwps,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libzapojit,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+man-db,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+mariadb,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+marisa,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+maven-common-artifact-filters,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+maven-dependency-tree,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+maven-doxia,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+maven-doxia-sitetools,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+maven-doxia-tools,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-ear-plugin,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+maven-ejb-plugin,(Mapped) SBR-Services,(Mapped) SBR-Desktop
+maven-filtering,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-javadoc-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-parent,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+maven-plugin-build-helper,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+maven-plugin-bundle,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-plugin-tools,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-reporting-api,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-reporting-exec,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+maven-resources-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-scm,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-script-interpreter,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+maven-shared-incremental,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+maven-shared-io,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+maven-shared-utils,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+maven-source-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-verifier-plugin,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+memstomp,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+mesa-libGLU,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+modello,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+mod_fcgid,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+mod_security,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+mojo-parent,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+munge-maven-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+nekohtml,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+nepomuk-core,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+nepomuk-widgets,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+netsniff-ng,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+nettle,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+nfsometer,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+nfstest,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+objectweb-asm4,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+opencc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+openlmi-networking,(Mapped) SBR-Services,(Mapped) SBR-Shells
+openlmi-tools,(Mapped) SBR-Services,(Mapped) SBR-Shells
+optipng,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+ortp,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+os-prober,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+pcp,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+pcsc-lite-ccid,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-Archive-Extract,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Archive-Tar,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-B-Lint,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Class-Load-XS,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+perl-Compress-Raw-Zlib,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-CPANPLUS,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-DateTime-Locale,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-Devel-CheckLib,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-ExtUtils-ParseXS,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-File-Fetch,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-File-Path,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-File-ShareDir,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Filter,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-gettext,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-IPC-Cmd,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Mail-SPF,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+perl-Module-Load-Conditional,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Net-HTTP,(Mapped) SBR-Services,(Mapped) SBR-Shells
+perl-Params-Check,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-PlRPC,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-podlators,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Pod-Perldoc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Pod-Simple,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-PPIx-Utilities,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-srpm-macros,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Term-UI,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Test-EOL,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-NoTabs,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-threads,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Time-HiRes,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+phonon,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+phonon-backend-gstreamer,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-archiver,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-cdc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-cli,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-compiler,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-containers,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-digest,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-i18n,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-interactivity,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-interpolation,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+plexus-mail-sender,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+plexus-resources,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-tools-pom,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+plexus-utils,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-velocity,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+pngcrush,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+polkit-pkla-compat,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+polkit-qt,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+pps-tools,(Mapped) SBR-Services,(Mapped) SBR-Kernel
+pyatspi,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+pygobject3,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+pyserial,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+python-blivet,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+python-di,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+python-dns,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-inotify,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+python-kmod,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+python-lockfile,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+python-pillow,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+python-pyudev,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-requests,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-tornado,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-urllib3,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+python-virtualenv,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+pyxattr,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+qjson,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+qpdf,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+qrencode,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+raptor2,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+rasdaemon,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+relaxngcc,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+relaxngDatatype,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+rngom,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+rubygem-abrt,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+satyr,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+sbc,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+seahorse-nautilus,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+sil-abyssinica-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+sisu-maven-plugin,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+snakeyaml,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+snapper,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+sonatype-oss-parent,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+soundtouch,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+source-highlight,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+speech-dispatcher,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+stax-ex,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+systemd,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+t1utils,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+targetd,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+telepathy-farstream,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+telepathy-filesystem,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+telepathy-gabble,(Mapped) SBR-Desktop,(Mapped) SBR-Services
+telepathy-haze,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+telepathy-logger,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+telepathy-salut,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+tex-fonts-hebrew,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+tmux,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+tpm-quote-tools,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+tracker,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+udisks2,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+unbound,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+unicode-ucd,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+uriparser,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+usb_modeswitch,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+usb_modeswitch-data,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+v4l-utils,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+virtuoso-opensource,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+vte3,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+webkitgtk3,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+wqy-unibit-fonts,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+xbean,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+xcb-util-keysyms,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xcb-util-renderutil,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xcb-util-wm,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xml-stylebook,(Mapped) SBR-Tools,(Mapped) SBR-Services
+xmlunit,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+xmvn,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+xpp3,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+xsom,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+xstream,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+xz-java,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+yelp-tools,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+yum-langpacks,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+d_Hat_Enterprise_Linux-Release_Notes,SBR-Nontechnical,,
+thy,SBR-Desktop,,
+3-fwcutter,SBR-Shells,SBR-Kernel,
+sesystem,SBR-Shells,,
+ertificates,SBR-Desktop,,
+paranoia,SBR-Shells,,
+ufrequtils,SBR-Shells,SBR-Kernel,
+cope,SBR-Shells,SBR-Tools,
+acut,SBR-Shells,SBR-Kernel,
+ryptfs-utils,SBR-Filesystem,,
+acs,SBR-Shells,,
+acs-auctex,SBR-Shells,,
+enisoimage,SBR-Lowvolume,,
+l-info,SBR-Desktop,,
+nspell-gu,SBR-Desktop,,
+nspell-hi,SBR-Desktop,,
+nspell-mr,SBR-Desktop,,
+nspell-ne,SBR-Desktop,,
+nspell-pa,SBR-Desktop,,
+nspell-ta,SBR-Desktop,,
+a-gothic-fonts,SBR-Desktop,,
+a-mincho-fonts,SBR-Desktop,,
+a-pgothic-fonts,SBR-Desktop,,
+a-pmincho-fonts,SBR-Desktop,,
+utils,SBR-Shells,,
+tv-firmware,SBR-Lowvolume,,
+l100-firmware,SBR-Lowvolume,,
+l1000-firmware,SBR-Lowvolume,,
+l3945-firmware,SBR-Lowvolume,,
+l4965-firmware,SBR-Lowvolume,,
+l6000g2a-firmware,SBR-Lowvolume,,
+l6000g2b-firmware,SBR-Lowvolume,,
+l6050-firmware,SBR-Lowvolume,,
+va,SBR-Lowvolume,,
+bi-whitelists,SBR-Lowvolume,,
+e-filesystem,SBR-Desktop,,
+o_sysinfo,SBR-Lowvolume,,
+h,SBR-Shells,,
+ss,SBR-Shells,,
+bjpeg,SBR-Tools,,
+bspiro,SBR-Desktop,,
+bvirt-qpid,SBR-Virtualization,,
+,SBR-Services,SBR-Services,
+ilx,SBR-Services,,
+n-pages-ja,SBR-Shells,,
+n-pages-ko,SBR-Shells,,
+tahari,SBR-Mrg,,
+dia-player-info,SBR-Desktop,,
+grationtools,SBR-Idm,,
+ngw32-matahari,SBR-Mrg,,
+sh,SBR-Shells,,
+txen-firmware,SBR-Networking,,
+scd,SBR-Tools,,
+enoffice.org,SBR-Desktop,,
+enoffice.org-dict-cs_CZ,SBR-Desktop,,
+m_ldap,SBR-Idm,,
+m2l7k,SBR-Desktop,,
+mciautils,SBR-Shells,,
+rl-File-Slurp,SBR-Tools,,
+rltidy,SBR-Tools,,
+stgresql-odbc,SBR-Services,,
+misc,SBR-Lowvolume,,
+thon-gudev,SBR-Shells,,
+thon-zope-filesystem,SBR-Shells,,
+tz,SBR-Shells,,
+dhat-bookmarks,SBR-Lowvolume,,
+dhat-indexhtml,SBR-Lowvolume,,
+dhat-logos,SBR-Lowvolume,,
+dhat-release-workstation,SBR-Lowvolume,,
+port,SBR-Lowvolume,,
+g-tools,SBR-Lowvolume,,
+c-fonts,SBR-Desktop,,
+x,SBR-Desktop,,
+xlive,SBR-Desktop,,
+viceKit-power,unmapped,
+alsa-plugins,SBR-Desktop,,
+baekmuk-ttf-fonts,SBR-Desktop,,
+g-fonts,unmapped,
+cdrkit,unmapped,
+cjkuni-fonts,SBR-Desktop,,
+cloog,unmapped,
+clucene,unmapped,
+cluster,SBR-Clusterha,,
+cluster-glue,SBR-Clusterha,,
+clustermon,SBR-Clusterha,,
+compat-gcc-32,SBR-Tools,,
+compat-gcc-295,SBR-Tools,,
+compat-gcc-296,SBR-Tools,,
+mps-extras,unmapped,
+ctan-cm-lgc-fonts,unmapped,
+ctan-kerkis-fonts,unmapped,
+culmus-fonts,SBR-Desktop,,
+dejavu-fonts,SBR-Desktop,,
+ding-libs,unmapped,
+eclipse,SBR-Desktop,SBR-Middleware,
+fontpackages,SBR-Desktop,,
+gpxe,unmapped,
+hunspell-no,SBR-Desktop,,
+ipa,SBR-Idm,,
+ipa-pki-theme,unmapped,
+kacst-fonts,unmapped,
+kdepim3,SBR-Desktop,,
+khmeros-fonts,unmapped,
+krb5,SBR-Idm,,
+krb5-appl,SBR-Idm,,
+rdit-unikurd-web-fonts,unmapped,
+liberation-fonts,unmapped,
+libica,unmapped,
+librtas,unmapped,
+libservicelog,unmapped,
+libvpd,unmapped,
+pki-core,SBR-Idm,,
+plpa,SBR-Shells,,
+python-weberror,SBR-Shells,,
+apache-jasper,SBR-Webservers,,
+dvipng,SBR-Services,,
+enchant,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+gnome-settings-daemon,SBR-Desktop,,
+gnome-speech,SBR-Desktop,,
+hspell,SBR-Shells,,
+ilmbase,SBR-Tools,,
+kdegames,SBR-Desktop,,
+libsigc++20,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+help2man,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+ipset,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+perl-Clone,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Net-IP,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+publican-redhat,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+puppet,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+python-configshell,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+rubygem-locale,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+rubygem-rake,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+scl-utils,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+aqute-bndlib,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+firewalld,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+fxload,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+gdk-pixbuf2,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+GeoIP,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+geronimo-jaspic-spec,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+geronimo-saaj,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+glassfish-fastinfoset,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+glassfish-jaxb,(Mapped) SBR-Tools,(Mapped) SBR-Services
+gnome-font-viewer,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+golang,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+hexedit,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+icc-profiles-openicc,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+iowatcher,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+javapackages-tools,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+jboss-ejb-3.1-api,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+jboss-el-2.2-api,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+jetty-parent,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+jvnet-parent,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+kactivities,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+ktimer,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+libgnome-keyring,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libodfgen,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libquvi-scripts,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+libteam,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+libvirt-glib,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+maven-enforcer,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+maven-jar-plugin,(Mapped) SBR-Tools,(Mapped) SBR-Desktop
+maven-jxr,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-osgi,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+maven-release,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+maven-shade-plugin,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+mesa-demos,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+openlmi-storage,(Mapped) SBR-Services,(Mapped) SBR-Desktop
+pcp-gui,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+perl-CPAN-Meta,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-CPAN-Meta-YAML,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Digest-MD5,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-HTTP-Message,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+perl-HTTP-Negotiate,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Module-Signature,(Mapped) SBR-Tools,(Mapped) SBR-Shells
+perl-Test-Portability-Files,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+pesign,(Mapped) SBR-Shells,(Mapped) SBR-Services
+plexus-component-factories-pom,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+plexus-components-pom,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+plexus-pom,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+po4a,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+pykde4,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+python-cpio,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+python-hwdata,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+python-six,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+python-which,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+Red_Hat_Enterprise_Linux-Release_Notes-7-en-US,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+redhat-upgrade-tool,(Mapped) SBR-Shells,(Mapped) SBR-Services
+scap-workbench,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+seahorse-sharing,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+shim,(Mapped) SBR-Shells,(Mapped) SBR-Desktop
+shotwell,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+spice-parent,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+sushi,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+sweeper,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
+telepathy-glib,(Mapped) SBR-Desktop,(Mapped) SBR-Tools
+testng,(Mapped) SBR-Shells,(Mapped) SBR-Tools
+Red_Hat_Enterprise_Linux-Release_Notes-6-si-LK,unmapped,
+java-1.5.0-gcj,(Mapped) SBR-Desktop,(Mapped) SBR-Shells
