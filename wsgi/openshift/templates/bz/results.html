@@ -1,0 +1,7 @@
+{% extends "bz/base.html" %}
+{% load app_filters %}
+{% block results %}
+   {% for key, v in data.items %}
+      <p>{{ get_item:key:"bugdata" }}</p>
+   {% endfor %}
+{% endblock %}

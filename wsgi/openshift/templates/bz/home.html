@@ -1,0 +1,20 @@
+{% block content %}
+<div class="container">
+   <div class="row">
+      <div class="col-md-6">
+         <form method="post" id="myform">{% csrf_token %}
+         <input id="username" name="username" placeholder="Bugzilla Username" 
+         type="text" class="form-control input-md">
+         <input id="password" name="password" placeholder="Bugzilla Password" 
+         type="password" class="form-control input-md">
+         <input id="bugid" name="id" placeholder="Enter Bug ID" 
+         type="text" class="form-control input-md">
+         <input id="url" name="url" placeholder="Enter Save Search Query" 
+         type="text" class="form-control input-md">
+         <button id="submit" type="submit" class="btn btn-warning">Submit</button>
+         </form>
+      </div>
+   </div>
+</div>
+{% endblock %}
+
