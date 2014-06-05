@@ -1,0 +1,380 @@
+Bug 1023829
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1069289
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1067116
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1051575
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1051033
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1083205
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1083617
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1052871
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1059800
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1061795
+  -Priority Tag Is Not Set
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1041405
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1043426
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1062675
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1037290
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1053094
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1038015
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1048256
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1042793
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1078915
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1056647
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1081976
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1069106
+  -Priority Tag Is Not Set
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1051042
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1056316
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1036271
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1042925
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1044404
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1070065
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1067135
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1070302
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1070098
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1056962
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1073470
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1050400
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1058607
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 909313
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1053671
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1056989
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1044391
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1058520
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1035779
+  -Priority Tag Is Not Set
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1059332
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1040315
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1058529
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1056661
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1048403
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1062698
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1045438
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1051289
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 444509
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1090422
+  -Severity Tag Is Not Set
+  -Priority Tag Is Not Set
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 882279
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1044005
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1042822
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1043063
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 980127
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1008869
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1058516
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1020733
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1061996
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1050994
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1059829
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1049041
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1062281
+  -Priority Tag Is Not Set
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1062284
+  -Priority Tag Is Not Set
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1054859
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1053059
+  -Severity Tag Is Not Set
+  -Priority Tag Is Not Set
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1061296
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1065971
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1036262
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 907836
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1036971
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1061729
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1032928
+  -Severity Tag Is Not Set
+  -Priority Tag Is Not Set
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1043478
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1061186
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1059760
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1029316
+  -Severity Tag Is Not Set
+  -Priority Tag Is Not Set
+
+Bug 1058173
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 994623
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 903343
+  -Severity Tag Is Not Set
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1069490
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1080009
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1058538
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1082017
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1058537
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1044723
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1058564
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1056202
+  -Priority Tag Is Not Set
+
+Bug 1070984
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+Bug 1058518
+  -Nvr Flag Is Outdated: the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1
+
+No Relevant Sales Force Case: This bug is not associated with any of the Sales Force cases that this compliance filter is set up to handle (Red Hat Customer Portal, Red Hat Knowledge Base). If this is by mistake, attach an appropriate SF case and reanalyze for the complete list of problems.
+  -1014029
+  -997082
+  -1017502
+  -1045203
+  -1040565
+  -1065735
+  -1047614
+  -1054194
+  -1040751
+  -1023913
+  -821723
+  -1016195
+  -1042324
+  -892453
+  -1065354
+  -810042
+  -1075206
+  -1035564
+  -1038797
+  -1040525
+  -1032182
+  -1081214
+  -1054262
+  -994520
+  -1025779
+  -1092413
+  -1063293
+  -985846
+  -1044555
+  -1040240
+  -1071009
+  -1036276
+  -1017855
+  -1033696
+  -1068729
+  -982290
+  -1075918
+  -1092490
+  -1058049
+  -1031169
+  -1017433
+  -1024403
+  -1039006
+  -1068699
+  -1042831
+  -1015554
+  -1053103
+  -1086931
+  -1066880
+  -1068663
+  -1092445
+  -1033063
+  -1041901
+  -1049446
+  -1038763
+  -1077967
+  -1071277
+  -1096772
+  -1054796
+  -1038802
+  -1069278
+  -1048210
+  -1061702
+  -1019467
+  -1017303
+  -1051095
+  -1067781
+  -1056035
+  -1015564
+  -1065974
+  -1065360
+  -1061129
+  -1087689
+  -1000409
+  -1044299
+  -1053122
+  -1069389
+  -1055560
+  -960150
+  -1032118
+  -1045663
+  -1030361
+  -911553
+  -1084159
+  -1093115
+  -1052772
+  -1062098
+  -1026084
+  -1074699
+  -1086383
+  -1063547
+  -1034384
+  -1049337

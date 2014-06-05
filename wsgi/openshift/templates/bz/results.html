@@ -1,7 +1,41 @@
 {% extends "bz/base.html" %}
-{% load app_filters %}
 {% block results %}
-   {% for key, v in data.items %}
-      <p>{{ get_item:key:"bugdata" }}</p>
-   {% endfor %}
+   <div class="panel-body">
+      <div class="panel-group" id="accordion">
+         {% for bug, bugdata in data.items %}
+            <div class="panel panel-danger">
+               <div class="panel-heading">
+                  <h4 class="panel-title">
+                  <a data-toggle="collapse" href="#{{ bug }}">Bug ID {{ bug }}
+                  </a>
+                  </h4>
+               </div>
+
+               {% for k,v in bugdata.items %}
+
+                  {% if k == "problems" %}
+                     <div id="{{ bug }}" class="panel-collapse collapse">
+                        <div class="panel-body">            
+                           {% for i in v %}
+                              {% for problems_keys, problems_values in i.items %}
+                                 <p>
+                                 <div class="alert alert-warning">
+                                    {% if problems_keys != "id" %}
+                                       <strong>Message:</strong> {{ problems_values }}
+                                    {% else %}
+                                       <strong>Error Type:</strong> {{ problems_values }}
+                                    {% endif %}
+                                 </div>
+                                 </p>
+                              {% endfor %}
+                           {% endfor %}
+                           </div>
+                        </div>
+                  {% endif %}   
+                  
+               {% endfor %}
+
+            </div>
+         {% endfor %}
+      </div>
 {% endblock %}
