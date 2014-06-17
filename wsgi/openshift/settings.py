@@ -15,6 +15,7 @@ if ON_OPENSHIFT:
 else:
     DEBUG = True
 
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
