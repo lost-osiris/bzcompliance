@@ -1,0 +1,184 @@
+{% block parent %}
+   {% for parent_bug in bug.parents %}
+      <div class="tab-pane" id="{{ bug.id }}-{{ parent_bug.id }}-parent" style="overflow:hidden">
+         <div class="row" style="height:100%; overflow:hidden">
+            <div class="col-md-12" style="height:70%; width:100%; padding-right:5%; overflow:auto;">
+               <dl class="dl-horizontal">
+                  <h5>
+                     <dt>Summary<dt>
+                  </h5>
+                  <dd>{{ parent_bug.data.summary }}</dd>
+               </dl>
+
+               <div class="row">
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Status<dt>
+                        </h5>
+                        <dd>{{ parent_bug.data.status }}</dd>
+                     </dl>
+                  </div>  
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Priorirty<dt>
+                        </h5>
+                        <dd>{{ parent_bug.data.priority }}</dd>
+                     </dl>
+                  </div>  
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Severity<dt>
+                        </h5>
+                        <dd>{{ parent_bug.data.priority }}</dd>
+                     </dl>
+                  </div>  
+               </div>  
+               <div class="row">
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Product<dt>
+                        </h5>
+                        <dd>{{ parent_bug.data.product }}</dd>
+                     </dl>
+                  </div>  
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Component<dt>
+                        </h5>
+                        <dd>
+                           {% for i in parent_bug.data.component %}
+                              {% if forloop.last %}
+                                 {{ i }}
+                              {% else %}
+                                 {{ i }},
+                              {% endif %}
+                           {% endfor %}
+                        </dd>
+                     </dl>
+                  </div> 
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Internal Whiteboard<dt>
+                        </h5>
+                        <dd><b>{{ parent_bug.data.cf_internal_whiteboard }}</b></dd>
+                     </dl>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>SF Case<dt>
+                        </h5>
+                        {% if parent_bug.data.external_bugs|length > 0 %}
+                           {% for i in parent_bug.data.external_bugs %}
+                              {% if i.type.description == "Red Hat Customer Portal" %}
+                                 <dd><a href="https://c.na7.visual.force.com/apex/Case_View?sbstr={{ i.id }}">{{ i.id }}</a></dd>
+                              {% endif %}
+                           {% endfor %}
+                        {% else %}
+                           <dd>Not Set</dd>
+                        {% endif %}
+                     </dl>
+                  </div>
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>SF Status<dt>
+                        </h5>
+                        {% if parent_bug.data.external_bugs|length > 0 %}
+                           {% for i in parent_bug.data.external_bugs %}
+                              {% if i.type.description == "Red Hat Customer Portal" %}
+                                 <dd>{{ i.ext_status }}</dd>
+                              {% endif %}
+                           {% endfor %}
+                        {% else %}
+                           <dd>Not Set</dd>
+                        {% endif %}
+                     </dl>
+                  </div>
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>SF Priority<dt>
+                        </h5>
+                        {% if parent_bug.data.external_bugs|length > 0 %}
+                           {% for i in parent_bug.data.external_bugs %}
+                              {% if i.type.description == "Red Hat Customer Portal" %}
+                                 <dd>{{ i.ext_priority }}</dd>
+                              {% endif %}
+                           {% endfor %}
+                        {% else %}
+                           <dd>Not Set</dd>
+                        {% endif %}
+                     </dl>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Assigned To<dt>
+                        </h5>
+                        {% if parent_bug.data.assigned_to == "" %}
+                           <dd>Not Set</dd>
+                        {% else %}
+                           <dd><a href="mailto:{{ parent_bug.data.assigned_to }}">{{ parent_bug.data.assigned_to }}</a></dd>
+                        {% endif %}
+                     </dl>
+                  </div>
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Reporter<dt>
+                        </h5>
+                        <dd><a href="mailto:{{ parent_bug.data.creator }}">{{ parent_bug.data.creator }}</a></dd>
+                     </dl>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-12">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Flags<dt>
+                        </h5>
+                        <dd>
+                           <table class="table table-striped">
+                              <thread>
+                                 <th>Name</th>
+                                 <th>Status</th>
+                                 <th>Setter</th>
+                              </thread>
+                              {% for flag in parent_bug.data.flags %}
+                                 <tr>
+                                    <td>{{ flag.name }}</td>
+                                    <td><b>{{ flag.status }}</b></td>
+                                    <td><a href="mailto:{{ flag.setter }}">{{ flag.setter }}</a></td>
+                                 </tr>
+                              {% endfor %}
+                           </table>
+                        </dd>
+                     </dl>
+                 </div>
+               </div>
+               <div class="row" style="height:100%">
+                  <div class="col-md-12">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Description<dt>
+                        </h5>
+                        <dd><pre>{{ parent_bug.data.comments.0.text }}</pre></dd>
+                     </dl>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   {% endfor %}
+{% endblock %}
