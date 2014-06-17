@@ -1,17 +1,43 @@
 {% block content %}
 <div class="container">
+   <br />
    <div class="row">
+      <form method="post" id="myform">{% csrf_token %}
       <div class="col-md-6">
-         <form method="post" id="myform">{% csrf_token %}
-         <input id="username" name="username" placeholder="Bugzilla Username" 
-         type="text" class="form-control input-md">
-         <input id="password" name="password" placeholder="Bugzilla Password" 
-         type="password" class="form-control input-md">
-         <input id="bugid" name="id" placeholder="Enter Bug ID" 
-         type="text" class="form-control input-md">
-         <input id="url" name="url" placeholder="Enter Save Search Query" 
-         type="text" class="form-control input-md">
-         <button id="submit" type="submit" class="btn btn-warning">Submit</button>
+
+         <div class="row" style="padding: 5px">
+            <div class="col-md-6">
+               <label for="username">Bugzilla Username</label>
+               <input id="username" name="username" placeholder="Bugzilla Username" 
+               type="text" class="form-control input-md">
+            </div>
+
+            <div class="col-md-6">
+               <label for="password">Password</label>
+               <input id="password" name="password" placeholder="Bugzilla Password"
+               type="password" class="form-control input-md">
+            </div>
+         </div>
+
+         <div class="row" style="padding: 5px">
+            <div class="col-md-12">
+               <label for="bugid">Bug ID's</label>
+               <input id="bugid" name="id" placeholder="Enter Bug ID's" 
+               type="text" class="form-control input-md">
+            </div>
+         </div>
+
+         <div class="row" style="padding: 5px">
+            <div class="col-md-12">
+               <label for="url">Saved Search Query</label>
+               <input id="url" name="url" placeholder="Enter Saved Search Query" 
+               type="text" class="form-control input-md">
+            </div>
+         </div>
+
+         <div class="row" style="padding: 5px; margin-left: 0px"> 
+            <button id="submit" type="submit" class="btn btn-warning">Submit</button>
+         </div>
          </form>
       </div>
    </div>
