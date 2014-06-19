@@ -6,5 +6,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'openshift.views.home', name='home'),
+    url(r'^/$', 'openshift.views.home', name='home'),
     url(r'^rfe', 'views.rfe', name='rfe'),
 )
