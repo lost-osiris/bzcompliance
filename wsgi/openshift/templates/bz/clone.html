@@ -1,6 +1,6 @@
 {% block clone %}
    {% for clone_bug in bug.clones %}
-      <div class="tab-pane" id="{{ bug.id }}-{{ clone_bug.id }}-parent" style="overflow:hidden">
+      <div class="tab-pane" id="{{ bug.id }}-{{ clone_bug.id }}-clone" style="overflow:hidden">
          <div class="row" style="height:100%; overflow:hidden">
             <div class="col-md-12" style="height:70%; width:100%; padding-right:5%; overflow:auto;">
                <dl class="dl-horizontal">
@@ -9,8 +9,15 @@
                   </h5>
                   <dd>{{ clone_bug.data.summary }}</dd>
                </dl>
-
                <div class="row">
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Bug ID<dt>
+                        </h5>
+                        <dd><a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ clone_bug.id }}">{{ clone_bug.id }}</a></dd>
+                     </dl>
+                  </div> 
                   <div class="col-md-4">
                      <dl class="dl-horizontal">
                         <h5>
@@ -18,7 +25,18 @@
                         </h5>
                         <dd>{{ clone_bug.data.status }}</dd>
                      </dl>
-                  </div>  
+                  </div> 
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Resolution<dt>
+                        </h5>
+                        <dd>{{ clone_bug.data.resolution }}</dd>
+                     </dl>
+                  </div> 
+               </div>
+
+               <div class="row">
                   <div class="col-md-4">
                      <dl class="dl-horizontal">
                         <h5>

@@ -86,6 +86,7 @@ STATIC_ROOT = ""
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATICFILES_DIRS = (
    ("bootstrap", str(new_dir + "/static/bootstrap/")),
+   ("bootstrap-datetime", str(new_dir + "/static/bootstrap-datetimepicker/build/")),
    ("download", str(new_dir + "/static/download/")),
 )
 

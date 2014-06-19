@@ -44,9 +44,19 @@
                         </table>
                      </div>
 
-                     <div class="col-md-7" align="right"> 
-                        <a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ bug.id }}">Bugzilla Link</a>
-                     </div>         
+                     {% if bug.errata == 1 or bug.errata_clone == 1 or bug.errata_parent == 1 %}
+                        <div class="col-md-4" align="center">
+                           <b>Has a CLOSED ERRATA</b>
+                        </div>
+
+                        <div class="col-md-3" align="right"> 
+                           <a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ bug.id }}">Bugzilla Link</a>
+                        </div>      
+                     {% else %}   
+                        <div class="col-md-7" align="right"> 
+                           <a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ bug.id }}">Bugzilla Link</a>
+                        </div> 
+                     {% endif %}         
                   </div>
                </div>
             </div> <!-- panel-heading -->
@@ -67,13 +77,21 @@
                               </a>
                               <ul class="dropdown-menu">
                                  {% for i in bug.parents %}
-                                    <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }}</a></li>
+                                    {% if i.errata == 1 %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }} <b>(CLOSED - ERRATA)</b></a></li>
+                                    {% else %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }}</a></li>
+                                    {% endif %}
                                  {% endfor %}
                               </ul>
                            </li>
                         {% else %}
                            {% for i in bug.parents %}
-                              <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Parent ({{ i.id }})</a></li>
+                              {% if i.errata == 1 %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Parent ({{ i.id }}) - <b>(CLOSED - ERRATA)</b></a></li>
+                              {% else %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Parent ({{ i.id }})</a></li>
+                              {% endif %}
                            {% endfor %}
                         {% endif %}
                      {% endif %}
@@ -86,23 +104,48 @@
                               </a>
                               <ul class="dropdown-menu">
                                  {% for i in bug.clones %}
-                                    <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }}</a></li>
+                                    {% if i.errata == 1 %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">{{ i.id }} <b>(CLOSED - ERRATA)</b></a></li>
+                                    {% else %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">{{ i.id }}</a></li>
+                                    {% endif %}
                                  {% endfor %}
                               </ul>
                            </li>
                         {% else %}
                            {% for i in bug.clones %}
-                              <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Clone ({{ i.id }})</a></li>
+                              {% if i.errata == 1 %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">Clone ({{ i.id }}) - <b>(CLOSED - ERRATA)</b></a></li>
+                              {% else %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">Clone ({{ i.id }})</a></li>
+                              {% endif %}
                            {% endfor %}
                         {% endif %}
                      {% endif %}
 
-                     <li><a href="#{{ bug.id }}-detials" data-toggle="tab">More Detials</a></li>
+                     {% if bug.errata == 1 %}
+                        <li><a href="#{{ bug.id }}-detials" data-toggle="tab">More Detials <b>(CLOSED - ERRATA)</b></a></li>
+                     {% else %}
+                        <li><a href="#{{ bug.id }}-detials" data-toggle="tab">More Detials</a></li>
+                     {% endif %}
+                     {% if bug.zstream|length > 0 %}
+                        <li><a href="#{{ bug.id }}-zstream" data-toggle="tab">Kernel Data</a></li>
+                     {% endif %}
+
                   </ul> 
                   <div class="tab-content" style="padding-top:3%">
                      <div class="tab-pane active" id="{{ bug.id }}-current">
                         <div class="row">
                            <div class="col-md-12">
+                              {% if bug.errata == 1 or bug.errata_clone == 1 or bug.errata_parent == 1 %}
+                                 <div class="alert alert-success">
+                                    <h4>Bug has a CLOSED ERRATA</h4>
+                                    <p><b>Description:</b> A patch or a fix has been made for this bug.</p> 
+                                    <p><b>Errata Link:</b> <a href="{{ bug.errata_link }}">Click Here</a></p>
+                                    <p><b>Number of SF: </b>{{ bug.errata_sf }}</p>
+                                 </div>
+                              {% endif %}
+
                               {% for i in bug.problems %}
                                  <div class="alert alert-warning">
                                     {% for problems_keys, problems_values in i.items %}
@@ -134,7 +177,6 @@
                            </div>   
                         </div>
                      </div> <!-- tab-pane -->
-
                      {% block parent %}
                         {% include "bz/parent.html" %}
                      {% endblock %}
@@ -146,7 +188,10 @@
                      {% block more_detials %}
                         {% include "bz/more_detials.html" %}
                      {% endblock %}
+
+
                   </div><!-- tab-content -->
+               {{ bug.zstream }}
                </div><!-- panel-body -->              
             </div><!-- panel-collapse -->
          </div><!-- panel -->
@@ -170,10 +215,19 @@
                         <span style="padding-top:5px"class="label label-info">Ignored</span>
                      </h1>
                   </div>
+                  {% if bug.errata == 1 or bug.errata_clone == 1 or bug.errata_parent == 1 %}
+                     <div class="col-md-4" align="center">
+                        <b>Has a CLOSED ERRATA</b>
+                     </div>
 
-                  <div class="col-md-7" align="right"> 
-                     <a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ bug.id }}">Bugzilla Link</a>
-                  </div>         
+                     <div class="col-md-3" align="right"> 
+                        <a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ bug.id }}">Bugzilla Link</a>
+                     </div>      
+                  {% else %}   
+                     <div class="col-md-7" align="right"> 
+                        <a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ bug.id }}">Bugzilla Link</a>
+                     </div> 
+                  {% endif %}         
                </div>
             </div>
             {% if total_checked <= 2 %}
@@ -192,13 +246,21 @@
                               </a>
                               <ul class="dropdown-menu">
                                  {% for i in bug.parents %}
-                                    <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }}</a></li>
+                                    {% if i.errata == 1 %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }} <b>(CLOSED - ERRATA)</b></a></li>
+                                    {% else %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }}</a></li>
+                                    {% endif %}
                                  {% endfor %}
                               </ul>
                            </li>
                         {% else %}
                            {% for i in bug.parents %}
-                              <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Parent ({{ i.id }})</a></li>
+                              {% if i.errata == 1 %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Parent ({{ i.id }}) - <b>(CLOSED - ERRATA)</b></a></li>
+                              {% else %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Parent ({{ i.id }})</a></li>
+                              {% endif %}
                            {% endfor %}
                         {% endif %}
                      {% endif %}
@@ -211,24 +273,47 @@
                               </a>
                               <ul class="dropdown-menu">
                                  {% for i in bug.clones %}
-                                    <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }}</a></li>
+                                    {% if i.errata == 1 %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">{{ i.id }} <b>(CLOSED - ERRATA)</b></a></li>
+                                    {% else %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">{{ i.id }}</a></li>
+                                    {% endif %}
                                  {% endfor %}
                               </ul>
                            </li>
                         {% else %}
                            {% for i in bug.clones %}
-                              <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Clone ({{ i.id }})</a></li>
+                              {% if i.errata == 1 %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">Clone ({{ i.id }}) - <b>(CLOSED - ERRATA)</b></a></li>
+                              {% else %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">Clone ({{ i.id }})</a></li>
+                              {% endif %}
                            {% endfor %}
                         {% endif %}
                      {% endif %}
 
-                     <li><a href="#{{ bug.id }}-detials" data-toggle="tab">More Detials</a></li>
+                     {% if bug.errata == 1 %}
+                        <li><a href="#{{ bug.id }}-detials" data-toggle="tab">More Detials <b>(CLOSED - ERRATA)</b></a></li>
+                     {% else %}
+                        <li><a href="#{{ bug.id }}-detials" data-toggle="tab">More Detials</a></li>
+                     {% endif %}
+                     {% if bug.zstream|length > 0 %}
+                        <li><a href="#{{ bug.id }}-zstream" data-toggle="tab">Kernel Data</a></li>
+                     {% endif %}
                   </ul> 
                   <div class="tab-content" style="padding-top:3%">
 
                      <div class="tab-pane active" id="{{ bug.id }}-current">
                         <div class="row">
                            <div class="col-md-12">
+                              {% if bug.errata == 1 or bug.errata_clone == 1 or bug.errata_parent == 1 %}
+                                 <div class="alert alert-success">
+                                    <h4>Bug has a CLOSED ERRATA</h4>
+                                    <p><b>Description:</b> A patch or a fix has been made for this bug.</p> 
+                                    <p><b>Errata Link:</b> <a href="{{ bug.errata_link }}">Click Here</a></p>
+                                    <p><b>Number of SF: </b>{{ bug.errata_sf }}</p>
+                                 </div>
+                              {% endif %}
                               <div class="alert alert-warning">
                                  <p><strong>Bug was CLOSED. Ignored bug.</strong></p>
                               </div>
@@ -247,6 +332,11 @@
                      {% block ignored-more_detials %}
                         {% include "bz/more_detials.html" %}
                      {% endblock %}
+                     {% if bug.zstream|length > 0 %}
+                        {% block ignored-zstream %}
+                           {% include "bz/zstream.html" %}
+                        {% endblock %}
+                     {% endif %}
                   </div>
                </div>
                </div>
@@ -272,10 +362,19 @@
                         <span style="padding-top:5px"class="label label-success">Passed</span>
                      </h1>
                   </div>
+                  {% if bug.errata == 1 or bug.errata_clone == 1 or bug.errata_parent == 1 %}
+                     <div class="col-md-4" align="center">
+                        <b>Has a CLOSED ERRATA</b>
+                     </div>
 
-                  <div class="col-md-7" align="right"> 
-                     <a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ bug.id }}">Bugzilla Link</a>
-                  </div>         
+                     <div class="col-md-3" align="right"> 
+                        <a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ bug.id }}">Bugzilla Link</a>
+                     </div>      
+                  {% else %}   
+                     <div class="col-md-7" align="right"> 
+                        <a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ bug.id }}">Bugzilla Link</a>
+                     </div> 
+                  {% endif %}         
                </div>
             </div>
             {% if total_checked <= 2 %}
@@ -294,13 +393,21 @@
                               </a>
                               <ul class="dropdown-menu">
                                  {% for i in bug.parents %}
-                                    <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }}</a></li>
+                                    {% if i.errata == 1 %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }} <b>(CLOSED - ERRATA)</b></a></li>
+                                    {% else %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }}</a></li>
+                                    {% endif %}
                                  {% endfor %}
                               </ul>
                            </li>
                         {% else %}
                            {% for i in bug.parents %}
-                              <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Parent ({{ i.id }})</a></li>
+                              {% if i.errata == 1 %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Parent ({{ i.id }}) - <b>(CLOSED - ERRATA)</b></a></li>
+                              {% else %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Parent ({{ i.id }})</a></li>
+                              {% endif %}
                            {% endfor %}
                         {% endif %}
                      {% endif %}
@@ -313,24 +420,47 @@
                               </a>
                               <ul class="dropdown-menu">
                                  {% for i in bug.clones %}
-                                    <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">{{ i.id }}</a></li>
+                                    {% if i.errata == 1 %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">{{ i.id }} <b>(CLOSED - ERRATA)</b></a></li>
+                                    {% else %}
+                                       <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">{{ i.id }}</a></li>
+                                    {% endif %}
                                  {% endfor %}
                               </ul>
                            </li>
                         {% else %}
                            {% for i in bug.clones %}
-                              <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-parent">Clone ({{ i.id }})</a></li>
+                              {% if i.errata == 1 %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">Clone ({{ i.id }}) - <b>(CLOSED - ERRATA)</b></a></li>
+                              {% else %}
+                                 <li><a data-toggle="tab" href="#{{ bug.id }}-{{ i.id }}-clone">Clone ({{ i.id }})</a></li>
+                              {% endif %}
                            {% endfor %}
                         {% endif %}
                      {% endif %}
 
-                     <li><a href="#{{ bug.id }}-detials" data-toggle="tab">More Detials</a></li>
+                     {% if bug.errata == 1 %}
+                        <li><a href="#{{ bug.id }}-detials" data-toggle="tab">More Detials <b>(CLOSED - ERRATA)</b></a></li>
+                     {% else %}
+                        <li><a href="#{{ bug.id }}-detials" data-toggle="tab">More Detials</a></li>
+                     {% endif %}
+                     {% if bug.zstream|length > 0 %}
+                        <li><a href="#{{ bug.id }}-zstream" data-toggle="tab">Kernel Data</a></li>
+                     {% endif %}
                   </ul> 
                   <div class="tab-content" style="padding-top:3%">
 
                      <div class="tab-pane active" id="{{ bug.id }}-current">
                         <div class="row">
                            <div class="col-md-12">
+                              {% if bug.errata == 1 or bug.errata_clone == 1 or bug.errata_parent == 1 %}
+                                 <div class="alert alert-success">
+                                    <h4>Bug has a CLOSED ERRATA</h4>
+                                    <p><b>Description:</b> A patch or a fix has been made for this bug.</p> 
+                                    <p><b>Errata Link:</b> <a href="{{ bug.errata_link }}">Click Here</a></p>
+                                    <p><b>Number of SF: </b>{{ bug.errata_sf }}</p>
+                                 </div>
+                              {% endif %}
                               <div class="alert alert-warning">
                                  <p><strong>Bug is in Compliance. All Tests passed.</strong></p>
                               </div>
@@ -349,6 +479,11 @@
                      {% block passed-more_detials %}
                         {% include "bz/more_detials.html" %}
                      {% endblock %}
+                     {% if bug.zstream|length > 0 %}
+                        {% block passed-zstream %}
+                           {% include "bz/zstream.html" %}
+                        {% endblock %}
+                     {% endif %}
                   </div>
                </div>
                </div>

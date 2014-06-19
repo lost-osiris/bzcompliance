@@ -9,8 +9,15 @@
                   </h5>
                   <dd>{{ parent_bug.data.summary }}</dd>
                </dl>
-
                <div class="row">
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Bug ID<dt>
+                        </h5>
+                        <dd><a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ parent_bug.id }}">{{ parent_bug.id }}</a></dd>
+                     </dl>
+                  </div> 
                   <div class="col-md-4">
                      <dl class="dl-horizontal">
                         <h5>
@@ -18,7 +25,18 @@
                         </h5>
                         <dd>{{ parent_bug.data.status }}</dd>
                      </dl>
-                  </div>  
+                  </div> 
+                  <div class="col-md-4">
+                     <dl class="dl-horizontal">
+                        <h5>
+                           <dt>Resolution<dt>
+                        </h5>
+                        <dd>{{ parent_bug.data.resolution }}</dd>
+                     </dl>
+                  </div> 
+               </div>
+
+               <div class="row">
                   <div class="col-md-4">
                      <dl class="dl-horizontal">
                         <h5>
@@ -36,6 +54,7 @@
                      </dl>
                   </div>  
                </div>  
+
                <div class="row">
                   <div class="col-md-4">
                      <dl class="dl-horizontal">
