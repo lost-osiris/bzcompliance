@@ -46,7 +46,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 )
 
 ROOT_URLCONF = 'openshift.urls'
@@ -86,7 +85,7 @@ STATIC_ROOT = ""
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 STATICFILES_DIRS = (
    ("bootstrap", str(new_dir + "/static/bootstrap/")),
-   ("bootstrap-datetime", str(new_dir + "/static/bootstrap-datetimepicker/build/")),
+   ("bootstrap-datetimepicker", str(new_dir + "/static/bootstrap-datetimepicker/build/")),
    ("download", str(new_dir + "/static/download/")),
 )
 

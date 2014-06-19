@@ -105,7 +105,7 @@ STATICFILES_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
    ("download", str(STATIC_ROOT + "/download/")),
    ("bootstrap", str(STATIC_ROOT + "/bootstrap/")),
-   ("bootstrap-datetime", str(STATIC_ROOT + "/datetime/build/")),
+   ("bootstrap-datetime", str(STATIC_ROOT + "/bootstrap-datetimepicker/build/")),
 )
 
 # List of finder classes that know how to find static files in
