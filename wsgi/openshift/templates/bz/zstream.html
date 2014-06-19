@@ -1,0 +1,9 @@
+{% block zstream %}
+   <div class="tab-pane" id="{{ bug.id }}-zstream" style="overflow:hidden">
+      <div class="row" style="height:100%; overflow:hidden">
+         <div class="col-md-12" style="height:70%; width:100%; padding-right:5%; overflow:auto;">
+         {{ bug.zstream }}
+         </div>
+      </div>
+   </div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% block content %}
+<div class="container">
+   <br />
+   <div class="row">
+      <form method="post" id="myform">{% csrf_token %}
+      <div class="col-md-6">
+
+         <div class="row" style="padding: 5px">
+            <div class="col-md-6">
+               <label for="username">Bugzilla Username</label>
+               <input id="username" name="username" placeholder="Bugzilla Username" 
+               type="text" class="form-control input-md">
+            </div>
+
+            <div class="col-md-6">
+               <label for="password">Password</label>
+               <input id="password" name="password" placeholder="Bugzilla Password"
+               type="password" class="form-control input-md">
+            </div>
+         </div>
+
+         <div class="row" style="padding: 5px">
+           <div class='col-sm-6'>
+               <div class="form-group">
+                   <div class='input-group date' id='start' data-date-format="YYYY/MM/DD">
+                       <input type='text' id="start" name="start" class="form-control" />
+                       <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
+                       </span>
+                   </div>
+               </div>
+           </div>
+           <div class='col-sm-6'>
+               <div class="form-group">
+                   <div class='input-group date' id='end' data-date-format="YYYY/MM/DD">
+                       <input type='text' id="end" name="end" class="form-control" />
+                       <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
+                       </span>
+                   </div>
+               </div>
+           </div>
+           <script type="text/javascript">
+               $(function () {
+                   $('#start').datetimepicker({
+                       pickTime: false
+                   });
+               });
+               $(function () {
+                   $('#end').datetimepicker({
+                       pickTime: false
+                   });
+               });
+           </script>
+       </div>
+
+         <div class="row" style="padding: 5px; margin-left: 0px"> 
+            <button id="submit" type="submit" class="btn btn-warning">Submit</button>
+         </div>
+         </form>
+      </div>
+   </div>
+</div>
+{% endblock %}
+
