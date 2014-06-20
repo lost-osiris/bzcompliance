@@ -177,6 +177,12 @@
                            </div>   
                         </div>
                      </div> <!-- tab-pane -->
+                     {% if bug.zstream|length > 0 %}
+                        {% block zstream %}
+                           {% include "bz/zstream.html" %}
+                        {% endblock %}
+                     {% endif %}
+
                      {% block parent %}
                         {% include "bz/parent.html" %}
                      {% endblock %}
@@ -189,9 +195,7 @@
                         {% include "bz/more_detials.html" %}
                      {% endblock %}
 
-
                   </div><!-- tab-content -->
-               {{ bug.zstream }}
                </div><!-- panel-body -->              
             </div><!-- panel-collapse -->
          </div><!-- panel -->
@@ -320,6 +324,11 @@
                            </div>   
                         </div>
                      </div> <!-- tab-pane -->
+                     {% if bug.zstream|length > 0 %}
+                        {% block ignored-zstream %}
+                           {% include "bz/zstream.html" %}
+                        {% endblock %}
+                     {% endif %}
 
                      {% block ingored-parent %}
                         {% include "bz/parent.html" %}
@@ -332,11 +341,6 @@
                      {% block ignored-more_detials %}
                         {% include "bz/more_detials.html" %}
                      {% endblock %}
-                     {% if bug.zstream|length > 0 %}
-                        {% block ignored-zstream %}
-                           {% include "bz/zstream.html" %}
-                        {% endblock %}
-                     {% endif %}
                   </div>
                </div>
                </div>
@@ -467,6 +471,11 @@
                            </div>   
                         </div>
                      </div> <!-- tab-pane -->
+                     {% if bug.zstream|length > 0 %}
+                        {% block passed-zstream %}
+                           {% include "bz/zstream.html" %}
+                        {% endblock %}
+                     {% endif %}
 
                      {% block passed-parent %}
                         {% include "bz/parent.html" %}
@@ -479,11 +488,6 @@
                      {% block passed-more_detials %}
                         {% include "bz/more_detials.html" %}
                      {% endblock %}
-                     {% if bug.zstream|length > 0 %}
-                        {% block passed-zstream %}
-                           {% include "bz/zstream.html" %}
-                        {% endblock %}
-                     {% endif %}
                   </div>
                </div>
                </div>

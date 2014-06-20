@@ -56,15 +56,18 @@ def rfe(request):
       username = request.POST['username']
 
       #RFE Query
-      rfe_search = ("https://bugzilla.redhat.com/buglist.cgi?"
-                    "classification=Red%20Hat&"
-                    "f1=keywords&f2=delta_ts&"
-                    "f3=delta_ts&list_id=2573790&"
-                    "o1=substring&o2=greaterthaneq&"
-                    "o3=lessthaneq&product=Red%20Hat%20Enterprise%20Linux%206&"
-                    "product=Red%20Hat%20Enterprise%20Linux%207&"
-                    "query_format=advanced&"
-                    "v1=FutureFeature&v2=***&v3=***")
+      rfe_search = ( "https://bugzilla.redhat.com/"
+                     "buglist.cgi?"
+                     "f1=keywords"
+                     "&f2=creation_ts"
+                     "&f3=creation_ts"
+                     "&o1=substring"
+                     "&o2=greaterthaneq"
+                     "&o3=lessthaneq"
+                     "&query_format=advanced"
+                     "&v1=FutureFeature"
+                     "&v2=***"
+                     "&v3=***")
 
       #Fill in date ranges
       new_search = rfe_search.replace("***", start, 1)

@@ -2,7 +2,17 @@
    <div class="tab-pane" id="{{ bug.id }}-zstream" style="overflow:hidden">
       <div class="row" style="height:100%; overflow:hidden">
          <div class="col-md-12" style="height:70%; width:100%; padding-right:5%; overflow:auto;">
-         {{ bug.zstream }}
+            <div class="row">
+               
+            {% for i,j in bug.zstream.data.items %}
+               <div class="col-md-5">
+                  <dl class="dl-horizontal">
+                     <h5><dt>{{ i }}: </dt></h5>
+                     <dd>{{ j.0 }} <b>-</b> {{ j.1 }}</dd>
+                  </dl>
+               </div>
+            {% endfor %}
+            </div>
          </div>
       </div>
    </div>
