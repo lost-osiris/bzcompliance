@@ -40,15 +40,15 @@ def rfe(request):
    if request.method == "POST":
       start = str(request.POST['start']).replace("/", "-")
       month = start[0:2]
-      day = start[4:6]
-      year = start[8:10]
+      day = start[3:4]
+      year = start[8:12]
    
       start = year + "-" + month + "-" + day
 
       end = str(request.POST['end']).replace("/", "-")
       month = end[0:2]
       day = end[4:6]
-      year = end[8:10]
+      year = end[8:12]
 
       end = year + "-" + month + "-" + day
 
@@ -85,8 +85,8 @@ def rfe(request):
       passed = correct_parent_clones(passed)
 
       return render_to_response("bz/rfe/results.html", {"passed":passed, "ignored":ignored,
-         "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored, "temp":temp
-         "query": new_search})
+         "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored, "temp":temp,
+         "query": start})
 
    return render_to_response('bz/rfe/main.html')
 
