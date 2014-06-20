@@ -114,7 +114,7 @@ def saved(request):
          results = requests.post("https://findbugs-seg.itos.redhat.com", data=values, verify=False).text
          saved_data = {"bugs":simplejson.loads(results)}
 
-         updated = datetime.datetime.now() - datetime.timedelta(hours=1) 
+         updated = datetime.datetime.now() + datetime.timedelta(hours=1) 
 
          if len(db.saved_search.find().distinct("name")) == 0:
             db.saved_search.insert({"name":name, "results": saved_data,
@@ -169,7 +169,10 @@ def rfe(request):
       #RFE Query
       rfe_search = ( "https://bugzilla.redhat.com/"
                      "buglist.cgi?"
-                     "f1=keywords"
+                     "classification=Red%20Hat"
+                     "&product=Red%20Hat%20Enterprise%20Linux%206"
+                     "&product=Red%20Hat%20Enterprise%20Linux%207"
+                     "&f1=keywords"
                      "&f2=creation_ts"
                      "&f3=creation_ts"
                      "&o1=substring"
