@@ -5,6 +5,18 @@
       <link rel="shortcut icon" type="image/x-icon" href="{% static "download/favicon.ico" %}"/>
    </head>
    <body>
+      <div id="vanhoof-message">
+         <div class="container">
+            <h1>Vanhoof <b>MUST</b> bow down to Matt</h1>
+         </div>
+      </div>
+
+      <div id="cww-message">
+         <div class="container">
+            <h1>Cww <b>MUST</b> bow down to Matt</h1>
+         </div>
+      </div>
+
       <div class="container" id="config-menu" style="display:none">
          {% block config %}
                {% include "bz/config.html" %}
@@ -44,12 +56,22 @@
             var str = getCookie("rh_user");
             var res = str.split("\|"); 
             var user = res[0];
-            if (String(user) == "rhn-support-cww" || String(user) == "rhn-support-mowens"){
+            if (String(user) == "rhn-support-cww" || String(user) == "rhn-support-mowens" ||
+               String(user) == "rhn-support-vanhoof"){
                document.getElementById("config-menu").style.display = 'block';
             }
             else {
                document.getElementById("config-menu").style.display = 'none';
-            } 
+            }
+ 
+            if (String(user) == "rhn-support-mowens"){
+               document.getElementById("vanhoof-message").style.display = 'block';
+               document.getElementById("cww-message").style.display = 'block';
+            }
+            else {
+               document.getElementById("vanhoof-message").style.display = 'none';
+               document.getElementById("cww-message").style.display = 'block';
+            }
          }
       </script>
    <body>

@@ -1,0 +1,60 @@
+<div class="modal fade" id="{{ i.name }}-update-modal">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Add Saved Search</h4>
+         </div>
+      <div class="modal-body">
+         <div class="row">
+            <form method="post" id="myform">{% csrf_token %}
+            <div class="col-md-12">
+
+               <div class="row" style="padding: 5px">
+                  <div class="col-md-6">
+                     <label for="username">Bugzilla Username</label>
+                     <input id="username" name="username" placeholder="Bugzilla Username" 
+                     type="text" class="form-control input-md">
+                  </div>
+
+                  <div class="col-md-6">
+                     <label for="password">Password</label>
+                     <input id="password" name="password" placeholder="Bugzilla Password"
+                     type="password" class="form-control input-md">
+                  </div>
+               </div>
+
+               <div class="row" style="padding: 5px">
+                  <div class="col-md-12">
+                     <label for="bugid">Bug ID's</label>
+                     <input id="bugid" name="id" readonly value="{{ i.query.id }}" 
+                     type="text" class="form-control input-md">
+                  </div>
+               </div>
+
+               <div class="row" style="padding: 5px">
+                  <div class="col-md-12">
+                     <label for="url">Saved Search Query</label>
+                     <input id="url" name="url" readonly value="{{ i.query.url }}" 
+                     type="text" class="form-control input-md">
+                  </div>
+               </div>
+
+               <div class="row" style="padding: 5px">
+                  <div class="col-md-12">
+                     <label for="name">Search Name</label>
+                     <input id="name" readonly name="name" value="{{ i.name }}" 
+                     type="text" class="form-control input-md">
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         <button id="submit" name="update" value="" type="submit" class="btn btn-warning">Submit</button>
+         </form>
+      </div>
+   </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
