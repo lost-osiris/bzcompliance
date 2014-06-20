@@ -114,7 +114,7 @@ def saved(request):
          results = requests.post("https://findbugs-seg.itos.redhat.com", data=values, verify=False).text
          saved_data = {"bugs":simplejson.loads(results)}
 
-         updated = datetime.datetime.now() 
+         updated = datetime.datetime.now() - datetime.timedelta(hours=1) 
 
          if len(db.saved_search.find().distinct("name")) == 0:
             db.saved_search.insert({"name":name, "results": saved_data,
