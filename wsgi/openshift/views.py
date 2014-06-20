@@ -85,7 +85,8 @@ def rfe(request):
       passed = correct_parent_clones(passed)
 
       return render_to_response("bz/rfe/results.html", {"passed":passed, "ignored":ignored,
-         "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored, "temp":temp})
+         "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored, "temp":temp
+         "query": new_search})
 
    return render_to_response('bz/rfe/main.html')
 
