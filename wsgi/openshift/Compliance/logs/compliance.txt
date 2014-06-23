@@ -1,1 +1,208 @@
-[]
+[
+  {
+    "parents": "", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }
+    ], 
+    "zstream": {}, 
+    "id": "464463"
+  }, 
+  {
+    "parents": "", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }
+    ], 
+    "zstream": {}, 
+    "id": "587389"
+  }, 
+  {
+    "parents": "", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }
+    ], 
+    "zstream": {}, 
+    "id": "587396"
+  }, 
+  {
+    "parents": "711184", 
+    "warnings": [], 
+    "clones": "1108969", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }
+    ], 
+    "zstream": {}, 
+    "id": "1023319"
+  }, 
+  {
+    "parents": "957681", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }
+    ], 
+    "zstream": {}, 
+    "id": "1015485"
+  }, 
+  {
+    "parents": "", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }
+    ], 
+    "zstream": {}, 
+    "id": "536441"
+  }, 
+  {
+    "parents": "", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }
+    ], 
+    "zstream": {}, 
+    "id": "631009"
+  }, 
+  {
+    "parents": "", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }, 
+      {
+        "id": "Priority Tag Is Not Set", 
+        "desc": "the priority tag for this bug is unspecified. Please set it to match the associated SF case."
+      }
+    ], 
+    "zstream": {}, 
+    "id": "890585"
+  }, 
+  {
+    "parents": "", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }
+    ], 
+    "zstream": {}, 
+    "id": "239353"
+  }, 
+  {
+    "parents": "", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }
+    ], 
+    "zstream": {}, 
+    "id": "696543"
+  }, 
+  {
+    "parents": "", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "On Gss Tracker Without Corresponding Nvr Flag Set", 
+        "desc": "this bug is on the 7.1 GSS tracker (id=1064025), but the 7.1 NVR flag is not set. Please either set the flag or remove this bug from the tracker"
+      }, 
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }
+    ], 
+    "zstream": {}, 
+    "id": "814489"
+  }, 
+  {
+    "parents": "", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Severity Tag Is Not Set", 
+        "desc": "the severity tag for this bug is unspecified. Please set it to match the associated SF case."
+      }, 
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }, 
+      {
+        "id": "Priority Tag Is Not Set", 
+        "desc": "the priority tag for this bug is unspecified. Please set it to match the associated SF case."
+      }
+    ], 
+    "zstream": {}, 
+    "id": "587393"
+  }, 
+  {
+    "parents": "", 
+    "warnings": [], 
+    "clones": "", 
+    "data": "ommited_info", 
+    "problems": [
+      {
+        "id": "Severity Tag Is Not Set", 
+        "desc": "the severity tag for this bug is unspecified. Please set it to match the associated SF case."
+      }, 
+      {
+        "id": "Nvr Flag Is Outdated", 
+        "desc": "the NVR flag for this bug (7.0) does not match any of the current appropriate versions of RHEL. Please add an NVR flag with one of the following versions: 7.1"
+      }, 
+      {
+        "id": "Priority Tag Is Not Set", 
+        "desc": "the priority tag for this bug is unspecified. Please set it to match the associated SF case."
+      }
+    ], 
+    "zstream": {}, 
+    "id": "850556"
+  }
+]

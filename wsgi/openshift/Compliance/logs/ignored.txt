@@ -1,9 +1,1 @@
-[
-  {
-    "clones": "", 
-    "data": "ommited_info", 
-    "parents": "", 
-    "id": "10", 
-    "zstream": {}
-  }
-]
+[]

@@ -223,7 +223,7 @@ def rfe(request):
 class Problems:
 
    def display_results(self, is_id, search, username = None, password = None, results = None):
-      if results != None:
+      if type(results) == dict:
          data, passed, ignored = compliance.check_compliance(is_id, search, results)
 
          total_checked = len(data) + len(passed) + len(ignored)   
@@ -278,7 +278,7 @@ def check_parent_clone(data, list, type, index, bug):
       data[index]['num_sf'] = find_num_sf(bug)
 
       if status == "CLOSED" and resolution == "ERRATA":
-         comments = data[index][type][i]['comments']
+         comments = data[index]['data']['comments']
          for j in comments:
             if j['author'] == "errata-xmlrpc@redhat.com" and "resolution of ERRATA" in j['text'] and j['is_private'] == "False":
                

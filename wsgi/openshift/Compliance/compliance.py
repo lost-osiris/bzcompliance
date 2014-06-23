@@ -19,7 +19,7 @@ def check_compliance(is_id, search, email=None, password=None, server=None, resu
    if server: config.server = server
    
    #For testing/debugging
-   if results != "" and is_id == False:
+   if results != None and is_id == False:
       bugs = results
    elif config.test_from_log_file:
       bugs = read_bugs()
