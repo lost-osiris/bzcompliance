@@ -127,6 +127,22 @@ def saved(request):
    return render_to_response("bz/saved/main.html", {"searches":searches})
 
 @csrf_exempt
+def check_bug_id(request, bug_id):
+   if request.method == "POST":
+      password = request.POST['password']
+      username = request.POST['username']
+
+      if password == "" or username == "":
+         return render_to_response("bz/error.html")
+
+      is_id = True
+       
+      return Problems().display_results(is_id, bug_id, username=username, password=password)
+
+   return render_to_response('bz/bugid/main.html', {"appname": resolve(request.path).app_name})
+   
+
+@csrf_exempt
 def bug_id(request, bug_id):
    db = client['saved_searches']
 
