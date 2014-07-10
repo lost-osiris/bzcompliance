@@ -1,0 +1,207 @@
+<div class="modal fade" id="{{ requirement_type.split|join:"_" }}-modal">
+   <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+               onclick="document.getElementById('requirement_select').options[0].selected = true;">
+               &times;
+            </button>
+
+            <h4>{{ requirement_type }} Requirement</h4>
+         </div>
+         <div class="modal-body">
+            <div class="row">
+               {% if requirement_type == "Status" %}
+                  <div class="col-md-5">
+                     <label for="status">Status</label>
+                     <select multiple onchange="modal_expression('{{ requirement_type }}');"
+                        id="status" name="status" class="form-control">
+                        <option selected value="new">NEW</option>
+                        <option value="assigned">ASSIGNED</option>
+                        <option value="post">POST</option>
+                        <option value="modified">MODIFIED</option>
+                        <option value="on_dev">ON_DEV</option>
+                        <option value="on_qa">ON_QA</option>
+                        <option value="verified">VERIFIED</option>
+                        <option value="release_pending">RELEASE_PENDING</option>
+                        <option value="close">CLOSED</option>
+                     </select>
+                  </div>
+                  <div class="col-md-5">               
+                     <label for="function">Function Type</label>
+
+                     <select id="{{ requirement_type }}-function" class="form-control"
+                        onchange="modal_expression('{{ requirement_type }}');">
+                        <option selected></option>
+                        <option value="matches">Matches</option>
+                     </select>      
+                  </div>
+               {% endif %}
+
+               {% if requirement_type == "Resolution" %}
+                  <div class="col-md-5">
+                     <label for="resolution">Resolution</label>
+                     <select multiple id="resolution" 
+                        onchange="modal_expression('{{ requirement_type }}');"
+                        class="form-control">
+                        <option selected value="notabug">NOTABUG</option>
+                        <option value="wontfix">WONTFIX</option>
+                        <option value="deferred">DEFERRED</option>
+                        <option value="worksforme">WORKSFORME</option>
+                        <option value="currentrelease">CURRENTRELEASE</option>
+                        <option value="rawhide">RAWHIDE</option>
+                        <option value="errata">ERRATA</option>
+                        <option value="duplicate">DUPLICATE</option>
+                        <option value="upstream">UPSTREAM</option>
+                        <option value="nextrelease">NEXTRELEASE</option>
+                        <option value="cantfix">CANTFIX</option>
+                        <option value="insufficient_data">INSUFFICIENT_DATA</option>
+                     </select>
+                  </div>
+
+                  <div class="col-md-5">               
+                     <label for="function">Function Type</label>
+
+                     <select id="{{ requirement_type }}-function" class="form-control"
+                        onchange="modal_expression('{{ requirement_type }}');">
+                        <option selected></option>
+                        <option value="matches">Matches</option>
+                     </select>      
+                  </div>
+               {% endif %}
+               {% if requirement_type == "Severity" %}
+                  <div class="col-md-5">
+                     <label for="severity">Severity</label>
+                     <select id="severity" 
+                        onchange="modal_expression('{{ requirement_type }}');"
+                        class="form-control">
+                        <option selected value="unspecified">Unspecified</option>
+                        <option value="urgent">Urgent</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">low</option>
+                     </select>
+                  </div>
+
+                  <div class="col-md-5">               
+                     <label for="function">Function Type</label>
+
+                     <select id="{{ requirement_type }}-function" class="form-control"
+                        onchange="modal_expression('{{ requirement_type }}');">
+                        <option selected></option>
+                        <option value="matches">Matches</option>
+                     </select>      
+                  </div>
+               {% endif %}
+               {% if requirement_type == "Priority" %}
+                  <div class="col-md-5">
+                     <label for="priority">Priority</label>
+                     <select id="priority" 
+                        onchange="modal_expression('{{ requirement_type }}');"
+                        class="form-control">
+                        <option selected value="unspecified">Unspecified</option>
+                        <option value="urgent">Urgent</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">low</option>
+                     </select>
+                  </div>
+
+                  <div class="col-md-5">               
+                     <label for="function">Function Type</label>
+
+                     <select id="{{ requirement_type }}-function" class="form-control"
+                        onchange="modal_expression('{{ requirement_type }}');">
+                        <option selected></option>
+                        <option value="matches">Matches</option>
+                     </select>      
+                  </div>
+               {% endif %}
+
+               {% if requirement_type in modal_input_boxes %}
+                  <div class="col-md-5">
+                     <label for="{{ requirement_type.split|join:"_" }}">{{ requirement_type }}</label>
+                     <input class="form-control" type="text" 
+                        id="{{ requirement_type.split|join:"_" }}"
+                        >
+                  </div>
+
+                  <div class="col-md-3">               
+                     <label for="function">Function Type</label>
+
+                     <select id="{{ requirement_type.split|join:"_" }}-function" class="form-control">
+                        <option selected></option>
+                        <option value="matches">Matches</option>
+                        <option value="contains">Contains</option>
+                        <option value="isContainedIn">isContainedIn</option>
+                        <option value="sizeIs">sizeIs</option>
+                        <option value="regex">RegEx</option>
+                     </select>      
+                  </div>
+                 
+                  <div class="col-md-2" style="margin-top:25px;">
+                     <button id="{{ requirement_type.split|join:"_" }}-addreq" 
+                        class="btn btn-default"
+                        onclick="modal_expression('{{ requirement_type.split|join:"_" }}');">
+                        Add
+                     </button>
+                  </div> 
+               {% endif %}
+            </div>
+            
+            <br />
+            
+            <div class="row">
+               <div class="col-md-12">
+                  <label for="{{ requirement_type.split|join:"_" }}-modal-expression">
+                     Requirement Expression
+                  </label>
+
+                  <textarea id="{{ requirement_type.split|join:"_" }}-modal-expression" 
+                     class="form-control expression" style="resize: vertical" rows="3"></textarea>
+                  
+                  <br />
+                  
+                  <div class="btn-group">
+                     <button id="{{ requirement_type.split|join:"_" }}-and_button" 
+                        class="btn btn-default"
+                        onclick="insertText(this, '{{ requirement_type.split|join:"_" }}-');">
+                     And</button>
+
+                     <button id="{{ requirement_type.split|join:"_" }}-or_button" 
+                        class="btn btn-default"
+                        onclick="insertText(this, '{{ requirement_type.split|join:"_" }}-');">
+                     Or</button>
+
+                     <button 
+                        id="{{ requirement_type.split|join:"_" }}-not_button" 
+                        class="btn btn-default"
+                        onclick="insertText(this, '{{ requirement_type.split|join:"_" }}-');">
+                     Not</button>
+
+                     <button id="{{ requirement_type.split|join:"_" }}-group_button" 
+                        class="btn btn-default"
+                        onclick="insertText(this, '{{ requirement_type.split|join:"_" }}-');">
+                     Group</button>
+
+                     <button id="{{ requirement_type.split|join:"_" }}-clear_button" 
+                        class="btn btn-warning"
+                        onclick="insertText(this, '{{ requirement_type.split|join:"_" }}-');">
+                     Clear</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal"
+               onclick="document.getElementById('requirement_select').options[0].selected = true;">
+               Close
+            </button>
+
+            <button class="btn btn-success" data-dismiss="modal"
+               onclick="insertExpression('{{ requirement_type.split|join:"_" }}');">Submit</button>
+         </div>
+      </div>
+   </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+

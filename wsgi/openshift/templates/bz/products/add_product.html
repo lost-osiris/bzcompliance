@@ -1,0 +1,29 @@
+<div class="modal fade" id="addproduct-modal">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Add Product</h4>
+         </div>
+         <div class="modal-body">
+            <div class="row">
+               <form method="post" id="myform">{% csrf_token %}
+               <div class="col-md-12">
+                  <div class="row" style="padding: 5px">
+                     <div class="col-md-12">
+                        <label for="product_name">Product Name</label>
+                        <input id="product_name" name="product_name" type="text" class="form-control input-md">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button id="add_product" name="add_product" value="" type="submit" class="btn btn-warning">Submit</button>
+            </form>
+         </div>
+      </div>
+   </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+

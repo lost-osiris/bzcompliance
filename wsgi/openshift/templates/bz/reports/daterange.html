@@ -23,7 +23,7 @@
            <div class='col-sm-6'>
                <div class="form-group">
                    <div class='input-group date' id='start' data-date-format="YYYY/MM/DD">
-                       <input type='text' id="start" name="start" class="form-control" />
+                       <input type='text' id="{{ i.name }}-start" name="start" class="form-control" />
                        <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
                        </span>
                    </div>
@@ -32,7 +32,7 @@
            <div class='col-sm-6'>
                <div class="form-group">
                    <div class='input-group date' id='end' data-date-format="YYYY/MM/DD">
-                       <input type='text' id="end" name="end" class="form-control" />
+                       <input type='text' id="{{ i.name }}-end" name="end" class="form-control" />
                        <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span>
                        </span>
                    </div>
@@ -40,12 +40,12 @@
            </div>
         <script type="text/javascript">
             $(function () {
-                $('#start').datetimepicker({
+                $('#{{ i.name }}-start').datetimepicker({
                     pickTime: false
                 });
             });
             $(function () {
-                $('#end').datetimepicker({
+                $('#{{ i.name }}-end').datetimepicker({
                     pickTime: false
                 });
             });

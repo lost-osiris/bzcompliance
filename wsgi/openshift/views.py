@@ -1,18 +1,18 @@
-import os, datetime
-import copy
-from django.shortcuts import render_to_response
-from django.shortcuts import render
+from django.shortcuts import render_to_response, render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from django.core.urlresolvers import resolve
 from django.utils.safestring import mark_safe
-from Compliance import compliance
-import pymongo
-from pymongo import MongoClient
+from django.template import Context
 from django.http import Http404
-import simplejson
-import requests
-import datetime
+
+from pymongo import MongoClient
+from bson.objectid import ObjectId
+import simplejson, requests, datetime, copy, os, urllib
+
+from templatetags import templatetags
+from dbManager import Manager
+from Compliance import compliance
 
 PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
 ON_OPENSHIFT = False
@@ -29,7 +29,159 @@ if ON_OPENSHIFT:
 else:
    import local_settings
 
-   client = MongoClient("127.0.0.1")
+   client = MongoClient("osiris.usersys.redhat.com")
+
+manager = Manager.dbManager("test")
+
+@csrf_exempt
+def add_requirement(request):
+   req_type = ""
+   id = ""
+   name = ""
+
+   for i in request.GET:
+      if i == "add_req":
+         id = request.GET[i]
+      if i == "req_type":
+         req_type = request.GET[i]
+
+         if req_type == "product":
+            group = manager.get_product(id)
+            name = group['product_name']
+         
+         if req_type == "group" or req_type == "message":
+            group = manager.get_group(id)
+            name = group['group_name']
+
+   for i in request.POST:
+      if i == "expression":
+         expression = request.POST[i]
+         
+         #if req_type == "message":
+         #   manager.add_mesage(message_name, id, description, expression)
+
+         if req_type == "product":
+            product_name = product['product_name']
+
+            req_name = str(name + "-main")
+            manager.add_req(req_name, id, req_type, expression)
+
+            return redirect('/compliance')
+
+         if req_type == "group":
+            req_name = str(name + "-main")
+            manager.add_req(req_name, id, req_type, expression)
+
+            return redirect(str('/showgroup/' + id))
+         
+   modal_input_boxes = [
+      "Product",
+      "Alias",
+      "Assigned To",
+      "Component", 
+      "Reported",
+      "Modified",
+      "Summary",
+      "Tags",
+      "Url",
+      "CC",
+      "Keywords",
+      "Devel Whiteboard",
+      "Internal Whiteboard",
+      "Whiteboard",
+   ]
+ 
+   requirement_list = [
+      "Alias", 
+      "Assigned To", 
+      "Blocks", 
+      "CC", 
+      "Comments", 
+      "Depends On", 
+      "Devel Whiteboard",
+      "External Trackers",
+      "Flags", 
+      "Internal Whiteboard",
+      "Keywords",
+      "Modified",
+      "Priority",
+      "Product",
+      "Reported",
+      "Resolution",
+      "Severity",
+      "Status",
+      "Summary",
+      "Tags",
+      "Url",
+      "Whiteboard"
+   ]
+   c = {
+      "requirement_list": requirement_list, 
+      "modal_input_boxes": modal_input_boxes, 
+      "req_type":req_type,
+      "add_to": name,
+   }
+
+   return render_to_response("bz/add_req/main.html", Context(c))
+ 
+@csrf_exempt
+def compliance(request):
+   db = client['test']
+   products = manager.find_all_products()
+
+   if request.method == "POST":
+
+      for i in request.POST:
+
+         if i == "delete_product":
+            product_name = request.POST[i]
+            manager.remove_product(product_name)
+
+         if i == "add_product":
+            product_name = request.POST['product_name']
+            manager.add_product(product_name)
+             
+         if i == "add_group":
+            group_name = request.POST['group_name']
+            product_name = request.POST['add_group']
+            manager.add_group_to_product(group_name, product_name)
+
+         if i == "add_req":
+            req_type = request.POST['req_type']
+            group_name = request.POST['add_req']
+
+            return redirect('/addrequirement?'+ urllib.urlencode(request.POST))
+
+         if i == "nested_group":
+           continue 
+
+   return render_to_response("bz/products/main.html", {"products":products}) 
+
+@csrf_exempt
+def show_group(request, group_id):
+   group = manager.get_group(group_id)
+
+   if request.method == "POST":
+
+      for i in request.POST:
+         if i == "add_group":
+            group_name = request.POST['group_name']
+            manager.add_group_to_group(group_id, group_name)
+                        
+         if i == "add_req":
+            req_type = request.POST['req_type']
+            group_name = request.POST['add_req']
+
+            return redirect('/addrequirement?'+ urllib.urlencode(request.POST))
+
+         if i == "add_message":
+            req_type = request.POST['req_type']
+            group_name = request.POST['add_req']
+         
+
+            return redirect('/addrequirement?'+ urllib.urlencode(request.POST))
+
+   return render_to_response("bz/groups/show_group/main.html", {"group":group})
 
 @csrf_exempt
 def home(request):
@@ -112,11 +264,20 @@ def saved(request):
          }
       
          results = requests.post("https://findbugs-seg.itos.redhat.com", data=values, verify=False).text
-         saved_data = {"bugs":simplejson.loads(results)}
+
+         bugs = simplejson.loads(results)
+
+         data, passed, ignored = compliance.check_compliance(False, {}, results=bugs)
+
+         data = correct_parent_clones(data)
+
+         passed = correct_parent_clones(passed)
+
+         saved_data = {"data":data, "ignored": ignored, "passed": passed}
 
          updated = datetime.datetime.now() + datetime.timedelta(hours=1) 
 
-         if len(db.saved_search.find().distinct("name")) == 0:
+         if len(db.saved_search.find({"name":name}).distinct("name")) == 0:
             db.saved_search.insert({"name":name, "results": saved_data,
                 "last_updated":updated, "query":query})
 
@@ -125,6 +286,8 @@ def saved(request):
                "last_updated":updated, "query":query}})
    
    return render_to_response("bz/saved/main.html", {"searches":searches})
+
+
 
 @csrf_exempt
 def check_bug_id(request, bug_id):
@@ -146,65 +309,88 @@ def check_bug_id(request, bug_id):
 def bug_id(request, bug_id):
    db = client['saved_searches']
 
-   results = db.saved_search.find({"name": bug_id}).distinct("results")
-   bugs = results[0]['bugs']
+   results = db.saved_search.find({"name": bug_id}).distinct("results")[0]
 
-   data, passed, ignored = compliance.check_compliance(False, {}, results=bugs)
+   data = results['data']
+   passed = results['passed']
+   ignored = results['ignored']
 
    total_checked = len(data) + len(passed) + len(ignored)   
    total_ignored = len(ignored) 
-   temp = data
-
-   data = correct_parent_clones(data)
-   ignored = correct_parent_clones(ignored)
-   passed = correct_parent_clones(passed)
 
    return render_to_response("bz/results.html", {"passed":passed, "ignored":ignored,
-      "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored, "temp":temp})
+      "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored})
    
-@csrf_exempt
-def rfe(request):
-   if request.method == "POST":
-      start = str(request.POST['start']).replace("/", "-")
-      month = start[0:2]
-      day = start[3:5]
-      year = start[8:12]
-   
-      start = year + "-" + month + "-" + day
+def run_report(request, report_name):
+   if request.POST != "":
+      db = client['reports']
+      report = db.reports.find({"name":report_name})
 
-      end = str(request.POST['end']).replace("/", "-")
-      month = end[0:2]
-      day = end[3:5]
-      year = end[8:12]
+      query = report.distinct("query")
 
-      end = year + "-" + month + "-" + day
+      if report['is_date_range'] == True:
+         start = str(request.POST['start']).replace("/", "-")
+         month = start[0:2]
+         day = start[3:5]
+         year = start[8:12]
+      
+         start = year + "-" + month + "-" + day
 
-      password = request.POST['password']
-      username = request.POST['username']
+         end = str(request.POST['end']).replace("/", "-")
+         month = end[0:2]
+         day = end[3:5]
+         year = end[8:12]
 
-      #RFE Query
-      rfe_search = ( "https://bugzilla.redhat.com/"
-                     "buglist.cgi?"
-                     "classification=Red%20Hat"
-                     "&product=Red%20Hat%20Enterprise%20Linux%206"
-                     "&product=Red%20Hat%20Enterprise%20Linux%207"
-                     "&f1=keywords"
-                     "&f2=creation_ts"
-                     "&f3=creation_ts"
-                     "&o1=substring"
-                     "&o2=greaterthaneq"
-                     "&o3=lessthaneq"
-                     "&query_format=advanced"
-                     "&v1=FutureFeature"
-                     "&v2=***"
-                     "&v3=***")
+         end = year + "-" + month + "-" + day
 
-      #Fill in date ranges
-      new_search = rfe_search.replace("***", start, 1)
-      new_search = new_search.replace("***", end)
+         #Fill in date ranges
+         query = query.replace("***", start, 1)
+         query = query.replace("***", end)
 
-      #Call script
-      data, passed, ignored = compliance.check_compliance(False, new_search, username, password)
+         data, passed, ignored = compliance.check_compliance(False, query, username, password)
+
+         total_checked = len(data) + len(passed) + len(ignored)   
+         total_ignored = len(ignored) 
+         temp = data
+
+         data = correct_parent_clones(data)
+         ignored = correct_parent_clones(ignored)
+         passed = correct_parent_clones(passed)
+
+         return render_to_response("bz/exceptions/results.html", {"passed":passed, "ignored":ignored,
+            "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored, "temp":temp,
+            "query": start})
+
+      else:
+         data, passed, ignored = compliance.check_compliance(False, query, username, password)
+
+         total_checked = len(data) + len(passed) + len(ignored)   
+         total_ignored = len(ignored) 
+         temp = data
+
+         data = correct_parent_clones(data)
+         ignored = correct_parent_clones(ignored)
+         passed = correct_parent_clones(passed)
+
+         return render_to_response("bz/exceptions/results.html", {"passed":passed, "ignored":ignored,
+            "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored, "temp":temp,
+            "query": start})
+
+
+   else:
+
+      db = client['reports']
+      reports = db.reports.find()
+      
+      return render_to_response("bz/reports/main.html", {"reports":reports})
+
+class Problems:
+
+   def display_results(self, is_id, search, username = None, password = None):
+      usr = username
+      psswd = password
+
+      data, passed, ignored = compliance.check_compliance(is_id, search, email=usr, password=psswd)
 
       total_checked = len(data) + len(passed) + len(ignored)   
       total_ignored = len(ignored) 
@@ -214,45 +400,8 @@ def rfe(request):
       ignored = correct_parent_clones(ignored)
       passed = correct_parent_clones(passed)
 
-      return render_to_response("bz/rfe/results.html", {"passed":passed, "ignored":ignored,
-         "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored, "temp":temp,
-         "query": start})
-
-   return render_to_response('bz/rfe/main.html')
-
-class Problems:
-
-   def display_results(self, is_id, search, username = None, password = None, results = None):
-      if type(results) == dict:
-         data, passed, ignored = compliance.check_compliance(is_id, search, results)
-
-         total_checked = len(data) + len(passed) + len(ignored)   
-         total_ignored = len(ignored) 
-         temp = data
-
-         data = correct_parent_clones(data)
-         ignored = correct_parent_clones(ignored)
-         passed = correct_parent_clones(passed)
-
-         return render_to_response("bz/results.html", {"passed":passed, "ignored":ignored,
-            "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored, "temp":temp})
-
-      else:
-         usr = username
-         psswd = password
-
-         data, passed, ignored = compliance.check_compliance(is_id, search, email=usr, password=psswd)
-
-         total_checked = len(data) + len(passed) + len(ignored)   
-         total_ignored = len(ignored) 
-         temp = data
-
-         data = correct_parent_clones(data)
-         ignored = correct_parent_clones(ignored)
-         passed = correct_parent_clones(passed)
-
-         return render_to_response("bz/results.html", {"passed":passed, "ignored":ignored,
-            "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored, "temp":temp})
+      return render_to_response("bz/results.html", {"passed":passed, "ignored":ignored,
+         "raw_data":data, "total_checked":total_checked, "total_ignored":total_ignored, "temp":temp})
 
 def correct_parent_clones(data):
    temp = copy.deepcopy(data)
@@ -263,7 +412,7 @@ def correct_parent_clones(data):
       
       check_parent_clone(temp, parents, "parents", index, bug)
       check_parent_clone(temp, clones, "clones", index, bug)
-      check_parent_clone(temp, None, "bug", index, bug)
+      check_parent_clone(temp, None, "data", index, bug)
    
       temp[index]['parents'] = parents
       temp[index]['clones'] = clones
@@ -271,7 +420,7 @@ def correct_parent_clones(data):
    return temp
 
 def check_parent_clone(data, list, type, index, bug):
-   if type == "bug":
+   if type == "data":
       status = data[index]['data']['status']
       resolution = data[index]['data']['resolution']
 
