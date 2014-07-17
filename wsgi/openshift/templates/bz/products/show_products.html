@@ -25,12 +25,12 @@
             <div class="row">
                <div class="col-md-2" style="padding-top:3px">
                   <h1 class="panel-title">
-                     <a data-toggle="collapse" href="#{{ product.product_name }}">{{ product.product_name }}</a>
+                     <a data-toggle="collapse" href="#{{ product.name }}">{{ product.name }}</a>
                   </h1>
                </div>
                <form method="post">{% csrf_token %}
                   <div class="col-md-10" align="right">
-                     <button type="submit" value="{{ product.product_name }}" 
+                     <button type="submit" value="{{ product.name }}" 
                         id="submit" name="delete_product" class="btn btn-danger btn-sm">
                         <span class="glyphicon glyphicon-remove"></span> Remove
                      </button>
@@ -38,41 +38,9 @@
                </form>
             </div>
          </div>
-         <div id="{{ product.product_name }}" class="panel-collapse collapse">
+         <div id="{{ product.name }}" class="panel-collapse collapse">
             <div class="panel-body">
-               {% if "req" in product %}
-                  <div class="row">
-                     <div class="col-md-10">
-                        <label for="{{ product.product_name }}">Requirement Expression</label>
-                        <textarea class="form-control" style="resize:vertical" 
-                           id="{{ product.product_name }}-req-expression" 
-                           readonly>{{ product.req.expression }}</textarea>
-                     </div>
-                     <div class="col-md-2" align="left" style="margin-top:24px; padding:0px">
-                        <form method="post">{% csrf_token %}
-                           <button class="btn btn-primary" type="submit" name="add_req" 
-                              value="{{ product.product_name }}">
-                              <span class="glyphicon glyphicon-edit"></span> Edit</button>
-                           <input type="hidden" name="req_type" value="product">
-                        </form>
-                     </div>
-                  </div>
-                  <br />
-               {% else %}
-                  <div class="row">
-                     <div class="col-md-12" align="left">
-                        <form method="post">{% csrf_token %}
-                           <button class="btn btn-default" type="submit" name="add_req" 
-                              value="{{ product.product_name }}">
-                              Add Requirment</button>
-                           <input type="hidden" name="req_type" value="product">
-                        </form>
-                     </div>
-                  </div>
-               {% endif %}
-
-
-               {% include "bz/groups/all_groups.html" %}
+               {% include "bz/tabs/main.html" %}
             </div>
          </div>
       </div>

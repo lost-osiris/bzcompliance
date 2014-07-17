@@ -69,7 +69,7 @@
       <div class="row">
          <div class="col-md-12">
             <h5><b id="lock">Expression Builder (locked)</b></h5>
-            <form method="post" id="save-req" target="compliance">{{ crf_token }}
+            <form method="post" id="save-req" target="compliance">{{ csrf_token }}
                <textarea readonly placeholder="Build Expression..." 
                   id="main-expression" style="resize: vertical;" 
                   class="form-control expression" name="expression" rows="3"></textarea>
@@ -109,9 +109,16 @@
          </div>
 
          <div class="col-md-7" align="right" style="padding-top:1%">
-            <button onclick="edit_expression();" class="btn btn-default">Edit</button>
-            <button onclick="submit_req();"
-               class="btn btn-success">Submit</button>
+            <button id="unlock" onclick="edit_expression();" class="btn btn-default">Edit</button>
+
+            {% if req_type == "message" %}
+               <button onclick="submit_message();"
+                  class="btn btn-success">Submit</button>
+            {% else %}
+               <button onclick="submit_req();"
+                  class="btn btn-success">Submit</button>
+            {% endif %}
+
          </div>
 
       </div>
@@ -123,7 +130,26 @@
    String.prototype.replaceAt=function(index, character) {
        return this.substr(0, index) + character + this.substr(index+character.length);
    }  
-   
+
+   function submit_message() {
+      var main_expression = document.getElementById('main-expression').value;
+      var description = document.getElementById('message').value;
+      var message_name = document.getElementById('message-name').value;
+
+      var message_options = document.getElementById('message-type');
+      var message_type = message_options.options[message_options.selectedIndex].text;
+
+      document.getElementById('submit-message-description').value = description;
+      document.getElementById('submit-message-main-expression').value = main_expression;
+      document.getElementById('submit-message-name').value = message_name;
+      document.getElementById('submit-message-type').value = message_type;
+
+      var yes_no = confirm('Are you sure you want to save requirement expression?');
+      if (yes_no == true) {
+         document.getElementById('submit-message').submit();
+      }
+   }
+
    function submit_req(){
       var yes_no = confirm('Are you sure you want to save requirement expression?');
       if (yes_no == true) {
@@ -140,6 +166,7 @@
          document.getElementById("lock").innerHTML = "Expression Builder (unlocked)";
          
          $("#edit-functions").show();
+         document.getElementById("unlock").innerHTML = "Done"
          return false;
       }
 
@@ -147,6 +174,7 @@
          document.getElementById("main-expression").readOnly = true;
          document.getElementById("lock").innerHTML = "Expression Builder (locked)";
          $("#edit-functions").hide();
+         document.getElementById("unlock").innerHTML = "Edit"
          return true;
       }
    }

@@ -1,5 +1,12 @@
-{% extends "bz/base.html" %}
+{% extends "bz/core/base.html" %}
 {% block results %}
+<div class="container" style="font-family:Courier New">
+   {% load templatetags %}
+   {{ raw_data }}
+</div>
+
+{% comment %}
+<!--
 <div class="container">
    <h3>Total Bugs Checked: {{ total_checked }}</h3>
    <h3>Total Bugs Ignored: {{ total_ignored }}</h3>
@@ -179,20 +186,20 @@
                      </div> <!-- tab-pane -->
                      {% if bug.zstream|length > 0 %}
                         {% block zstream %}
-                           {% include "bz/zstream.html" %}
+                           {% include "bz/results/zstream.html" %}
                         {% endblock %}
                      {% endif %}
 
                      {% block parent %}
-                        {% include "bz/parent.html" %}
+                        {% include "bz/results/parent.html" %}
                      {% endblock %}
 
                      {% block clone %}
-                        {% include "bz/clone.html" %}
+                        {% include "bz/results/clone.html" %}
                      {% endblock %}
 
                      {% block more_detials %}
-                        {% include "bz/more_detials.html" %}
+                        {% include "bz/results/more_detials.html" %}
                      {% endblock %}
 
                   </div><!-- tab-content -->
@@ -326,20 +333,20 @@
                      </div> <!-- tab-pane -->
                      {% if bug.zstream|length > 0 %}
                         {% block ignored-zstream %}
-                           {% include "bz/zstream.html" %}
+                           {% include "bz/results/zstream.html" %}
                         {% endblock %}
                      {% endif %}
 
                      {% block ingored-parent %}
-                        {% include "bz/parent.html" %}
+                        {% include "bz/results/parent.html" %}
                      {% endblock %}
 
                      {% block ignored-clone %}
-                        {% include "bz/clone.html" %}
+                        {% include "bz/results/clone.html" %}
                      {% endblock %}
 
                      {% block ignored-more_detials %}
-                        {% include "bz/more_detials.html" %}
+                        {% include "bz/results/more_detials.html" %}
                      {% endblock %}
                   </div>
                </div>
@@ -473,20 +480,20 @@
                      </div> <!-- tab-pane -->
                      {% if bug.zstream|length > 0 %}
                         {% block passed-zstream %}
-                           {% include "bz/zstream.html" %}
+                           {% include "bz/results/zstream.html" %}
                         {% endblock %}
                      {% endif %}
 
                      {% block passed-parent %}
-                        {% include "bz/parent.html" %}
+                        {% include "bz/results/parent.html" %}
                      {% endblock %}
 
                      {% block passed-clone %}
-                        {% include "bz/clone.html" %}
+                        {% include "bz/results/clone.html" %}
                      {% endblock %}
 
                      {% block passed-more_detials %}
-                        {% include "bz/more_detials.html" %}
+                        {% include "bz/results/more_detials.html" %}
                      {% endblock %}
                   </div>
                </div>
@@ -496,4 +503,6 @@
       {% endfor %}
    </div>
 </div>
+-->
+{% endcomment %}
 {% endblock %}

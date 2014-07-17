@@ -1,0 +1,42 @@
+{% load templatetags %}
+
+<div class="tab-pane" id="{{ tools.name }}-configure">
+   <div class="row">
+      <div class="col-md-12">
+         <p>Configure Page</p>
+      </div>
+   </div>
+</div> 
+<div class="tab-pane" id="{{ tools.name }}-raw-data">
+   <div class="row">
+      <div class="col-md-12">
+         <pre>{{ tools|json }}</pre>
+      </div>
+   </div>
+</div>
+<div class="tab-pane" id="{{ tools.name }}-add-group">
+   <div class="row">
+      <form method="post" id="myform">{% csrf_token %}
+      <div class="col-md-12">
+         <div class="row" style="padding: 5px">
+            <div class="col-md-12">
+               <label for="name">Group Name</label>
+               <input id="name" name="name" type="text" class="form-control input-md">
+            </div>
+            <br />
+
+            <div class="col-md-12">
+               <label for="description">Description</label>
+               <textarea class="form-control" name="description" id="description" rows="2"></textarea>
+            </div>
+         </div>
+         <br />
+         <div class="row">
+            <div class="col-md-12">
+               <button id="submit" name="add_group" value="{{ tools.group_id }}" 
+                  type="submit" class="btn btn-warning">Submit</button>
+            </div>
+         </div> 
+      </div> 
+   </div> 
+</div> 

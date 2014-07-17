@@ -1,0 +1,24 @@
+<div class="tab-pane active" id="{{ details.name }}-details">
+   <div class="row">
+      <div class="col-md-12">
+         {% if details.expression != "" %}
+            <div class="row">
+               <div class="col-md-10">
+                  <label for="{{details.name }}">Requirement Expression</label>
+                  <textarea class="form-control" style="resize:vertical" 
+                     id="{{ details.name }}-req-expression" 
+                     readonly>{{ details.expression }}</textarea>
+               </div>
+               <div class="col-md-2" align="left" style="margin-top:24px; padding:0px">
+                  <form method="post">{% csrf_token %}
+                     <button class="btn btn-primary" type="submit" name="add_req" 
+                        value="{{ details.group_id }}">
+                        <span class="glyphicon glyphicon-edit"></span> Edit</button>
+                     <input type="hidden" name="req_type" value="product">
+                  </form>
+               </div>
+            </div>
+         {% endif %}      
+      </div>
+   </div>
+</div> 

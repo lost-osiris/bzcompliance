@@ -1,0 +1,35 @@
+<div class="tab-pane" id="{{ message.name }}-messages">
+<br />
+   <div class="row">
+      <div class="col-md-10">
+         <h3>Messages</h3>
+      </div>
+      <div class="col-md-2">
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-md-12">
+         <table class="table table-hover">
+            <tr>
+               <th>Name</th>
+               <th>Message Description</th>
+               <th>Type</th>
+               <th>Expression</th>
+               <th></th>
+            </tr>
+            {% for i in message.messages %}
+               <tr>
+                  <td width="15%">{{ i.name }}</td>
+                  <td>{{ i.description }}</td>
+                  <td>{{ i.type }}</td>
+                  <td>{{ i.expression }}</td>
+                  <td align="right">
+                     <button class="btn btn-default">
+                        <span class="glyphicon glyphicon-edit"></span> Edit</button>
+                  </td>
+               </tr>
+            {% endfor %} 
+         </table>
+      </div>
+   </div>
+</div>

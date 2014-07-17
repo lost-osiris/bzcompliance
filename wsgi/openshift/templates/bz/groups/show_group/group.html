@@ -1,4 +1,5 @@
 {% block group %}
+   {% load templatetags %}
    <div class="container">
       <style>
          button.add-message {
@@ -27,147 +28,183 @@
          <input type="hidden" name="add_req" value="{{ group.group_id }}">
       </form>
 
+      <h1>{{ group.name }}</h1>
+
       <div class="row">
          <div class="col-md-12">
-            <dl class="dl-horizontal">
-               <dt><h1>{{ group.group_name }}</h1></dt>
-               <dd>{{ group.description}}</dd>
-            </dl>
+            <ul class="nav nav-tabs" role="tablist">
+               <li class="active">
+                  <a href="#{{ group.name }}" data-toggle="tab" role="tab">Details</a>
+               </li>
+               {% if "messages" in group %}
+                  <li><a role="tab" data-toggle="tab" href="#messages">Messages</a></li>
+               {% endif %}
+               {% if "groups" in group %}
+                  <li><a role="tab" data-toggle="tab" href="#groups">Groups</a></li>
+               {% endif %}
+               <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools</a>
+                  <ul class="dropdown-menu" role="menu">
+                     {% if "req" in gorup %}
+                        <li><a onclick="document.getElementById('add-requirement').submit();" 
+                           role="tab" data-toggle="tab" href="#">Add Requirement</a></li>
+                     {% else %}
+                        <li><a onclick="document.getElementById('edit-requirement').submit();" 
+                           role="tab" data-toggle="tab" href="#">Edit Requirement</a></li>
+                     {% endif %}
+                     <li><a onclick="document.getElementById('add_message').submit();" 
+                        role="tab" data-toggle="tab" href="#">Add Message</a></li>
+                     <li><a role="tab" data-toggle="tab" href="#add-group">Add Group</a></li>
+                     <li><a role="tab" data-toggle="tab" href="#raw-data">Raw Group Data</a></li>
+                  </ul>
+               </li>
+             <ul>        
          </div>
       </div>
-      <div class="row">
-         <div class="col-md-12">
-            {% if "req" in group %}
-               <div class="row">
-                  <div class="col-md-10">
-                     <label for="{{ group.group_name }}">Requirement Expression</label>
-                     <textarea class="form-control" style="resize:vertical" 
-                        id="{{ group.group_name }}-req-expression" 
-                        readonly>{{ group.req.expression }}</textarea>
-                  </div>
-                  <div class="col-md-2" align="left" style="margin-top:24px; padding:0px">
-                     <button class="btn btn-primary" type="submit" name="add_req" 
-                        onclick="document.getElementById('edit-requirement').submit();">
-                        <span class="glyphicon glyphicon-edit"></span> Edit</button>
-                  </div>
-               </div>
 
-               <br />
+      <div class="tab-content">
+         <div class="tab-pane" id="raw-data">
+            <pre>{{ group|json }}</pre>
+         </div>
 
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="btn-group">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#addgroup-modal">Add Group</button>
-                        <button onclick="document.getElementById('add_message').submit();" 
-                           class="btn btn-primary" name="add_req" 
-                           value="{{ group.group_id }}">
-                           Add Message
-                        </button>
-                     </div>
-                  </div>
-               </div>
-            {% else %}
-               <div class="row">
-                  <div class="col-md-12" align="left">
-                     <div class="btn-group">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#addgroup-modal">Add Group</button>
-                        <button onclick="document.getElementById('add_message').submit();" 
-                           class="btn btn-primary" name="add_req" 
-                           value="{{ group.group_name }}">
-                           Add Message
-                        </button>
-                        <button class="btn btn-primary" onclick="document.getElementById('add-requirement').submit();">Add Requirment</button>
-                     </div>
-                  </div>
-               </div>
+         <div class="tab-pane active" id="{{ group.name }}">
+            {% if "description" in group %}
+               <dl class="dl-horizontal">
+                  <dt><h3>Description</h3></dt>
+                  <dd>{{ group.description}}</dd>
+               </dl>
             {% endif %}
-         </div>
-      </div>
+            <br />
 
+            <div class="row">
+               <div class="col-md-3">
+                  <dl class="dl-horizontal">
+                     <dt style="width:auto">Active:</dt>
+                     <dd>{{ group.isActive }}</dd>
+                  </dl>
+               </div>
+            </div>
 
-      {% if "messages" in group %}
-         <div class="row">
-            <div class="col-md-10">
-               <h3>Messages</h3>
-            </div>
-            <div class="col-md-2">
-            </div>
-         </div>
-         <div class="row">
-            <div class="col-md-12">
-               <table class="table">
-                  <tr>
-                     <th>Name</th>
-                     <th>Description</th>
-                     <th>Type</th>
-                     <th>Expression</th>
-                  </tr>
-               </table>
-            </div>
-         </div>
-      {% endif %}
+            <br />
 
-
-      {% if "groups" in group %}
-         <div class="row">
-            <div class="col-md-10">
-               <h3>Groups</h3>
-            </div>
-            <div class="col-md-2">
-            </div>
-         </div>
-         <div class="row">
-            <div class="col-md-12">
-               <table class="table table-striped">
-                  <thead>
-                     <tr>
-                        <th>Group Name</th>
-                        <th>Attached Groups</th>
-                        <th>Description</th>
-                        <th>Expression</th>
-                     </tr>
-                  </thead>
-                  {% for i in group.groups %}
-                     <tr>
-                        <td>{{ i.group_name }}</td>
-                        <td>{{ i.groups }}</td>
-                        <td>{{ i.description }}</td>
-                        <td>{{ i.expression }}</td>
-                     </tr>
-                  {% endfor %}
-
-               </table>
-            </div>
-         </div>
-      {% endif %}
- 
-   </div>
-   <div class="modal fade" id="addgroup-modal">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-               <h4 class="modal-title">Add Group</h4>
-            </div>
-            <div class="modal-body">
-               <div class="row">
-                  <form method="post" id="myform">{% csrf_token %}
-                  <div class="col-md-12">
-                     <div class="row" style="padding: 5px">
-                        <div class="col-md-12">
-                           <label for="name">Group Name</label>
-                           <input id="name" name="group_name" type="text" class="form-control input-md">
+            <div class="row">
+               <div class="col-md-12">
+                  {% if "req" in group %}
+                     <div class="row">
+                        <div class="col-md-10">
+                           <label for="{{ group.name }}">Requirement Expression</label>
+                           <textarea class="form-control" style="resize:vertical" 
+                              id="{{ group.name }}-req-expression" 
+                              readonly>{{ group.req.expression }}</textarea>
+                        </div>
+                        <div class="col-md-2" align="left" style="margin-top:24px; padding:0px">
+                           <button class="btn btn-primary" type="submit" name="add_req" 
+                              onclick="document.getElementById('edit-requirement').submit();">
+                              <span class="glyphicon glyphicon-edit"></span> Edit</button>
                         </div>
                      </div>
+                  {% endif %}
+               </div>
+            </div>
+         </div>
+
+         {% if "messages" in group %}
+            <div class="tab-pane" id="messages">
+            <br />
+               <div class="row">
+                  <div class="col-md-10">
+                     <h3>Messages</h3>
+                  </div>
+                  <div class="col-md-2">
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-12">
+                     <table class="table table-hover">
+                        <tr>
+                           <th>Name</th>
+                           <th>Message Description</th>
+                           <th>Type</th>
+                           <th>Expression</th>
+                           <th></th>
+                        </tr>
+                        {% for i in group.messages %}
+                           <tr>
+                              <td width="15%">{{ i.name }}</td>
+                              <td>{{ i.description }}</td>
+                              <td>{{ i.type }}</td>
+                              <td>{{ i.req.expression }}</td>
+                              <td align="right">
+                                 <button class="btn btn-default">
+                                    <span class="glyphicon glyphicon-edit"></span> Edit</button>
+                              </td>
+                           </tr>
+                        {% endfor %} 
+                     </table>
                   </div>
                </div>
             </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-               <button id="submit" name="add_group" value="{{ i.group_name }}" type="submit" class="btn btn-warning">Submit</button>
-               </form>
+         {% endif %}
+         {% if "groups" in group %}
+            <div class="tab-pane" id="groups">
+            <br />
+               <div class="row">
+                  <div class="col-md-10">
+                     <h3>Groups</h3>
+                  </div>
+                  <div class="col-md-2">
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-12">
+                     <table class="table table-striped">
+                        <thead>
+                           <tr>
+                              <th>Group Name</th>
+                              <th>Attached Groups</th>
+                              <th>Description</th>
+                              <th>Expression</th>
+                           </tr>
+                        </thead>
+                        {% for i in group.groups %}
+                           <tr>
+                              <td><a href="/showgroup/{{ i.group_id }}/">{{ i.name }}</a></td>
+                              <td>{{ i.groups }}</td>
+                              <td>{{ i.description }}</td>
+                              <td>{{ i.req.expression }}</td>
+                           </tr>
+                        {% endfor %}
+
+                     </table>
+                  </div>
+               </div>
             </div>
+         {% endif %}
+         <div class="tab-pane" id="add-group">
+            <br />
+            <form method="post" id="myform">{% csrf_token %}
+               <div class="row">
+                  <div class="col-md-12">
+                     <label for="name">Group Name</label>
+                     <input id="name" name="name" type="text" class="form-control input-md">
+                  </div>
+               </div>   
+               <br />
+               <div class="row">
+                  <div class="col-md-12">
+                     <label for="description">Description</label>
+                     <textarea class="form-control" name="description" id="description" rows="2"></textarea>
+                  </div>
+               </div>
+               <br />
+               <div class="row">
+                  <div class="col-md-12">
+                     <button id="submit" name="add_group" 
+                        value="{{ i.name }}" type="submit" 
+                        class="btn btn-warning">Submit</button>
+                  </div>
+               </div>
+            </form>
          </div>
-      </div><!-- /.modal-content -->
+      </div>
    </div>
 {% endblock %}

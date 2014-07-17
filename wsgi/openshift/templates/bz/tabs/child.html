@@ -1,0 +1,13 @@
+{% if node.groups|length > 0 %}
+   <li class="dropdown-submenu"><a tabindex="-1" href="/showgroup/{{ node.group_id }}/">{{ node.name }}</a>
+      <ul class="dropdown-menu">
+         {% for child in node.groups %}
+            {% with node=child template_name="bz/tabs/child.html" %}
+               {% include template_name %}
+            {% endwith %}
+         {% endfor %}
+      </ul>
+   </li>
+{% else %}
+   <li><a href="/showgroup/{{ node.group_id }}/">{{ node.name }}</a></li>
+{% endif %}

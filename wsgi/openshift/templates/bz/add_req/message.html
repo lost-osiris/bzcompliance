@@ -1,0 +1,35 @@
+{% block message %}
+
+   <form method="post" id="submit-message">
+      <input name="description" type="hidden" id="submit-message-description">
+      <input name="message_name" type="hidden" id="submit-message-name">
+      <input name="message_type" type="hidden" id="submit-message-type">
+      <input name="expression" type="hidden" id="submit-message-main-expression">
+   </form>
+
+   <h3>Add Message</h3>
+      <div class="row">
+         <div class="col-md-4">
+            <label for="message-name">Message Name</label>
+            <input class="form-control" id="message-name" name="message_name" placeholder="Message Name">
+         </div>
+
+         <div class="col-md-4">
+            <label for="message-type">Type</label>
+            <select name="message_type" class="form-control" id="message-type">
+               <option selected value="problem">Problem</option>
+               <option value="warning">Warning</option>
+               <option value="notification">Notification</option>
+            </select>
+         </div>
+      </div>
+
+      <br />
+
+      <div class="row">
+         <div class="col-md-12">
+            <label for="message">Message</label>
+            <textarea id="message" name="description" class="form-control"></textarea>
+         </div>
+      </div>
+{% endblock %}

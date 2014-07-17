@@ -1,17 +1,14 @@
 {% block content %}
 
-<button class="btn btn-success" data-toggle="modal" 
-   data-target="#addgroup-modal">Add Group</button>
-<br />
 {% for group in product.groups %}
    <div class="row">
       <div class="col-md-12">
          <ol class="breadcrumb">
-            <li><a href="showgroup/{{ group.group_id }}">{{ group.group_name }}</a></li>
+            <li><a href="showgroup/{{ group.group_id }}">{{ group.name }}</a></li>
             {% for i in product.all_groups %}
-               {% if group.group_name == i.group.group_name and i.found_groups|length > 0 %}
+               {% if group.name == i.group.name and i.found_groups|length > 0 %}
                   {% for j in i.found_groups %}
-                     <li><a href="showgroup/{{ j.group_id }}">{{ j.group_name }}</a></li>
+                     <li><a href="showgroup/{{ j.group_id }}">{{ j.name }}</a></li>
                   {% endfor %}
                {% endif %} 
             {% endfor %}
@@ -21,7 +18,7 @@
    <br />
 {% endfor %}
 
-<div class="modal fade" id="addgroup-modal">
+<div class="modal fade" id="{{ product.name }}-addgroup-modal">
    <div class="modal-dialog">
       <div class="modal-content">
          <div class="modal-header">
@@ -35,7 +32,13 @@
                   <div class="row" style="padding: 5px">
                      <div class="col-md-12">
                         <label for="name">Group Name</label>
-                        <input id="name" name="group_name" type="text" class="form-control input-md">
+                        <input id="name" name="name" type="text" class="form-control input-md">
+                     </div>
+                     <br />
+
+                     <div class="col-md-12">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" name="description" id="description" rows="2"></textarea>
                      </div>
                   </div>
                </div>
@@ -43,7 +46,7 @@
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button id="submit" name="add_group" value="{{ product.product_name }}" type="submit" class="btn btn-warning">Submit</button>
+            <button id="submit" name="add_group" value="{{ product.name }}" type="submit" class="btn btn-warning">Submit</button>
             </form>
          </div>
       </div>

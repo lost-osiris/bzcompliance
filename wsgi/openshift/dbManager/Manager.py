@@ -27,66 +27,71 @@ class dbManager:
    def __parse_curser_object(self, curser):
       output = {}
 
-      if "req" in curser:
-         output['req'] = curser['req']
+      output['name'] = curser['name']
+      output['description'] = curser['description']
+      output['active'] = curser['active']
 
-      if "product_name" in curser:
-         output['product_name'] = curser['product_name']
-         output['id'] = curser['_id']
+      if "expression" in curser:
+         output['expression'] = curser['expression']
+      else:
+         output['expression'] = ""
 
-         if "groups" in curser:
-            output['groups'] = curser['groups']
-            output['all_groups'] = []
-            for i in output['groups']:
-               new = {}
-               new['group'] = i
-               new['found_groups'] =  self.__find_all_groups(i)
-               self.all_groups = []
-               output['all_groups'].append(new)
-               
-      if "group_name" in curser:
-         output['group_name'] = curser['group_name']
+      if "message_id" in curser:
+         output['message_id'] = curser['message_id']
+         output['message_type'] = curser['message_type']
+      else:
          output['group_id'] = curser['group_id']
- 
+         output['path'] = curser['path']
+         output['isProduct'] = curser['isProduct']
+
          if "groups" in curser:
-            output['groups'] = curser['groups']
+            groups = []
+            for i in curser['groups']:
+               groups.append(self.__parse_curser_object(self.get_group(i['group_id'])))
+            output['groups'] = groups
+         else:
+            output['groups'] = ""
+
+         if "messages" in curser:
+            messages = []
+            for i in curser['messages']:
+               messages.append(self.__parse_curser_object(self.get_message(i['message_id'])))
+            output['messages'] = messages
+         else:
+            output['messages'] = ""
 
       return output
       
-   
-   #all product functions
-   def get_product(self, product_name):
-      product = self.db.products.find_one({"product_name": product_name})
-      return self.__parse_curser_object(product)
+   def remove_group(self, group_id):
+      id = ObjectId(group_id)
+      group = self.db.groups.find_one({"group_id":id})
+      
+      for key,value in group.items():
+         if key == "req":
+            self.remove_req(value['req_id'])
+         if key == "groups":
+            for i in group[key]:
+               id = self.db.groups.find({"group_id":i['group_id']}).distinct("group_id")[0]
+               self.remove_group(id)
+         if key == "messages":
+            for i in group[key]:
+               id = self.db.messages.find({"_id": i['_id']}).distinct("_id")[0]
+               self.remove_message(id)
 
-   def add_product(self, product_name):
-      if self.db.products.find_one({"product_name":product_name}) == None:
-         self.db.products.insert({"product_name": product_name})
-         return True
-      return False
-   
-   def remove_product(self, product_name):
-      self.db.products.remove({"product_name": product_name})
+      self.db.remove({"group_id":id})
+
+   def remove_message(self, message_id):
+      id = ObjectId(message_id)
+      message = self.db.messages.find_one({"_id":id})
+      self.db.messages.remove({"_id":id})
 
    def find_all_products(self):
-      products = self.db.products.find()
+      groups = self.db.groups.find({"isProduct":True})
       output = []
 
-      for product in products:
-         output.append(self.__parse_curser_object(product))
+      for group in groups:
+         output.append(self.__parse_curser_object(group))
 
-      return output
-
-   def __find_all_groups(self, group):
-      id = ObjectId(group['group_id'])
-      new_group = self.db.groups.find_one({"group_id":id})
-
-      if "groups" in new_group:
-         for j in new_group['groups']:
-            self.all_groups.append(j)
-            self.__find_all_groups(j)
-
-      output = self.all_groups
       return output
 
    def get_group(self, group_id):
@@ -95,60 +100,84 @@ class dbManager:
       
       return self.__parse_curser_object(group)
 
-   def add_group_to_product(self, group_name, product_name):
+   def get_message(self, message_id):
+      id = ObjectId(message_id)
+      message = self.db.messages.find_one({"message_id":id})
+      
+      return self.__parse_curser_object(message)
+
+   def add_group(self, group_name, description = None, isProduct = None):
       group_id = ObjectId()
-      self.db.groups.insert({"group_id":group_id, "group_name":group_name})
+      product = False
 
-      self.db.products.update({"product_name": product_name},
-         {"$push" : {"groups": { "$each":
-                                 [{"group_id": group_id, "group_name":group_name}]
-                               }   
-                    }   
-         }) 
+      if isProduct == True:
+         product = True
+      
+      if description == None:
+         description = ""
 
-   def add_group_to_group(self, parent_id, group_name):
+      group = {
+         "group_id": group_id,
+         "name": group_name,
+         "description": description,
+         "active":False,
+         "isProduct": product,
+         "path": str(group_name + "/"),
+      }
+
+      self.db.groups.insert(group)
+
+   def add_group_to_group(self, parent_id, group_name, description = None, isProduct = None):
       new_id = ObjectId()
       id = ObjectId(parent_id)
-      self.db.groups.insert({"group_id": new_id, "parent_group":id, "group_name": group_name})
+      product = False
+      
+      if isProduct == True:
+         product = True
+
+      if description == None:
+         description = ""
+
+      parent = self.get_group(parent_id)
+      
+      group = {
+         "group_id": new_id,
+         "name": group_name,
+         "parent_group": id,
+         "description": description,
+         "active":False,
+         "isProduct": product,
+         "path": str(parent['path'] + group_name + "/")
+      }
+
+      self.db.groups.insert(group)
 
       self.db.groups.update({"group_id": id},
          {"$push" : {"groups": { "$each":
-                                 [{"group_id": new_id, "parent_group": id, "group_name":group_name}]
+                                 [{"group_id":new_id}]
                               }
                      }
          })
 
-   def add_req(self, req_name, group, type, expression):
-      if type == "group":
+   def add_req(self, group, type, expression, message = None):
+      if type == "group" or type == "product":
+         id = ObjectId(group['group_id'])
+         self.db.groups.update({"group_id":id}, {"$set": {"expression":expression}}) 
+
+      if type == "message":
          new_id = ObjectId()
-         group = self.get_group(group)
-         id = ObjectId(group['id'])
+         group_id = ObjectId(group['group_id'])
+         message['message_id'] = new_id
+         message['parent_id'] = group_id
+         message['expression'] = expression
+         message['active'] = False
 
-         req = {
-            "req_name": req_name,
-            "parent_id": id,
-            "req_id": new_id,
-            "expression": expression,
-         }
-
-         self.db.groups.update({"group_id":id}, {"$set": {"req":req}}) 
-
-      if type == "product":
-         new_id = ObjectId()
-         product = self.get_product(group)
-         id = ObjectId(product['id'])
+         self.db.messages.insert(message)
          
-         req = {
-            "req_name": req_name,
-            "parent_id": id,
-            "req_id": new_id,
-            "expression": expression,
-         }
-
-         self.db.products.update({"product_name":group}, {"$set": {"req":req}}) 
-
-      if self.db.reqs.find_one({"req_name":req_name}) == None:
-         self.db.reqs.insert(req)
-      else:
-         self.db.reqs.update({"req_name":req_name}, req)
-
+         self.db.groups.update({"group_id": group_id},
+            {"$push" : {"messages": { "$each":
+                                    [{"message_id":new_id}]
+                                 }
+                        }
+            })
+ 
