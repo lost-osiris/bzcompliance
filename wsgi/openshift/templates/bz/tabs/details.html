@@ -1,24 +1,39 @@
-<div class="tab-pane active" id="{{ details.name }}-details">
+{% block content %}
+   {% if "description" in details and details.description != ""%}
+      <div class="row">
+         <div class="col-md-12">
+            <dl class="dl-horizontal">
+              <dt>Description</dt>
+              <dd>{{ details.description }}</dd>
+            </dl>
+         </div>
+      </div>
+      <br />
+   {% endif %}
+
    <div class="row">
       <div class="col-md-12">
-         {% if details.expression != "" %}
-            <div class="row">
-               <div class="col-md-10">
-                  <label for="{{details.name }}">Requirement Expression</label>
-                  <textarea class="form-control" style="resize:vertical" 
-                     id="{{ details.name }}-req-expression" 
-                     readonly>{{ details.expression }}</textarea>
-               </div>
-               <div class="col-md-2" align="left" style="margin-top:24px; padding:0px">
-                  <form method="post">{% csrf_token %}
-                     <button class="btn btn-primary" type="submit" name="add_req" 
-                        value="{{ details.group_id }}">
-                        <span class="glyphicon glyphicon-edit"></span> Edit</button>
-                     <input type="hidden" name="req_type" value="product">
-                  </form>
-               </div>
+         <div class="row">
+            <div class="col-md-10">
+               <label for="{{details.name }}">Requirement Expression</label>
+               <textarea class="form-control" style="resize:vertical" 
+                  id="{{ details.name }}-req-expression" 
+                  readonly>{{ details.expression }}</textarea>
             </div>
-         {% endif %}      
+            <div class="col-md-2" align="left" style="margin-top:24px; padding:0px">
+               <form id="{{ details.group_id }}-edit" method="post" style="width:0px; height:0px">
+                  <input type="hidden" name="add_req" value="{{ details.group_id }}">
+                  <input type="hidden" name="req_type" value="group">
+                  <input type="hidden" name="edit" value="{{ details.group_id }}">
+               </form>
+
+               <button class="btn btn-primary" 
+                  onclick="document.getElementById('{{ details.group_id }}-edit').submit();">
+                     <span class="glyphicon glyphicon-edit"></span> Edit</button>
+                  <input type="hidden" name="req_type" value="product">
+            </div>
+
+         </div>
       </div>
    </div>
-</div> 
+{% endblock %}

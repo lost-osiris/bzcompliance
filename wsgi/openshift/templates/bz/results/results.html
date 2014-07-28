@@ -2,8 +2,22 @@
 {% block results %}
 <div class="container" style="font-family:Courier New">
    {% load templatetags %}
+   {{ output }}
+</div>
+<br />
+<br />
+<div class="container" style="font-family:Courier New">
+   {% load templatetags %}
    {{ raw_data }}
 </div>
+<br />
+<br />
+<div class="container" style="font-family:Courier New">
+   {% load templatetags %}
+   <pre>{{ built_structer|json }}</pre>
+</div>
+<br />
+<br />
 
 {% comment %}
 <!--

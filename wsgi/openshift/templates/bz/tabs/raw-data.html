@@ -1,0 +1,9 @@
+{% block content %}
+   {% load templatetags %}
+   <br />
+   <div class="row">
+      <div class="col-md-12">
+         <pre>{{ raw_data|json }}</pre>
+      </div>
+   </div>
+{% endblock %}

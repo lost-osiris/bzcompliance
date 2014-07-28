@@ -1,80 +1,216 @@
 {% block content %}
-
    {% load templatetags %}
+   <style>
+      @-moz-document url-prefix() {
+         .list-group .list-group {
+            margin: 0;
+            margin-top: -25px;
+         }
+      }
+      .table > tbody > tr > td {
+         vertical-align:middle;
+      }
+      
+      #accordion .glyphicon { 
+         margin-right:10px; 
+      }
 
-   {% if product.messages != "" %}
-      {% load_nav "messages" product as all_tabs %}
-   {% endif %}
+      .panel-collapse>.list-group .list-group-item:first-child {
+         border-top-right-radius: 0;
+         border-top-left-radius: 0;
+      }
 
-   {% if product.groups != "" %}
-      {% load_nav "groups" product as all_tabs %}
-   {% endif %}
+      .panel-collapse>.list-group .list-group-item {
+         border-width: 1px 0;
+      }
+      
+      .panel-collapse>.list-group {
+         margin-bottom: 0; 
+      }
 
-   {% load_nav "details" product as all_tabs %}
+      .panel-collapse .list-group-item {
+         border-radius:0;
+      }
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+         .panel-collapse .list-group .list-group {
+            margin: 0;
+            margin-top: -11px;
+         }
+      }
 
-   {% load_nav "tools" product as all_tabs %}
+      .panel-collapse .list-group-item li.list-group-item {
+         margin: 0 -15px;
+         border-top: 1px solid #ddd;
+         border-bottom: 0;
+         padding-left: 30px;
+      }
 
-   <form style="width:0px; height:0px; padding:0px; margin:0px" method="post" id="{{ product.name }}-req">
-      <input type="hidden" name="add_req" value="{{ product.group_id }}">
-      <input type="hidden" name="req_type" value="product">
-   </form>
+      .panel-collapse .list-group-item li.list-group-item:last-child {
+         padding-bottom: 0;
+      }
 
-   <form style="width:0px; height:0px; padding:0px; margin:0px" method="post" id="{{ product.name }}-message">
-      <input type="hidden" name="add_req" value="{{ product.group_id }}">
-      <input type="hidden" name="req_type" value="message">
-   </form>
+      .panel-collapse div.list-group div.list-group{
+         margin: 0;
+      }
 
-   <ul class="nav nav-tabs">
-      {% for i in all_tabs %}
-         {% if i == "messages" %}
-            <li><a role="tab" data-toggle="tab" href="#{{ product.name }}-messages">Messages</a></li>
-         {% endif %}
+      .panel-collapse div.list-group .list-group a.list-group-item {
+         border-top: 1px solid #ddd;
+         border-bottom: 0;
+         padding-left: 30px;
+      }
 
-         {% if i == "groups" %}
-            {% build_nav "groups" product %}
-         {% endif %}
+      .expand-all {
+         color: #999;
+         text-decoration: none;
+         cursor: pointer;
+         font-size: 16px;
+      }
 
-         {% if i == "details" %}
-            <li class="active">
-               <a role="tab" data-toggle="tab" href="#{{ product.name}}-details">Details</a>
-            </li>
-         {% endif %} 
-         {% if i == "tools"  %}
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools</a>
-               <ul class="dropdown-menu">
-                  {% if product.expression == ""%}
-                     <li><a role="tab" data-toggle="tab" href="#" 
-                        onclick="add_req('{{ product.name }}-req');">
-                        Add Requirement</a></li>
-                  {% endif %}
-                  <li><a role="tab" data-toggle="tab" href="#{{ product.name }}-add-group">Add Group</a></li>
-                  <li><a role="tab" data-toggle="tab" href="#" 
-                     onclick="add_req('{{ product.name }}-message');">
-                     Add Message</a></li>
-                  <li><a role="tab" data-toggle="tab" href="#{{ product.name }}-configure">Configure</a></li>
-                  <li><a role="tab" data-toggle="tab" href="#{{ product.name }}-raw-data">Raw Data</a></li>
-               </ul>
-            </li>
-         {% endif %}
-      {% endfor %}
-   </ul> 
+      .expand-all:hover {
+         text-decoration: underline;
+      }
 
-   <div class="tab-content">
-      {% if "messages" in product %}
-         {% build_nav "messages" product %}
-      {% endif %}
+   </style>
 
-      {% if "groups" in product %}
-      {% endif %}
+   <div class="row">
+      <div class="col-md-3">
+         <div class="panel-group" id="accordion">
+            <div class="panel panel-info" style="background-color:#222;border-color: #080808;">
+               <div class="panel-heading" style="background-color:#222;border-color: #080808;">
+                  <div class="panel-title">
+                    <div class="row">
+                        <div class="col-md-6"> 
+                           <h4 style="color: #999" class="panel-title">
+                              Navigation
+                           </h4>
+                        </div>
+                        <div class="col-md-6" style="margin: 0px; text-align:right"> 
+                           <div class="collapse-all">
+                              <span class="expand-all" id="collapse-init">Collapse All</span>
+                           </div>
+                           <div class="retrack-all">
+                              <span class="expand-all" id="retrack-init">Collapse All</span>
+                           </div>
+                        </div>
+                     </div>
+                        <script>
+                           $('.retrack-all').hide();
+                           $(function () {
+                               $('#collapse-init').click(function () {
+                                 $('.panel-collapse').each(function(){
+                                     if (!$(this).hasClass('in')) {
+                                         $(this).collapse('toggle');
+                                     }
+                                 });
+                                 $('.collapse-all').hide();
+                                 $('.retrack-all').show();
+                              });
+                               $('#retrack-init').click(function () {
+                                 $('.panel-collapse').each(function(){
+                                     if (!$(this).hasClass('out')) {
+                                       if (!$(this).hasClass('first')) $(this).collapse('toggle');
+                                     }
+                                 });
+                                 $('.retrack-all').hide();
+                                 $('.collapse-all').show();
+                              });
+                           });
+                        </script>
+                  </div>
+               </div>
+               {% for product in products %}
+                  <div class="panel-collapse collapse in first">
+                        <ul class="list-group">
+                           <li class="list-group-item">
+                              <h4>
+                                 <a style="color:#999" class="panel-toggle" data-toggle="collapse" 
+                                    href="#{{ product.group_id }}-first">
+                                    {{ product.name }} 
+                                 </a>
+                              </h4> 
+                           </li>
+                           <div class="panel-collapse collapse" id="{{ product.group_id }}-first">
+                              <li class="list-group-item">
+                                 <a  class="panel-toggle" data-toggle="collapse" 
+                                    data-parent="#{{ node.group_id }}-parent" 
+                                    onclick="display_content('{{ product.group_id }}-group-content');"
+                                    href="#">Dashboard
+                                 </a>
+                              </li>
+                              <li class="list-group-item">
+                                 <a onclick="display_content('{{ product.group_id }}-messages');" href="#">
+                                    Messages
+                                 </a>
+                              </li>
+                              <li class="list-group-item">
+                                 <a class="panel-toggle" data-toggle="collapse" 
+                                    href="#{{ product.group_id }}-parent-groups">Groups</a>
+                              </li>
+                              <div class="panel-collapse collapse" id="{{ product.group_id }}-parent-groups" 
+                                 data-parent="#{{ product.group_id }}-parent">
+                                 <li class="list-group-item">
 
-      {% build_nav "details" product %}
+                                    <ul class="list-group firefox-error" role="tablist">
+                                       {% for node in product.groups %}
+                                          {% include "bz/tabs/child.html" %}
+                                       {% endfor %}
+                                    </ul>
+                                 </li>
+                              </div>
+                           </div>
+                        </ul>
+                  </div>
+               {% endfor %}
+            </div>
+         </div>
+      </div>
+      <div class="col-md-9">
+         <div id="main-content">
+            {% for product in products %} 
 
-      {% build_nav "tools" product %}
+               {% with node=product template_name="bz/tabs/content.html" %}
+                  {% include template_name %}
+               {% endwith %}
+
+               {% for node in product.groups %}
+                  {% include "bz/tabs/loop.html" %}
+               {% endfor %}
+
+               {% if forloop.first %}
+                  <script>
+                     var current = "{{ product.group_id }}-group-content";
+                     document.getElementById(current).style.display = "block";
+                  </script>
+               {% endif %} 
+            {% endfor %}
+         </div>
+      </div>
    </div>
-
    <script>
+
       function add_req(id){
          document.getElementById(id).submit();
       }
+      
+      function show_content(id) {
+         document.getElementById(id).style.display = "block";
+      }
+      function hide_content(id) {
+         document.getElementById(id).style.display = "none";
+      }
+      function display_content(id) {
+         hide_content(current);
+         current = id;
+         show_content(current);
+      }
+      function add_variable(id) {
+         value = document.getElementById(id + "-value").value;
+         name = document.getElementById(id + "-name").value;
+         description = document.getElementById(id + "-description").value;
+         document.getElementById(id + "-add-variable-name").value = name;
+         document.getElementById(id + "-add-variable-value").value = value;
+         document.getElementById(id + "-add-variable-description").value = description;
+         document.getElementById(id + "-add-variable").submit();
+      }
    </script>
-{% endblock %} 
+{% endblock %}

@@ -1,0 +1,93 @@
+{% block content %}
+
+   {% load templatetags %}
+
+   {% if "messages" in product %}
+      {% load_nav "messages" product as all_tabs %}
+   {% endif %}
+
+   {% if "groups" in product %}
+      {% load_nav "groups" product as all_tabs %}
+   {% endif %}
+
+   {% load_nav "details" product as all_tabs %}
+
+   {% load_nav "tools" product as all_tabs %}
+
+   {% load_nav "groups-test" product as all_tabs %}
+
+   <form style="width:0px; height:0px; padding:0px; margin:0px;" method="post"
+      id="{{ product.group_id }}-remove-group">
+      <input type="hidden" name="remove_group" id="{{ product.group_id }}-remove-group-input">
+   </form>
+
+   <form style="width:0px; height:0px; padding:0px; margin:0px" method="post" id="{{ product.group_id }}-req">
+      <input type="hidden" name="add_req" value="{{ product.group_id }}">
+      <input type="hidden" name="req_type" value="product">
+   </form>
+
+   <form style="width:0px; height:0px; padding:0px; margin:0px" method="post" id="{{ product.group_id }}-message">
+      <input type="hidden" name="add_req" value="{{ product.group_id }}">
+      <input type="hidden" name="req_type" value="message">
+   </form>
+
+   <ul class="nav nav-tabs">
+      {% for i in all_tabs %}
+         {% if i == "groups-test" %}
+            <li><a role="tab" data-toggle="tab" href="#{{ product.group_id }}-groups-test">Group Test</a></li>
+         {% endif %}
+
+         {% if i == "messages" %}
+            <li><a role="tab" data-toggle="tab" href="#{{ product.group_id }}-messages">Messages</a></li>
+         {% endif %}
+
+         {% if i == "groups" %}
+            {% build_nav "groups" product %}
+         {% endif %}
+
+         {% if i == "details" %}
+            <li class="active">
+               <a role="tab" data-toggle="tab" href="#{{ product.group_id}}-details">Details</a>
+            </li>
+         {% endif %} 
+         {% if i == "tools"  %}
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools</a>
+               <ul class="dropdown-menu">
+                  {% if product.expression == ""%}
+                     <li><a role="tab" data-toggle="tab" href="#" 
+                        onclick="add_req('{{ product.group_id }}-req');">
+                        Add Requirement</a></li>
+                  {% endif %}
+                  <li><a role="tab" data-toggle="tab" href="#{{ product.group_id }}-add-group">Add Group</a></li>
+                  <li><a role="tab" data-toggle="tab" href="#{{ product.group_id }}-remove-group-pane">Remove Group</a></li>
+                  <li><a role="tab" data-toggle="tab" href="#" 
+                     onclick="add_req('{{ product.group_id }}-message');">
+                     Add Message</a></li>
+                  <li><a role="tab" data-toggle="tab" href="#{{ product.group_id }}-configure">Configure</a></li>
+                  <li><a role="tab" data-toggle="tab" href="#{{ product.group_id }}-raw-data">Raw Data</a></li>
+               </ul>
+            </li>
+         {% endif %}
+      {% endfor %}
+   </ul> 
+
+   <div class="tab-content">
+      {% if "messages" in product %}
+         {% build_nav "messages" product %}
+      {% endif %}
+
+      {% if "groups" in product %}
+      {% endif %}
+
+      {% build_nav "details" product %}
+
+      {% build_nav "tools" product %}
+      {% build_nav "groups-test" product %}
+   </div>
+
+   <script>
+      function add_req(id){
+         document.getElementById(id).submit();
+      }
+   </script>
+{% endblock %} 

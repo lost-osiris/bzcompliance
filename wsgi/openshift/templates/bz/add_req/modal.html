@@ -30,11 +30,17 @@
                   <div class="col-md-5">               
                      <label for="function">Function Type</label>
 
-                     <select id="{{ requirement_type }}-function" class="form-control"
-                        onchange="modal_expression('{{ requirement_type }}');">
-                        <option selected value="matches">Matches</option>
+                     <select id="{{ requirement_type }}-function" class="form-control">
+                        <option value="matches">Matches</option>
                      </select>      
                   </div>
+                  <div class="col-md-2" style="margin-top:25px;">
+                     <button id="{{ requirement_type.split|join:"_" }}-addreq" 
+                        class="btn btn-default"
+                        onclick="modal_expression('{{ requirement_type.split|join:"_" }}');">
+                        Add
+                     </button>
+                  </div> 
                {% endif %}
 
                {% if requirement_type == "Resolution" %}
@@ -57,15 +63,20 @@
                         <option value="insufficient_data">INSUFFICIENT_DATA</option>
                      </select>
                   </div>
-
                   <div class="col-md-5">               
                      <label for="function">Function Type</label>
 
-                     <select id="{{ requirement_type }}-function" class="form-control"
-                        onchange="modal_expression('{{ requirement_type }}');">
-                        <option selected value="matches">Matches</option>
+                     <select id="{{ requirement_type }}-function" class="form-control">
+                        <option value="matches">Matches</option>
                      </select>      
                   </div>
+                  <div class="col-md-2" style="margin-top:25px;">
+                     <button id="{{ requirement_type.split|join:"_" }}-addreq" 
+                        class="btn btn-default"
+                        onclick="modal_expression('{{ requirement_type.split|join:"_" }}');">
+                        Add
+                     </button>
+                  </div> 
                {% endif %}
                {% if requirement_type == "Severity" %}
                   <div class="col-md-5">
@@ -84,11 +95,17 @@
                   <div class="col-md-5">               
                      <label for="function">Function Type</label>
 
-                     <select id="{{ requirement_type }}-function" class="form-control"
-                        onchange="modal_expression('{{ requirement_type }}');">
-                        <option selected value="matches">Matches</option>
+                     <select id="{{ requirement_type }}-function" class="form-control">
+                        <option value="matches">Matches</option>
                      </select>      
                   </div>
+                  <div class="col-md-2" style="margin-top:25px;">
+                     <button id="{{ requirement_type.split|join:"_" }}-addreq" 
+                        class="btn btn-default"
+                        onclick="modal_expression('{{ requirement_type.split|join:"_" }}');">
+                        Add
+                     </button>
+                  </div> 
                {% endif %}
                {% if requirement_type == "Priority" %}
                   <div class="col-md-5">
@@ -107,12 +124,17 @@
                   <div class="col-md-5">               
                      <label for="function">Function Type</label>
 
-                     <select id="{{ requirement_type }}-function" class="form-control"
-                        onchange="modal_expression('{{ requirement_type }}');">
-                        <option selected></option>
+                     <select id="{{ requirement_type }}-function" class="form-control">
                         <option value="matches">Matches</option>
                      </select>      
                   </div>
+                  <div class="col-md-2" style="margin-top:25px;">
+                     <button id="{{ requirement_type.split|join:"_" }}-addreq" 
+                        class="btn btn-default"
+                        onclick="modal_expression('{{ requirement_type.split|join:"_" }}');">
+                        Add
+                     </button>
+                  </div> 
                {% endif %}
 
                {% if requirement_type in modal_input_boxes %}

@@ -1,52 +1,34 @@
 {% block content %}
-<div class="container">
-   <table class="table table-striped">
-      <thead>
-         <tr>
-            <th>Name</th>
-            <th>
-               <form action="/compliance">
-                  <button type="submit" class="btn btn-default" target="compliance">
-                  <span class="glyphicon glyphicon-refresh"></span> Refresh</button>
-               </form>
-            </th>
-            <th style="text-align:right; padding-right: 16px">
-               <button type="button" class="btn btn-success btn-sm"
-                  data-toggle="modal" data-target="#addproduct-modal">Add Product
-               </button>
-            </th>
-         </tr>
-      </thead>
-   </table>
-
-   {% for product in products %}
-      <div class="panel panel-default">
-         <div class="panel-heading">
-            <div class="row">
-               <div class="col-md-2" style="padding-top:3px">
-                  <h1 class="panel-title">
-                     <a data-toggle="collapse" href="#{{ product.name }}">{{ product.name }}</a>
-                  </h1>
-               </div>
-               <form method="post">{% csrf_token %}
-                  <div class="col-md-10" align="right">
-                     <button type="submit" value="{{ product.name }}" 
-                        id="submit" name="delete_product" class="btn btn-danger btn-sm">
-                        <span class="glyphicon glyphicon-remove"></span> Remove
-                     </button>
-                  </div>
-               </form>
-            </div>
-         </div>
-         <div id="{{ product.name }}" class="panel-collapse collapse">
-            <div class="panel-body">
-               {% include "bz/tabs/main.html" %}
-            </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <table class="table table-striped">
+               <thead>
+                  <tr>
+                     <th>Name</th>
+                     <form id="refresh" action="/compliance" style="padding:0px; margin:0px; height:0px; width:0px;">
+                     </form>
+                     <th style="text-align:center">
+                        <button class="btn btn-default" onclick="document.getElementById('refresh').submit();">
+                        <span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+                     </th>
+                     <th style="text-align:right; padding-right: 16px">
+                        <button type="button" class="btn btn-success btn-sm"
+                           data-toggle="modal" data-target="#addproduct-modal">Add Product
+                        </button>
+                     </th>
+                  </tr>
+               </thead>
+            </table>
          </div>
       </div>
-   {% endfor %}
 
+      <div class="row">
+         <div class="col-md-12">
+            {% include "bz/tabs/main.html" %}
+         </div>
+         {{ all_tabs }}
+      </div>
+   </div>
    {% include "bz/products/add_product.html" %}
-
-</div>
 {% endblock %}

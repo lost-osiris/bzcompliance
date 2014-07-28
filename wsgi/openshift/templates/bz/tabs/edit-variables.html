@@ -1,0 +1,151 @@
+{% block content %}
+   {% load templatetags %}
+   <br />
+   <div class="row">
+      <div class="col-md-10">
+         <h3>{{ variables.name }} - Edit Variables</h3>
+      </div>
+      <div class="col-md-2" style="text-align:right; padding-top:10px;">
+         <button class="btn btn-default" data-toggle="modal" data-target="#{{ variables.group_id }}-add-variable-modal">Add Variable</button>
+      </div>
+   </div>
+
+   {% with parent_id=variables.group_id var_values=variables.variable_values %}
+      {% include "bz/tabs/variables-values.html" %}
+   {% endwith %}
+
+   <div class="row">
+      <div class="col-md-12">
+         <table class="table table-hover">
+            <tr>
+               <th>Name</th>
+               <th>Value</th>
+               <th>Accessor</th>
+               <th></th>
+               <th></th>
+            </tr>
+            {% for i in variables.variable_values %}
+               <form id="{{ variables.group_id }}-{{ i.var_id }}-add-variable" 
+                  method="post" style="height:0px; width:0px">
+                  <input type="hidden" name="add_variable" value="{{ variables.group_id }}">
+                  <input type="hidden" name="name" 
+                     id="{{ variables.group_id }}-{{ i.var_id }}-add-variable-name">
+                  <input type="hidden" name="value" 
+                     id="{{ variables.group_id }}-{{ i.var_id }}-add-variable-value">
+               </form>
+
+               <form id="{{ variables.group_id }}-{{ i.var_id }}-remove" method="post" 
+                  style="width:0px; height:0px">
+                  <input type="hidden" name="remove_variable" value="{{ i.var_id }}">
+               </form>
+
+               <tr class="danger">
+                  <td width="35%">{{ i.name }}</td>
+                  <td>
+                     <a href="#" data-target="#{{ i.var_id }}-values-modal" data-toggle="modal">Show Values</a>
+                  </td>
+                  <td>@{{ i.name }}@</td>
+                  <td>
+                     <div class="row">
+                        <div class="col-md-6" style="text-align:right; margin-right:0px; padding-right:0px">
+                           <button class="btn btn-primary" data-toggle="modal"
+                              data-target="#{{ variables.group_id }}-edit-{{ i.var_id }}-variable-modal" >
+                              <span class="glyphicon glyphicon-edit"></span> Edit
+                           </button>
+                        </div>
+                        <div class="col-md-6" style="text-align:right; margin-left:0px; padding-left:0px;">
+                           <button class="btn btn-danger" 
+                              onclick="document.getElementById('{{ variables.group_id }}-{{ i.var_id }}-remove').submit();">
+                              <span class="glyphicon glyphicon-remove"></span> Remove</button>
+                        </div>
+                     </div>
+                  </td>     
+               </tr>  
+
+               <div class="modal fade" id="{{ variables.group_id }}-edit-{{ i.var_id }}-variable-modal">
+                  <div class="modal-dialog modal-lg">
+                     <div class="modal-content">
+                        <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal"          
+                              aria-hidden="true">
+                              &times;
+                           </button>
+                           <h4 class="modal-title">Edit Variable - "<i>{{ i.name }}</i>"</h4>
+                        </div> 
+                        <div class="modal-body">
+                           <div class="row">
+                              <div class="col-md-5">
+                                 <label for="#{{ variables.group_id }}-{{ i.var_id }}-name">
+                                    Variable Name
+                                 </label>
+                                 <input type="text" id="{{ variables.group_id }}-{{ i.var_id }}-name" 
+                                    class="form-control" name="name" value="{{ i.name }}">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           <button class="btn btn-warning" 
+                              onclick="add_variable('{{ variables.group_id }}-{{ i.var_id }}');">
+                              Submit
+                           </button>
+                        </div>
+                     </div>
+                  </div><!-- /.modal-content -->
+               </div><!-- /.modal-dialog -->
+
+            {% endfor %}
+         </table>
+      </div>
+   </div>
+   <div class="modal fade" id="{{ variables.group_id }}-add-variable-modal">
+      <div class="modal-dialog modal-lg">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"          
+                  aria-hidden="true">
+                  &times;
+               </button>
+               <h4 class="modal-title">Add New Variable - "<i>{{ variables.name }}</i>"</h4>
+            </div> 
+            <div class="modal-body">
+               <div class="row">
+                  <div class="col-md-6">
+                     <label for="{{ variables.group_id }}-name">Variable Name</label>
+                     <input type="text" id="{{ variables.group_id }}-name" class="form-control" name="name">
+                  </div>
+                  <div class="col-md-6">
+                     <label for="{{ variables.group_id }}-value">Variable Value</label>
+                     <input type="text" id="{{ variables.group_id }}-value" class="form-control" name="value">
+                  </div>
+               </div>
+               <br />
+               <div class="row">
+                  <div class="col-md-12">
+                     <label for="{{ variables.group_id }}-description">Variable Description</label>
+                     <textarea class="form-control" id="{{ variables.group_id }}-description"></textarea>
+                  </div>
+               </div>
+               <form id="{{ variables.group_id }}-add-variable" 
+                  method="post" style="height:0px; width:0px">
+                  <input type="hidden" name="add_variable" value="{{ variables.group_id }}">
+                  <input type="hidden" name="name" 
+                     id="{{ variables.group_id }}-add-variable-name">
+                  <input type="hidden" name="value" 
+                     id="{{ variables.group_id }}-add-variable-value">
+                  <input type="hidden" name="description" 
+                     id="{{ variables.group_id }}-add-variable-description">
+               </form>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               <button class="btn btn-warning" 
+                  onclick="add_variable('{{ variables.group_id }}');">
+                  Submit
+               </button>
+            </div>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+
+{% endblock %}

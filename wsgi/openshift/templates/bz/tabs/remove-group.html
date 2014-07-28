@@ -1,0 +1,30 @@
+{% block content %}
+   {% load templatetags %}
+   <br />
+   <div class="row">
+      <div class="col-md-6">
+         <label for="{{ remove_group.group_id }}-remove-group-select">Remove Group</label>
+         <select id="{{ remove_group.group_id }}-remove-group-select" class="form-control">
+            <option value="{{ remove_group.group_id }}">{{ remove_group.name }} - Current Group</option>
+            {% find_groups remove_group as all_groups %}
+            {% for i in all_groups %}
+               <option value="{{ i.group_id }}">{{ i.name }}</option>
+            {% endfor %}
+         </select>
+      </div>
+      <div class="col-md-2" style="margin-top:25px">
+         <button class="btn btn-danger" 
+            onclick="remove_group('{{ remove_group.group_id }}');">
+            <span class="glyphicon glyphicon-remove"></span> Remove</button>
+         <script>
+            function remove_group(id){
+               var sel = document.getElementById(String(id + "-remove-group-select"));
+               var val = sel.options[sel.selectedIndex].value;
+               document.getElementById(String(id + "-remove-group-input")).value = String(val);
+               var form = String(id + "-remove-group");
+               document.getElementById(form).submit();
+            }
+         </script>
+      </div>
+   </div>
+{% endblock %}

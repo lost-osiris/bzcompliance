@@ -10,7 +10,6 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 import simplejson, requests, datetime, copy, os, urllib
 
-from templatetags import templatetags
 from dbManager import Manager
 from Compliance import builder
 
@@ -38,6 +37,7 @@ def add_requirement(request):
    req_type = ""
    id = ""
    name = ""
+   edit = ""
 
    for i in request.GET:
       if i == "add_req":
@@ -47,6 +47,15 @@ def add_requirement(request):
          group = manager.get_group(id)
          name = group['name']
 
+      if i == "edit":
+         edit = request.GET[i]
+        
+   if edit != "" and req_type == "message":
+      edit = manager.get_message(edit)
+ 
+   if edit != "" and (req_type == "product" or req_type == "group"):
+      edit = manager.get_group(edit)
+
    for i in request.POST:
       if i == "expression":
          expression = request.POST[i]
@@ -55,27 +64,30 @@ def add_requirement(request):
             message_name = request.POST['message_name']
             message_type = request.POST['message_type']
             message_description = request.POST['description']
-
+            
             message = {
                "name": message_name,
                "message_type": message_type,
-               "description": message_description
+               "description": message_description,
             }
-            
-            manager.add_req(group, req_type, expression, message)
 
-            return redirect(str('/showgroup/' + id))
+            if edit != "":
+               message['message_id'] = edit['message_id']
+               message['active'] = edit['active']
+   
+            manager.add_req(group, req_type, expression, message)
 
          if req_type == "product":
             req_name = str(name + "-main")
             manager.add_req(group, req_type, expression)
 
-            return redirect("/compliance")
-
          if req_type == "group":
             req_name = str(name + "-main")
             manager.add_req(group, req_type, expression)
 
+         if group['isProduct'] == True: 
+            return redirect("/compliance")
+         else :
             return redirect(str('/showgroup/' + id))
          
    modal_input_boxes = [
@@ -124,22 +136,26 @@ def add_requirement(request):
       "modal_input_boxes": modal_input_boxes, 
       "req_type":req_type,
       "add_to": name,
+      "message": edit,
    }
 
    return render_to_response("bz/add_req/main.html", Context(c))
  
 @csrf_exempt
 def compliance(request):
-   db = client['test']
-   products = manager.find_all_products()
-
    if request.method == "POST":
-
       for i in request.POST:
+         if i == "remove_message":
+            id = request.POST[i]
+            manager.remove_message(id) 
+
+         if i == "remove_group":
+            id = request.POST[i]
+            manager.remove_group(id) 
 
          if i == "delete_product":
-            product_name = request.POST[i]
-            value = manager.remove_product(product_name)
+            product_id = request.POST[i]
+            value = manager.remove_group(product_id)
 
          if i == "add_product":
             product_name = request.POST['product_name']
@@ -151,23 +167,38 @@ def compliance(request):
             description = request.POST['description']
             manager.add_group_to_group(product_id, group_name, description)
 
+         if i == "remove_variable":
+            var_id = ObjectId(request.POST[i])
+            manager.remove_variable(var_id)
+
+         if i == "add_variable":
+            group_id = ObjectId(request.POST[i])
+            group = manager.get_group(group_id)
+
+            var = {
+               "name": request.POST['name'],
+               "var_id": ObjectId(),
+               "values": [request.POST['value']],
+               "parent_id": group_id,
+               "description": request.POST['description'],
+            }
+
+            manager.add_variable(group, var)
+
          if i == "add_req":
             req_type = request.POST['req_type']
             group_name = request.POST['add_req']
 
             return redirect('/addrequirement?'+ urllib.urlencode(request.POST))
 
-         if i == "nested_group":
-           continue 
+   db = client['test']
+   products = manager.find_all_products()
 
    return render_to_response("bz/products/main.html", {"products":products}) 
 
 @csrf_exempt
 def show_group(request, group_id):
-   group = manager.get_group(group_id)
-
    if request.method == "POST":
-
       for i in request.POST:
          if i == "add_group":
             group_name = request.POST['name']
@@ -183,10 +214,20 @@ def show_group(request, group_id):
          if i == "add_message":
             req_type = request.POST['req_type']
             group_name = request.POST['add_req']
-         
 
             return redirect('/addrequirement?'+ urllib.urlencode(request.POST))
 
+         if i == "remove_message":
+            id = request.POST[i]
+            manager.remove_message(id) 
+
+         if i == "remove_group":
+            id = request.POST[i]
+            manager.remove_group(id) 
+
+            return redirect('/compliance')
+
+   group = manager.get_group(group_id)
    return render_to_response("bz/groups/show_group/main.html", {"group":group})
 
 @csrf_exempt
@@ -408,18 +449,23 @@ class Problems:
          findbug_data['id'] = search
       else:
          findbug_data['url'] = search
-
-      suite = builder.build(manager.find_all_products())
+      all_products = manager.find_all_products()
+      suite = builder.build(all_products)
       results = requests.post("https://findbugs-seg.itos.redhat.com", data=findbug_data, verify=False).text
       bugs = simplejson.loads(results)
       data = []
-
+      raw_data = []
       for i in bugs['bugs']:
          suite.evaluate(i, True)
-         data.append(suite.html_string())
+
+         data.append([message['name'] for message in suite.get_messages()])
+
+         raw_data.append(suite.html_string())
      
       c = {
-         "raw_data":mark_safe(data),
+         "raw_data":mark_safe(raw_data),
+         "output":mark_safe(data),
+         "built_structer":manager.find_all_products(),
       }
 
       return render_to_response("bz/results/results.html", c)

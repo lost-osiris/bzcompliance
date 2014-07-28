@@ -1,42 +1,92 @@
 {% load templatetags %}
 
-<div class="tab-pane" id="{{ tools.name }}-configure">
-   <div class="row">
-      <div class="col-md-12">
-         <p>Configure Page</p>
+<div id="{{ tools.group_id }}-raw-data" style="display:none">
+   <div class="panel panel-default" style="border-color: #080808">
+      <div class="panel-heading" style="background-color:#222; boarder-color:#80808">
+         <h4 style="color: #999;" class="panel-title">{{ tools.name }} - Raw Data</h4>
       </div>
-   </div>
-</div> 
-<div class="tab-pane" id="{{ tools.name }}-raw-data">
-   <div class="row">
-      <div class="col-md-12">
-         <pre>{{ tools|json }}</pre>
-      </div>
-   </div>
-</div>
-<div class="tab-pane" id="{{ tools.name }}-add-group">
-   <div class="row">
-      <form method="post" id="myform">{% csrf_token %}
-      <div class="col-md-12">
-         <div class="row" style="padding: 5px">
-            <div class="col-md-12">
-               <label for="name">Group Name</label>
-               <input id="name" name="name" type="text" class="form-control input-md">
-            </div>
-            <br />
-
-            <div class="col-md-12">
-               <label for="description">Description</label>
-               <textarea class="form-control" name="description" id="description" rows="2"></textarea>
-            </div>
-         </div>
+      <div class="panel-body">
          <br />
          <div class="row">
             <div class="col-md-12">
-               <button id="submit" name="add_group" value="{{ tools.group_id }}" 
-                  type="submit" class="btn btn-warning">Submit</button>
+               <pre>{{ tools|json }}</pre>
             </div>
+         </div>
+      </div>
+   </div>
+</div> 
+
+
+<div id="{{ tools.group_id }}-add-group-view" style="display:none">
+   <div class="panel panel-default" style="border-color: #080808">
+      <div class="panel-heading" style="background-color:#222; boarder-color:#80808">
+         <h4 style="color: #999;" class="panel-title">{{ tools.name }} - Add Group</h4>
+      </div>
+      <div class="panel-body">
+         <br />
+         <div class="row">
+            <form method="post" id="myform">{% csrf_token %}
+            <div class="col-md-12">
+               <div class="row" style="padding: 5px">
+                  <div class="col-md-12">
+                     <label for="name">Group Name</label>
+                     <input id="name" name="name" type="text" class="form-control input-md">
+                  </div>
+                  <br />
+
+                  <div class="col-md-12">
+                     <label for="description">Description</label>
+                     <textarea class="form-control" name="description" id="description" rows="2"></textarea>
+                  </div>
+               </div>
+               <br />
+               <div class="row">
+                  <div class="col-md-12">
+                     <button id="submit" name="add_group" value="{{ tools.group_id }}" 
+                        type="submit" class="btn btn-warning">Submit</button>
+                     </form>
+                  </div>
+               </div> 
+            </div> 
          </div> 
       </div> 
-   </div> 
+   </div>
+</div> 
+
+
+<div id="{{ tools.group_id }}-remove-group-view" style="display:none">
+   <div class="panel panel-default" style="border-color: #080808">
+      <div class="panel-heading" style="background-color:#222; boarder-color:#80808">
+         <h4 style="color: #999;" class="panel-title">{{ tools.name }} - Remove Group</h4>
+      </div>
+      <div class="panel-body">
+         <br />
+         <div class="row">
+            <div class="col-md-6">
+               <label for="{{ tools.group_id }}-remove-group-select">Remove Group</label>
+               <select id="{{ tools.group_id }}-remove-group-select" class="form-control">
+                  <option value="{{ tools.group_id }}">{{ tools.name }} - Current Group</option>
+                  {% for i in tools.groups %}
+                     <option value="{{ i.group_id }}">{{ i.name }}</option>
+                  {% endfor %}
+               </select>
+            </div>
+            <div class="col-md-2" style="margin-top:25px">
+
+               <button class="btn btn-danger" 
+                  onclick="remove_group('{{ tools.group_id }}');">
+                  <span class="glyphicon glyphicon-remove"></span> Remove</button>
+               <script>
+                  function remove_group(id){
+                     var sel = document.getElementById(String(id + "-remove-group-select"));
+                     var val = sel.options[sel.selectedIndex].value;
+                     document.getElementById(String(id + "-remove-group-input")).value = String(val);
+                     var form = String(id + "-remove-group");
+                     document.getElementById(form).submit();
+                  }
+               </script>
+            </div>
+         </div>
+      </div>
+   </div>
 </div> 

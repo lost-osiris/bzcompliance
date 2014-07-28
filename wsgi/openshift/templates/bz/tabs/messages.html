@@ -1,10 +1,12 @@
-<div class="tab-pane" id="{{ message.name }}-messages">
-<br />
+{% block content %}
+   {% load templatetags %}
+   <br />
    <div class="row">
       <div class="col-md-10">
-         <h3>Messages</h3>
+         <h3>{{ message.name }} - Messages</h3>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2" style="text-align:right; padding-top:10px;">
+         <button class="btn btn-default" onclick="add_req('{{ message.group_id }}-message');">Add Message</button>
       </div>
    </div>
    <div class="row">
@@ -12,24 +14,75 @@
          <table class="table table-hover">
             <tr>
                <th>Name</th>
-               <th>Message Description</th>
                <th>Type</th>
-               <th>Expression</th>
+               <th>Details</th>
+               <th></th>
                <th></th>
             </tr>
             {% for i in message.messages %}
-               <tr>
-                  <td width="15%">{{ i.name }}</td>
-                  <td>{{ i.description }}</td>
-                  <td>{{ i.type }}</td>
-                  <td>{{ i.expression }}</td>
+               <form id="{{ i.message_id }}-edit" method="post" style="width:0px; height:0px">
+                  <input type="hidden" name="add_req" value="{{ message.group_id }}">
+                  <input type="hidden" name="req_type" value="message">
+                  <input type="hidden" name="edit" value="{{ i.message_id }}">
+               </form>
+               <form id="{{ i.message_id }}-remove" method="post" style="width:0px; height:0px">
+                  <input type="hidden" name="remove_message" value="{{ i.message_id }}">
+               </form>
+               {% if i.message_type == "Problem" %}
+                  <tr class="danger">
+               {% elif i.message_type == "Warning" %}
+                  <tr class="warning">
+               {% else %}
+                  <tr class="info">
+               {% endif %}
+                  <td width="35%">{{ i.name }}</td>
+                  <td>{{ i.message_type }}</td>
+                  <td><a href="#" data-toggle="modal" data-target="#{{ i.name|replace }}-message">Show Details</a></td>
                   <td align="right">
-                     <button class="btn btn-default">
+                     <button class="btn btn-primary" 
+                        onclick="document.getElementById('{{ i.message_id }}-edit').submit();">
                         <span class="glyphicon glyphicon-edit"></span> Edit</button>
                   </td>
+                  <td align="right">
+                     <button class="btn btn-danger" 
+                        onclick="document.getElementById('{{ i.message_id }}-remove').submit();">
+                        <span class="glyphicon glyphicon-remove"></span> Remove</button>
+                  </td>
                </tr>
+               <div class="modal fade" id="{{ i.name|replace }}-message">
+                  <div class="modal-dialog modal-lg">
+                     <div class="modal-content">
+                        <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal"          
+                              aria-hidden="true">
+                              &times;
+                           </button>
+                           <h4 class="modal-title">Message Details - "<i>{{ i.name }}</i>"</h4>
+                        </div>
+                        <div class="modal-body">
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label for="{{ i.name|replace }}-expression">Expression</label>
+                                 <pre id="{{ i.name|replace }}-expression">{{ i.expression }}</pre>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label for="{{ i.name|replace }}-description">Description</label>
+                                 <pre id="{{ i.name|replace }}-description">{{ i.description }}</pre>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                     </div>
+                  </div><!-- /.modal-content -->
+               </div><!-- /.modal-dialog -->
+
+
             {% endfor %} 
          </table>
       </div>
    </div>
-</div>
+{% endblock %}
