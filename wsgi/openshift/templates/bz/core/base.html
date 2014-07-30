@@ -47,6 +47,53 @@
             return "";
          }
 
+         $('.collapse').on('show.bs.collapse', function (event){
+            var nav_state = getCookie("nav_state");
+
+            if (nav_state == ""){
+               document.cookie = "nav_state=" + event.target.id;
+            } else {
+               if (nav_state.indexOf(event.target.id) == -1){
+                  document.cookie = "nav_state=" + nav_state + "|" + event.target.id;
+               }
+            }
+         });
+
+         $('.collapse').on('hide.bs.collapse', function (event){
+            var nav_state = getCookie("nav_state");
+
+            if (nav_state != ""){
+               cookie = nav_state.split("|");
+               new_cookie = "nav_state=";
+               for (var i = 0; i < cookie.length; i++){
+                  if (cookie[i] != event.target.id && cookie[i] != ""){
+                     if (new_cookie == "nav_state="){
+                        new_cookie += cookie[i];
+                     } else {
+                        new_cookie += "|" + cookie[i];
+                     }
+                  }
+               }
+               document.cookie = new_cookie;
+            }
+         });
+
+         $(document).ready(function() {
+            var current_state = getCookie("content_state");
+            if (current_state != "") {
+               display_content(current_state);
+            }
+            
+            var nav_state = getCookie("nav_state");
+            if (nav_state != ""){
+               cookie = nav_state.split("|");
+               for (var i = 0; i < cookie.length; i++){
+                  $("#" + cookie[i]).collapse('show');
+               }
+            } 
+            
+         });
+
          if(getCookie("rh_user") == ""){
             var redirect = document.URL;
             window.location.replace("https://www.redhat.com/wapps/sso/login.html?redirect=" + redirect);

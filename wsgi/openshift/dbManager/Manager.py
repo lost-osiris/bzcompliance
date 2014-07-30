@@ -72,28 +72,20 @@ class dbManager:
 
          if "variable_ids" in curser:
             variables = []
-            for i in curser['variable_ids']:
-               var = self.get_variable(i['var_id'])
-               if var != None:
-                  var_name = str(var['name'] + "." + str(curser['group_id']))
-                  variables.append(var_name)
-
-            output['variable_keys'] = variables
-            
-            variables = []
 
             for i in curser['variable_ids']:
                var = self.get_variable(i['var_id'])
                if var != None:
                   variables.append(var)
 
-            output['variable_values'] = variables
+            output['variables'] = variables
 
       if "var_id" in curser:
          output['var_id'] = curser['var_id']
          output['name'] = curser['name']
          output['parent_id'] = curser['parent_id']
          output['values'] = curser['values']
+         output['value_count'] = curser['value_count']
 
       return output
       
@@ -240,16 +232,28 @@ class dbManager:
    def add_variable(self, group, var):
       if var != None: 
          var_id = ObjectId(var['var_id'])
- 
-         for i,x in zip(var['values'], range(0, len(var['values']))):
-            var['values'][x] = str(var['values'][x]).replace("@", "\@")
+         
+         first = str(var['values']).find("@")
+         last = str(var['values']).rfind("@")
 
-         if self.get_variable(var_id) == None:
-            self.db.variables.insert(var)
+         if first == last:
+            value = {
+               "value": str(var['values']).replace("@", "\@"),
+               "index": 0,
+            }
+
+            var['values'] = [value]
          else:
-            self.db.variables.update({"var_id":var_id}, {"$set": {
-               "name": var['name'], "parent_id": var['parent_id'], "value": var['value']}})
+            value = {
+               "value": var['values'],
+               "index": 0,
+            }
+            var['values'] = [value]
 
+         var['value_count'] = 1
+
+         self.db.variables.insert(var)
+         
          if "variable_ids" not in group or var_id not in group['variable_ids']:
             self.db.groups.update({"group_id":group['group_id']}, 
                {"$push": { "variable_ids": {"$each" : [{'var_id': var_id }]
@@ -257,6 +261,55 @@ class dbManager:
                         }
             })
 
+   def edit_variable(self, var_id, var):
+      self.db.variables.update({"var_id":var_id}, {"$set": {
+         "name": var['name'], "parent_id": var['parent_id'], "values": var['values'], 
+         "description": var['description']}})
+
+   def edit_element_in_variable(self, var_id, value, index):
+      var = self.get_variable(var_id)
+
+      if var != None:
+         for i in var['values']:
+            if str(i['index']) == index:
+               self.remove_element_from_variable(var_id, i['value'], index) 
+               self.add_element_to_variable(var_id, value)
+
+
+   def add_element_to_variable(self, var_id, value):
+      var_id = ObjectId(var_id)
+
+      var = self.get_variable(var_id)
+
+      value = {
+         "value": value,
+         "index": var['value_count'],
+      }
+
+      if var != None:
+         count = var['value_count'] + 1
+         self.db.variables.update({"var_id":var_id}, 
+            {"$push": { "values": value}, 
+            "$set" : { "value_count": count}}, multi=True)
+        
+   def remove_element_from_variable(self, var_id, value, index):
+      var_id = ObjectId(var_id)
+
+      var = self.get_variable(var_id)
+
+      value = {
+         "value": value,
+         "index": int(index),
+      }
+
+      if var != None:
+         count = var['value_count'] - 1
+         if count < 0:
+            count = 0
+
+         self.db.variables.update({"var_id":var_id}, {"$pull": { "values": value }, 
+            "$set": {"value_count": count }}, multi=True)
+ 
    def get_variable(self, var_id):
       id = ObjectId(var_id)
       data = self.db.variables.find_one({"var_id":id})

@@ -4,6 +4,9 @@ from django import template
 from pymongo import MongoClient
 from bson.objectid import ObjectId
 import simplejson
+from dbManager import Manager
+
+manager = Manager.dbManager("dev-test")
 
 data = []
 register = Library()
@@ -195,6 +198,8 @@ def json_compatible(data):
       return data.replace("'", "''")
    elif type(data) is unicode:
       return data
+   elif type(data) is int:
+      return data
    else:
       return str(data)
 
@@ -321,7 +326,11 @@ class AppendContext(Node):
 
    def render(self, context):
       data = self.data.resolve(context)
-      context[self.var].append(data)
+      key = self.var
+      new_list = []
+      new_list.append(context[key])
+      new_list.append(data)
+      context[key] = new_list
       return ""
 
 def append_context(parser, token):
@@ -329,3 +338,34 @@ def append_context(parser, token):
    return AppendContext(bits[1], bits[3])  
      
 register.tag(append_context)
+
+
+
+
+
+class AddVariableValue(Node):
+   def __init__(self, var_id, value):
+      self.id = template.Variable(var_id)
+      self.value = value
+
+   def render(self, context):
+      id = ObjectId(self.id.resolve(context))
+      var_value = self.value
+
+      var = manager.get_variable(id)
+      var['values'].append(var_value)
+      manager.add_variable(manager.get_group(var['parent_id']), var)
+      return True
+
+def edit_variable(parser, token):
+   bits = token.contents.split()
+   return AddVariableValue(bits[1], bits[2])
+
+register.tag(edit_variable)
+
+
+
+
+
+
+

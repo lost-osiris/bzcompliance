@@ -201,6 +201,13 @@
       function display_content(id) {
          hide_content(current);
          current = id;
+
+         var current_cookie = getCookie("content_state");
+
+         if(String(id) != "undefined"){
+            document.cookie = "content_state=" + id;
+         }
+
          show_content(current);
       }
       function add_variable(id) {
@@ -211,6 +218,32 @@
          document.getElementById(id + "-add-variable-value").value = value;
          document.getElementById(id + "-add-variable-description").value = description;
          document.getElementById(id + "-add-variable").submit();
+      }
+
+      function edit_variable(id){
+         name = document.getElementById(id + "-name").value;
+         description = document.getElementById(id + "-description").value;
+         document.getElementById(id + "-edit-variable-name").value = name;
+         document.getElementById(id + "-edit-variable-description").value = description;
+         document.getElementById(id + "-edit-variable").submit();
+      }
+
+      function add_element_to_variable(id){
+         value = document.getElementById(id + "-element-value").value;
+         document.getElementById(id + "-add-value").value = value;
+         document.getElementById(id + "-add-element").submit();
+      }
+
+      function remove_element_from_variable(id, value, index){
+         document.getElementById(id + "-remove-index").value = index;
+         document.getElementById(id + "-remove-value").value = value;
+         document.getElementById(id + "-remove-element").submit();
+      }
+      function edit_element_in_variable(id, index){
+         value = document.getElementById(id + "-" + index +"-new-value").value;
+         document.getElementById(id + "-edit-index").value = index;
+         document.getElementById(id + "-edit-value").value = value;
+         document.getElementById(id + "-edit-element").submit();
       }
    </script>
 {% endblock %}

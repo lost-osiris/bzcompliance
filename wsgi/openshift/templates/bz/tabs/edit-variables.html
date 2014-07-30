@@ -10,7 +10,7 @@
       </div>
    </div>
 
-   {% with parent_id=variables.group_id var_values=variables.variable_values %}
+   {% with parent_id=variables.group_id var_values=variables.variables %}
       {% include "bz/tabs/variables-values.html" %}
    {% endwith %}
 
@@ -19,19 +19,26 @@
          <table class="table table-hover">
             <tr>
                <th>Name</th>
-               <th>Value</th>
+               <th>Values</th>
                <th>Accessor</th>
                <th></th>
                <th></th>
             </tr>
-            {% for i in variables.variable_values %}
-               <form id="{{ variables.group_id }}-{{ i.var_id }}-add-variable" 
+            {% for i in variables.variables %}
+               <form id="{{ variables.group_id }}-{{ i.var_id }}-add-element-to-variable" 
                   method="post" style="height:0px; width:0px">
-                  <input type="hidden" name="add_variable" value="{{ variables.group_id }}">
-                  <input type="hidden" name="name" 
-                     id="{{ variables.group_id }}-{{ i.var_id }}-add-variable-name">
+                  <input type="hidden" name="add_element_tovariable" value="{{ variables.group_id }}">
                   <input type="hidden" name="value" 
                      id="{{ variables.group_id }}-{{ i.var_id }}-add-variable-value">
+               </form>
+
+               <form id="{{ variables.group_id }}-{{ i.var_id }}-edit-variable" 
+                  method="post" style="height:0px; width:0px">
+                  <input type="hidden" name="edit_variable" value="{{ variables.group_id }}">
+                  <input type="hidden" name="name" 
+                     id="{{ variables.group_id }}-{{ i.var_id }}-add-variable-name">
+                  <input type="hidden" name="description" 
+                     id="{{ variables.group_id }}-add-variable-description">
                </form>
 
                <form id="{{ variables.group_id }}-{{ i.var_id }}-remove" method="post" 
@@ -40,24 +47,31 @@
                </form>
 
                <tr class="danger">
-                  <td width="35%">{{ i.name }}</td>
-                  <td>
-                     <a href="#" data-target="#{{ i.var_id }}-values-modal" data-toggle="modal">Show Values</a>
+                  <td>{{ i.name }}</td>
+                  <td>[
+                     {% for j in i.values %}
+                        {% if forloop.last %}
+                           "{{ j.value }}"
+                        {% else %}
+                           "{{ j.value }}", 
+                        {% endif %}
+                     {% endfor %} 
+                     ]
                   </td>
                   <td>@{{ i.name }}@</td>
-                  <td>
-                     <div class="row">
-                        <div class="col-md-6" style="text-align:right; margin-right:0px; padding-right:0px">
-                           <button class="btn btn-primary" data-toggle="modal"
-                              data-target="#{{ variables.group_id }}-edit-{{ i.var_id }}-variable-modal" >
-                              <span class="glyphicon glyphicon-edit"></span> Edit
-                           </button>
-                        </div>
-                        <div class="col-md-6" style="text-align:right; margin-left:0px; padding-left:0px;">
-                           <button class="btn btn-danger" 
-                              onclick="document.getElementById('{{ variables.group_id }}-{{ i.var_id }}-remove').submit();">
-                              <span class="glyphicon glyphicon-remove"></span> Remove</button>
-                        </div>
+                  <td style="width:43%">
+                     <div class="btn-group" style="text-align:right">
+                        <button class="btn btn-primary" data-toggle="modal"
+                           data-target="#{{ variables.group_id }}-edit-{{ i.var_id }}-variable-modal" >
+                           <span class="glyphicon glyphicon-edit"></span> Edit Variable
+                        </button>
+                        <button class="btn btn-primary" data-toggle="modal"
+                           data-target="#{{ i.var_id }}-values-modal" >
+                           <span class="glyphicon glyphicon-edit"></span> Edit Values
+                        </button>
+                        <button class="btn btn-danger" 
+                           onclick="document.getElementById('{{ variables.group_id }}-{{ i.var_id }}-remove').submit();">
+                           <span class="glyphicon glyphicon-remove"></span> Remove</button>
                      </div>
                   </td>     
                </tr>  
@@ -72,6 +86,14 @@
                            </button>
                            <h4 class="modal-title">Edit Variable - "<i>{{ i.name }}</i>"</h4>
                         </div> 
+                        <form id="{{ variables.group_id }}-{{ i.var_id }}-edit-variable" 
+                           method="post" style="height:0px; width:0px">
+                           <input type="hidden" name="edit_variable" value="{{ i.var_id }}">
+                           <input type="hidden" name="name" 
+                              id="{{ variables.group_id }}-{{ i.var_id }}-edit-variable-name">
+                           <input type="hidden" name="description" 
+                              id="{{ variables.group_id }}-{{ i.var_id }}-edit-variable-description">
+                        </form>
                         <div class="modal-body">
                            <div class="row">
                               <div class="col-md-5">
@@ -82,11 +104,22 @@
                                     class="form-control" name="name" value="{{ i.name }}">
                               </div>
                            </div>
+               
+                           <br />
+
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <label for="{{ variables.group_id }}-description">
+                                    Variable Description
+                                 </label>
+                                 <textarea class="form-control" id="{{ variables.group_id }}-{{ i.var_id }}-description">{{ i.description }}</textarea>
+                              </div>
+                           </div>
                         </div>
                         <div class="modal-footer">
                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                            <button class="btn btn-warning" 
-                              onclick="add_variable('{{ variables.group_id }}-{{ i.var_id }}');">
+                              onclick="edit_variable('{{ variables.group_id }}-{{ i.var_id }}');">
                               Submit
                            </button>
                         </div>

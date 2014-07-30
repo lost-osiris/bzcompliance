@@ -24,13 +24,33 @@
                   <h4 class="modal-title">Variable - "<i>{{ i.name }}</i>"</h4>
                </div>
                <div class="modal-body">
+                  <form method="post"
+                     id="{{ variables.group_id }}-{{ i.var_id }}-remove-element" 
+                     style="width:0px; height:0px">
+                     <input type="hidden" name="remove_element_from_variable" value="{{ i.var_id }}">
+                     <input type="hidden" name="index" id="{{ variables.group_id }}-{{ i.var_id}}-remove-index">
+                     <input type="hidden" name="value" id="{{ variables.group_id }}-{{ i.var_id}}-remove-value">
+                  </form>
+                  <form method="post"
+                     id="{{ variables.group_id }}-{{ i.var_id }}-add-element" 
+                     style="width:0px; height:0px">
+                     <input type="hidden" name="add_element_to_variable" value="{{ i.var_id }}">
+                     <input type="hidden" name="value" id="{{ variables.group_id }}-{{ i.var_id}}-add-value">
+                  </form>
+                  <form method="post"
+                     id="{{ variables.group_id }}-{{ i.var_id }}-edit-element" 
+                     style="width:0px; height:0px">
+                     <input type="hidden" name="edit_element_in_variable" value="{{ i.var_id }}">
+                     <input type="hidden" name="index" id="{{ variables.group_id }}-{{ i.var_id}}-edit-index">
+                     <input type="hidden" name="value" id="{{ variables.group_id }}-{{ i.var_id}}-edit-value">
+                  </form>
                   {% for j in i.values %}                  
-                     <div id="{{ parent_id }}-{{ i.var_id }}-edit-{{ forloop.counter }}" style="display:none">
+                     <div id="{{ parent_id }}-{{ i.var_id }}-edit-{{ j.index }}" style="display:none">
                         <div class="row">
                            <div class="col-md-5">
                               <button 
                               onclick="display_edit_content(this.id, '{{ parent_id }}-{{ i.var_id }}-content');" 
-                                 id="{{ parent_id }}-{{ i.var_id }}-edit-{{ forloop.counter }}" 
+                                 id="{{ parent_id }}-{{ i.var_id }}-edit-{{ j.index }}" 
                                  type="button" class="btn btn-default">Back</button>
                            </div>
                         </div>
@@ -42,52 +62,90 @@
                               <label for="#{{ variables.group_id }}-{{ i.var_id }}-currentvalue">
                                  Current Value
                               </label>
-                              <input disabled type="text" id="{{ variables.group_id }}-{{ i.var_id }}-currentvalue" 
-                                 class="form-control" name="currentvalue" value="{{ j }}" placeholder="{{ j }}">
+                              <input disabled type="text" 
+                                 id="{{ variables.group_id }}-{{ i.var_id }}-currentvalue" 
+                                 class="form-control" 
+                                 value="{{ j.value }}" placeholder="{{ j.value }}">
                            </div>
                            <div class="col-md-6">
-                              <label for="#{{ variables.group_id }}-{{ i.var_id }}-new-value">
+                              <label for="#{{ variables.group_id }}-{{ i.var_id }}-edit-new-value">
                                  New Value
                               </label>
-                              <input type="text" id="{{ variables.group_id }}-{{ i.var_id }}-new-value" 
-                                 class="form-control" name="new_value" placeholder="Enter new value for element">
+                              <input type="text" id="{{ variables.group_id }}-{{ i.var_id }}-{{ j.index }}-new-value" 
+                                 class="form-control" name="value" placeholder="Enter new value for element">
+                           </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                           <div class="col-md-12">
+                              <button class="btn btn-warning" 
+                                 onclick="edit_element_in_variable('{{ variables.group_id }}-{{ i.var_id }}', '{{ j.index }}');">Submit</button>
                            </div>
                         </div>
                      </div>
                   {% endfor %}
 
+                  <div id="{{ variables.group_id }}-{{ i.var_id }}-add-element-content" style="display:none">
+                     <div class="row">
+                        <div class="col-md-5">
+                           <button 
+                           onclick="display_edit_content(this.id, '{{ variables.group_id }}-{{ i.var_id }}-content');" 
+                              id="{{ parent_id }}-{{ i.var_id }}-add-element-content" 
+                              type="button" class="btn btn-default">Back</button>
+                        </div>
+                     </div>
+                     <br />
+       
+                     <div class="row">
+                        <div class="col-md-6">
+                           <label for="#{{ variables.group_id }}-{{ i.var_id }}-new-value">
+                              New Element Value
+                           </label>
+                           <input type="text" 
+                              class="form-control" name="value" id="{{ variables.group_id }}-{{ i.var_id }}-element-value">
+                        </div>
+                        <div class="col-md-6" style="margin-top:25px;">
+                           <button class="btn btn-warning" 
+                              onclick="add_element_to_variable('{{ variables.group_id }}-{{ i.var_id }}');">Submit</button>
+                        </div>
+                     </div>
+                  </div>
+
                   <div id="{{ parent_id }}-{{ i.var_id }}-content">
+                     <div class="row">
+                        <div class="col-md-6">
+                           <h3>Element Values</h3>
+                        </div>
+                        <div class="col-md-6" style="text-align:right; padding-top:10px">
+                           <button class="btn btn-default" data-toggle="modal"
+                              id="{{ variables.group_id }}-{{ i.var_id }}-add-element-content" 
+                              onclick="display_edit_content('{{ parent_id }}-{{ i.var_id }}-content', this.id);">
+                              Add Element
+                           </button>
+                        </div>
+                     </div>
                      <div class="row">
                         <div class="col-md-12">
                            <table class="table table-hover table-style">
-                              <tr>
-                                 <th>Element Values</th>
-                                 <th style="text-align:right">
-                                    <button class="btn btn-default" data-toggle="modal" 
-                                       data-target="#{{ parent_id }}-add-element-{{ i.var_id }}-modal">
-                                       Add Element
-                                    </button>
-                                 </th>
-                              </tr>
-                              <tr class="info">
-                                 {% for j in i.values %}
-                                       <td>{{ j }}</td>
-                                       <td>         
-                                          <div class="row">
-                                             <div class="col-md-12" style="text-align:right; margin-left:0px; padding-left:0px;">
-                                                <button id="{{ parent_id }}-{{ i.var_id }}-content" class="btn btn-primary" data-toggle="modal"
-                                                   onclick="display_edit_content(this.id, '{{ parent_id }}-{{ i.var_id }}-edit-{{ forloop.counter }}');" >
-                                                   <span class="glyphicon glyphicon-edit"></span> Edit
-                                                </button>
-                                                <button class="btn btn-danger" 
-                                                   onclick="document.getElementById('{{ variables.group_id }}-{{ i.var_id }}-remove').submit();">
-                                                   <span class="glyphicon glyphicon-remove"></span> Remove
-                                                </button>
-                                             </div>
+                              {% for j in i.values %}
+                                 <tr class="info">
+                                    <td>"{{ j.value }}"</td>
+                                    <td>         
+                                       <div class="row">
+                                          <div class="col-md-12" style="text-align:right; margin-left:0px; padding-left:0px;">
+                                             <button id="{{ parent_id }}-{{ i.var_id }}-content" class="btn btn-primary" data-toggle="modal"
+                                                onclick="display_edit_content(this.id, '{{ parent_id }}-{{ i.var_id }}-edit-{{ j.index }}');" >
+                                                <span class="glyphicon glyphicon-edit"></span> Edit
+                                             </button>
+                                             <button class="btn btn-danger" 
+                                                onclick="remove_element_from_variable('{{ variables.group_id }}-{{ i.var_id }}', '{{ j.value }}', '{{ j.index }}');">
+                                                <span class="glyphicon glyphicon-remove"></span> Remove
+                                             </button>
                                           </div>
-                                       </td>
-                                    {% endfor %}
+                                       </div>
+                                    </td>
                                  </tr>
+                              {% endfor %}
                            </table>
                         </div>
                      </div>
@@ -99,30 +157,5 @@
             </div><!-- /.modal-content -->
          </div><!-- /.modal-dialog -->
       </div>
-      
-      {% for j in i.values %}
-         <div class="modal fade" id="{{ parent_id }}-edit-{{ i.var_id }}-{{ forloop.counter }}-values-modal">
-            <div class="modal-dialog modal-lg">
-               <div class="modal-content">
-                  <div class="modal-header">
-                     <button type="button" class="close" data-dismiss="modal"          
-                        aria-hidden="true">
-                        &times;
-                     </button>
-                     <h4 class="modal-title">Edit Variable Element- "<i>{{ i.name }}</i>"</h4>
-                  </div>
-                  <div class="modal-body">
-                  </div>
-                  <div class="modal-footer">
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                     <button class="btn btn-warning" 
-                        onclick="add_variable('{{ variables.group_id }}-{{ i.var_id }}');">
-                        Submit
-                     </button>
-                  </div>
-               </div>
-            </div><!-- /.modal-content -->
-         </div><!-- /.modal-dialog -->
-      {% endfor %}
    {% endfor %}
 {% endblock %}

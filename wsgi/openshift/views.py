@@ -30,7 +30,7 @@ else:
 
    client = MongoClient("osiris.usersys.redhat.com")
 
-manager = Manager.dbManager("test")
+manager = Manager.dbManager("dev-test")
 
 @csrf_exempt
 def add_requirement(request):
@@ -178,12 +178,39 @@ def compliance(request):
             var = {
                "name": request.POST['name'],
                "var_id": ObjectId(),
-               "values": [request.POST['value']],
+               "values": request.POST['value'],
                "parent_id": group_id,
                "description": request.POST['description'],
             }
 
             manager.add_variable(group, var)
+
+         if i == "edit_variable":
+            var_id = ObjectId(request.POST[i])
+            var = manager.get_variable(var_id)
+
+            var['name'] = request.POST['name']
+            var['description'] = request.POST['description']
+
+            manager.edit_variable(var_id, var)
+
+         if i == "add_element_to_variable":
+            var_id = ObjectId(request.POST[i])
+            value = request.POST['value']
+
+            manager.add_element_to_variable(var_id, value)
+
+         if i == "remove_element_from_variable":
+            var_id = ObjectId(request.POST[i])
+            value = request.POST['value']
+            index = request.POST['index']
+            manager.remove_element_from_variable(var_id, value, index)
+
+         if i == "edit_element_in_variable":
+            var_id = ObjectId(request.POST[i])
+            value = request.POST['value']
+            index = request.POST['index']
+            manager.edit_element_in_variable(var_id, value, index)
 
          if i == "add_req":
             req_type = request.POST['req_type']
