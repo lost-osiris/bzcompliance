@@ -1,0 +1,181 @@
+[{
+  "isProduct": "True", 
+  "name": "RHEL", 
+  "variables": [
+		{"name": "nv_r",
+       "values": [{"value": "rhel-@n@.@v@.@blah@"}],
+       "type": "static"
+      },
+		{"name": "n",
+       "values": [{"value": 7}],
+       "type": "dynamic"
+      },
+		{"name": "v",
+       "values": [{"value": "joebloe\\@gmail.com"}, {"value": "9"}],
+       "type": "static"
+      },
+	   {
+	   	"name": "blah", 
+	   	"type": "static", 
+		   "var_id": "53da5ed85f29e64978cd2c42", 
+		   "value_count": 3, 
+		   "parent_id": "53d932835f29e62743f7a452", 
+		   "values": [
+	     {
+	       "index": 0, 
+	       "value": "1"
+	     }, 
+	     {
+	       "index": 1, 
+	       "value": "2"
+	     }, 
+	     {
+	       "index": 2, 
+	       "value": "3"
+	     }
+	   ], 
+	   "expression": "", 
+	   "description": "This is the description"
+	 }
+  	], 
+  "messages": [
+    {
+      "name": "No Attached Sales Force Case", 
+      "expression": "!external_bugs.forEach(type.type.is(\"SFDC\"))", 
+      "active": "False", 
+      "message_type": "Warning", 
+      "message_id": "53c96ca05f29e6618151472f", 
+      "description": "test - (@v@)"
+    }
+  ],  
+  "groups": [
+    {
+	  "variables": [
+			{"name": "nvr",
+	       "values": "4",
+	       "type": "static"
+	      }
+	  	], 
+      "isProduct": "False", 
+      "name": "GSS", 
+      "messages": [
+        {
+          "name": "Priority Field Is Not Set", 
+          "expression": "priority.is(\"unspecified\")", 
+          "active": "False", 
+          "message_type": "Problem", 
+          "message_id": "53c9800e5f29e66312e7a38b", 
+          "description": "The priority field for this bug is unspecified. Please set it to match the associated SF Case."
+        }, 
+        {
+          "name": "Severity Field Is Not Specified", 
+          "expression": "severity.is(\"unspecified\")", 
+          "active": "False", 
+          "message_type": "Problem", 
+          "message_id": "53c9802c5f29e66312e7a38d", 
+          "description": "The severity field for this bug is unspecified. Please set it to match the associated SF Case."
+        }
+      ], 
+      "groups": [
+        {
+          "isProduct": "False", 
+          "name": "ZStream", 
+          "messages": [
+            {
+              "name": "On Z-Stream Without GSS Approval", 
+              "expression": "!cf_internal_whiteboard.contains(\"GSSApproved\", \"PMApproved\")", 
+              "active": "False", 
+              "message_type": "Problem", 
+              "message_id": "53c97ef35f29e66312e7a389", 
+              "description": "This bug is flagged for z-stream, but it has not been approved by GSS. Please work with the SBR POC for accelerated fixes to get approval."
+            }, 
+            {
+              "name": "Y-Stream Flag is Set on Z-Stream Bug", 
+              "expression": "(keywords.contains(\"ZStream\")) & flags.forEach(name.regex(\"\\d.\\d.0\") & status.is(\"+\", \"?\"))", 
+              "active": "False", 
+              "message_type": "Problem", 
+              "message_id": "53d017285f29e669c85eb493", 
+              "description": "At no time should a Z-Stream clone have a Y-Stream NVR Flag. Consult the product liaison for guidance."
+            }
+          ], 
+          "groups": [
+            {
+              "isProduct": "False", 
+              "name": "Not Yet Cloned", 
+              "messages": [
+                {
+                  "name": "ZStream Clone is Missing ACK(s)", 
+                  "expression": "!flags.forEach(status.is(\"+\") & (name.is(\"pm_ack\", \"devel_ack\", \"qa_ack\"))).sizeIs(3)", 
+                  "active": "False", 
+                  "message_type": "Notification", 
+                  "message_id": "53c97cd95f29e66312e7a385", 
+                  "description": "ZStream clones need to go through the same 3-ACK process that y-stream bugs go through. No action is needed here from Support Delivery; PM EUS will seek out the missing ACKs (possibly pm_ack, devel_ack, or qa_ack)."
+                }, 
+                {
+                  "name": "Not Cloned for ZStream, and not Flagged for Current Version", 
+                  "expression": "!flags.forEach(status.is(\"+\") & (name.contains(\"rhel-\") & name.contains(\"6.7\", \"7.1\")))", 
+                  "active": "False", 
+                  "message_type": "Problem", 
+                  "message_id": "53c97dc25f29e66312e7a387", 
+                  "description": "This bug is flagged for z-stream, but does not have a current NVR (name-version-revision) ACK. This bug needs to be fully ACK'd for the next y-stream release and its status must be 'MODIFIED' before it can be cloned for z-stream. Work with the SBR POC for accelerated fixes to resolve this."
+                }
+              ], 
+              "active": "False", 
+              "path": [
+                {
+                  "group_id": "53c96be05f29e6618151472b", 
+                  "name": "RHEL"
+                }, 
+                {
+                  "group_id": "53c96bf85f29e6618151472d", 
+                  "name": "GSS"
+                }, 
+                {
+                  "group_id": "53c96f2e5f29e66211c95b85", 
+                  "name": "ZStream"
+                }
+              ], 
+              "group_id": "53c97c695f29e66312e7a383", 
+              "expression": "!keywords.contains(\"ZStream\")", 
+              "description": "Message group for ZStream relevant to bugs that have not yet been cloned (aka, \"zstream\" not in keywords)."
+            }
+          ], 
+          "active": "False", 
+          "path": [
+            {
+              "group_id": "53c96be05f29e6618151472b", 
+              "name": "RHEL"
+            }, 
+            {
+              "group_id": "53c96bf85f29e6618151472d", 
+              "name": "GSS"
+            }
+          ], 
+          "group_id": "53c96f2e5f29e66211c95b85", 
+          "expression": "keywords.contains(\"ZStream\") + flags.forEach(name.contains(\".z\"))", 
+          "description": "Bugs that are on ZStream."
+        }
+      ], 
+      "active": "False", 
+      "path": [
+        {
+          "group_id": "53c96be05f29e6618151472b", 
+          "name": "RHEL"
+        }
+      ], 
+      "group_id": "53c96bf85f29e6618151472d", 
+      "expression": "external_bugs.forEach(type.type.is(\"SFDC\"))", 
+      "description": "All bugs relevant to GSS have an attached Sales Force case."
+    }
+  ], 
+  "active": "False", 
+  "path": [
+    {
+      "group_id": "53c96be05f29e6618151472b", 
+      "name": "RHEL"
+    }
+  ], 
+  "group_id": "53c96be05f29e6618151472b", 
+  "expression": "flags.forEach(name.contains(\"@nv_r@\"))", 
+  "description": ""
+}]

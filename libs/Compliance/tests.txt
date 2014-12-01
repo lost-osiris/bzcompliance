@@ -1,0 +1,1 @@
+status.matches("CLOSED") & flags.within(status.matches("?")).sizeIs(1)
