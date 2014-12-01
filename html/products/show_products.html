@@ -1,0 +1,39 @@
+{% block content %}
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <table class="table table-striped">
+               <thead>
+                  <tr>
+                     <th>Name</th>
+                     <form id="refresh" action="/compliance" style="padding:0px; margin:0px; height:0px; width:0px;">
+                     </form>
+                     <th style="text-align:center">
+                        <div class="btn-group">
+                           <button class="btn btn-default" onclick="document.getElementById('refresh').submit();">
+                           <span class="glyphicon glyphicon-refresh"></span> Refresh</button>
+                           <button class="btn btn-default"
+                              onclick="deleteCookie('nav_state'); deleteCookie('content_state');">
+                             <span class="glyphicon glyphicon-refresh"></span> Reset Cookie
+                           </button>
+                     </th>
+                     <th style="text-align:right; padding-right: 16px">
+                        <button type="button" class="btn btn-success btn-sm"
+                           data-toggle="modal" data-target="#addproduct-modal">Add Product
+                        </button>
+                     </th>
+                  </tr>
+               </thead>
+            </table>
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col-md-12">
+            {% include "tabs/main.html" %}
+         </div>
+         {{ all_tabs }}
+      </div>
+   </div>
+   {% include "products/add_product.html" %}
+{% endblock %}

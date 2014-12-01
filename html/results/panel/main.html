@@ -1,0 +1,9 @@
+{% block content %}
+   {% if panel_type == "passed" %}
+      {% include "results/panel/passed.html" %}
+   {% elif panel_type == "ignored" %}
+      {% include "results/panel/ignored.html" %}
+   {% else %}
+      {% include "results/panel/failed.html" %}
+   {% endif %}
+{% endblock %}

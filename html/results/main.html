@@ -1,0 +1,9 @@
+{% block content %}
+   {% include "core/base.html" %}
+   {% load templatetags %}
+   <div class="container">
+      {% for bug_id, data in output.items %}
+         {% build_results_panel data %}
+      {% endfor %}
+   </div>
+{% endblock %}

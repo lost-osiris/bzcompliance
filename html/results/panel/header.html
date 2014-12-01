@@ -1,0 +1,32 @@
+{% block content %}
+   <div class="panel-heading">
+      <div class="row">
+         <div class="col-md-2">
+            <h1 class="panel-title">
+            <a data-toggle="collapse" href="#{{ bug_id }}">Bug ID {{ bug_id }}</a></h1>
+         </div>
+
+         <div class="col-md-3" style="padding-top:5px">
+            <table>
+               <tr>
+                  <td style="padding-right:5px"> 
+                     {% if content.messages|length != 0 %}
+                        <span class="label label-danger">
+                           Errors: {{ content.messages|length }}
+                        </span>
+                     {% else %}
+                        <span class="label label-success">
+                           Errors: {{ content.message|length }}
+                        </span>
+                     {% endif %}
+                  </td>
+               </tr>
+            </table>
+         </div>
+
+         <div class="col-md-7" align="right"> 
+            <a href="https://bugzilla.redhat.com/show_bug.cgi?id={{ bug_id }}">Bugzilla Link</a>
+         </div> 
+      </div>
+   </div> 
+{% endblock %}

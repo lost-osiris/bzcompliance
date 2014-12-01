@@ -1,0 +1,355 @@
+{% block content %}
+{% load templatetags %}
+
+<div class="container">
+   {% block message %}
+      {% if req_type == "message" %}
+         {% include "add_req/message.html" %}
+      {% endif %}
+
+   {% endblock %}
+
+   {% if req_type == "product" %}
+      <h3>Build Expression/Requirement for <i><b>{{ add_to }}</b></i></h3>
+   {% endif %}
+   {% if req_type == "message" %}
+      <h3>Build Expression/Requirement for <i><b>{{ add_to }}</b></i></h3>
+   {% endif %}
+
+   <div class="row">
+      <div id="requirements" class="col-md-5">
+         <label for="requirement_select">Select a Requirement Type</label>
+         <select onchange="display_modal();" id="requirement_select" class="form-control">
+            <option selected>None</option>
+            {% for i in requirement_list %}
+               <option value="{{ i.split|join:"_" }}-modal">{{ i }}</option>
+            {% endfor %}
+         </select>
+      </div>
+   </div>
+
+   <br />
+   <style>
+      textarea.form-control.expression{
+         background:rgb(0, 0, 0);
+         color:#0F0;
+         font-weight:normal;
+      }
+      textarea.form-control[readonly].expression {
+         background:rgb(0, 0, 0);
+         color:#FFF;
+         font-weight:bold;
+      }
+      textarea.form-control.expression:focus {
+         border-color:rgb(0, 169, 0);
+         font-weight:normal;
+      }
+      textarea.form-control[readonly].expression:focus {
+         border-color:rgb(169, 169, 169);
+         font-weight:bold;
+      }
+      textarea.form-control::-webkit-input-placeholder {
+         font-weight:normal;
+      }
+
+      textarea.form-control:-moz-placeholder { /* Firefox 18- */
+         font-weight:normal;
+      }
+
+      textarea.form-control::-moz-placeholder {  /* Firefox 19+ */
+         font-weight:normal;
+      }
+
+      textarea.form-control:-ms-input-placeholder {  
+         font-weight:normal;
+      }
+   </style>
+
+   <div class="well">
+      <div class="row">
+         <div class="col-md-12">
+            <h5><b id="lock">Expression Builder (locked)</b></h5>
+            <form method="post" id="save-req" target="compliance">{{ csrf_token }}
+               {% if message != "" and req_type == "message" %}
+               <textarea readonly placeholder="Build Expression..." 
+                  id="main-expression" style="resize: vertical;" 
+                  class="form-control expression" name="expression" rows="3">{{ message.expression }}</textarea>
+               {% else %}
+               <textarea readonly placeholder="Build Expression..." 
+                  id="main-expression" style="resize: vertical;" 
+                  class="form-control expression" name="expression" rows="3"></textarea>
+               {% endif %}
+            </form>
+         </div>
+
+         <div class="col-md-5" style="padding-top:1%">
+            <div id="edit-functions">
+               <div class="btn-group">
+                  <button id="and_button" 
+                     class="btn btn-default"
+                     onclick="insertText(this, '');">
+                  And</button>
+
+                  <button id="or_button" 
+                     class="btn btn-default"
+                     onclick="insertText(this, '');">
+                  Or</button>
+
+                  <button 
+                     id="not_button" 
+                     class="btn btn-default"
+                     onclick="insertText(this, '');">
+                  Not</button>
+
+                  <button id="group_button" 
+                     class="btn btn-default"
+                     onclick="insertText(this, '');">
+                  Group</button>
+
+                  <button id="clear_button" 
+                     class="btn btn-warning"
+                     onclick="insertText(this, '');">
+                  Clear</button>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-md-7" align="right" style="padding-top:1%">
+            <button id="unlock" onclick="edit_expression();" class="btn btn-default">Edit</button>
+
+            {% if req_type == "message" %}
+               {% if message != "" %}
+                  <script>
+                     document.getElementById("message").value = "{{ message.description|safe }}";
+                     document.getElementById("message-name").value = "{{ message.name|safe }}";
+
+                     options = document.getElementById("message-type");
+                     for(var i = 0; i < options.length; i++){
+                        if(options.options[i].value == "{{ message.message_type|lower }}"){
+                           document.getElementById("message-type").selectedIndex = i;
+                        }
+                     }
+                  </script>
+               {% endif %}
+
+               <button onclick="submit_message();"
+                  class="btn btn-success">Submit</button>
+            {% else %}
+               {% if message != "" %}
+                  <script>
+                     document.getElementById("main-expression").value = '{{ message.expression|safe }}';
+                  </script>
+               {% endif %}
+
+               <button onclick="submit_req();"
+                  class="btn btn-success">Submit</button>
+            {% endif %}
+
+         </div>
+
+      </div>
+   </div>
+
+</div>
+<script>
+   $("#edit-functions").hide();
+   String.prototype.replaceAt=function(index, character) {
+       return this.substr(0, index) + character + this.substr(index+character.length);
+   }  
+
+   function submit_message() {
+      var main_expression = document.getElementById('main-expression').value;
+      var description = document.getElementById('message').value;
+      var message_name = document.getElementById('message-name').value;
+
+      var message_options = document.getElementById('message-type');
+      var message_type = message_options.options[message_options.selectedIndex].text;
+
+      document.getElementById('submit-message-description').value = description;
+      document.getElementById('submit-message-main-expression').value = main_expression;
+      document.getElementById('submit-message-name').value = message_name;
+      document.getElementById('submit-message-type').value = message_type;
+
+      var yes_no = confirm('Are you sure you want to save requirement expression?');
+      if (yes_no == true) {
+         document.getElementById('submit-message').submit();
+      }
+   }
+
+   function submit_req(){
+      var yes_no = confirm('Are you sure you want to save requirement expression?');
+      if (yes_no == true) {
+         document.getElementById("save-req").submit();
+      } 
+   }
+      
+   function edit_expression(){
+      var ex = document.getElementById("main-expression").readOnly;
+      var lock = document.getElementById("lock");
+
+      if(ex == true){
+         document.getElementById("main-expression").readOnly = false;
+         document.getElementById("lock").innerHTML = "Expression Builder (unlocked)";
+         
+         $("#edit-functions").show();
+         document.getElementById("unlock").innerHTML = "Done"
+         return false;
+      }
+
+      if(ex == false){
+         document.getElementById("main-expression").readOnly = true;
+         document.getElementById("lock").innerHTML = "Expression Builder (locked)";
+         $("#edit-functions").hide();
+         document.getElementById("unlock").innerHTML = "Edit"
+         return true;
+      }
+   }
+
+   function reset_selection(){
+      var select = document.getElementById("requirement_select");
+   }
+
+   function modal_expression(id){
+      var type = "";
+      var new_value = "";
+      var expression = document.getElementById(id + "-modal-expression");
+
+      if (id == "Status" || id == "Resolution" || id == "Severity" || id == "Priority"){
+         var select = document.getElementById(id.toLowerCase());
+         type = id.toLowerCase();
+
+         var selected_values = [];
+      
+         for(var i = 0; i < select.options.length; i++){
+            if(select.options[i].selected == true){
+               selected_values.push(select.options[i].value);
+            }
+         }
+
+         new_value = String('"' + selected_values +'"');
+      }
+   
+      else{
+         var text = document.getElementById(id);
+         type = id.toLowerCase();
+
+
+         new_value = String('"' + text.value + '"');
+      }
+      
+      var function_type = document.getElementById(id + "-function");
+      var function_value = function_type.options[function_type.selectedIndex].value;
+      
+      var text = expression.value;
+      var cursor = expression.selectionStart;
+      var select = expression.selectionEnd;
+      
+      var start = text.substring(0, cursor);
+      var end = text.substring(select, text.length);
+
+      var middle = String(type + "." + function_value + "(" + new_value + ")")
+      
+      expression.value = (start + middle + end);     
+
+      function_type.options[0].selected = true;
+      document.getElementById(id).value = "";
+      document.getElementById(id + '-modal-expression').selectionStart = expression.value.length;
+
+   }
+
+   function insertExpression(id){
+      var new_expression = document.getElementById(id + "-modal-expression");
+      var main = document.getElementById("main-expression");
+
+      var index = main.value.length;
+      var logic_values = ["&", "+", "!"];
+      var found = false;
+
+      for(var j = 0; j < logic_values.length; j++){
+         if(main.value.lastIndexOf(logic_values[j]) > -1 && main.value.lastIndexOf(logic_values[j]) <= index){
+            main.value += "(" + new_expression.value + ")";
+            found = true;
+         }
+      }
+
+      if (found == false){
+         main.value = new_expression.value;
+      }
+      
+      if(found == false && index != 0){
+         main.value += "& " + new_expression.value;
+      }
+
+      document.getElementById('requirement_select').options[0].selected = true;
+   }
+
+   function display_modal(){
+      var select = document.getElementById("requirement_select");
+      var select_value = select.options[select.selectedIndex].value;
+      $(String("#" +select_value)).modal('toggle');
+   }
+
+   //Handles inserting text into the expression after a button is pressed
+   function insertText(object, req) {
+      if (req == ""){
+         var field = document.getElementById("main-expression");
+      }
+      else{
+         var field = document.getElementById(String(req + "modal-expression"));
+      }
+
+      var cursor = field.selectionStart
+      var select = field.selectionEnd
+      var text = field.value
+      var start = text.substring(0, cursor)
+      var middle = text.substring(cursor, select)
+      var end = text.substring(select, text.length)
+     
+
+      switch (object.id) {
+      case String(req + "and_button"):
+         middle = " & ";
+         break;
+      case String(req + "or_button"):
+         middle = " + ";
+         break;
+      case String(req + "not_button"):
+         if (middle.length > 0) {
+            if (middle.trim().match(/\s/g) != null)
+               middle = "!(" + middle.trim() + ")";
+            else
+               middle = "!" + middle.replace(/^\s+/g, "")
+         } else {
+            middle = "!";           
+         }
+         break;
+      case String(req + "group_button"):
+         cursor = middle.length > 0 ? 0 : -1;
+         middle = middle.length > 0 ? "(" + middle.trim() + ")" : "()";
+         break;
+      case String(req + "clear_button"):
+         start = "";
+         middle = "";
+         end = "";
+         break;
+      default:
+         middle = object.value
+      }
+      
+         middle = middle.replace(/\s+/g, " ")
+         end = end.replace(/\s+/g, " ")
+         field.value = (start + middle + end);
+         field.selectionEnd = 0
+         field.selectionStart = start.length + middle.length + cursor
+         field.focus();
+      
+  } 
+</script>
+
+   {% load templatetags %}
+
+   {% for i in requirement_list %}
+      {% get_requirement_type i as "requirement_type" %}
+   {% endfor %}
+
+{% endblock %}

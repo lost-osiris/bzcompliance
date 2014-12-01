@@ -1,0 +1,252 @@
+{% block content %}
+   {% load templatetags %}
+   <style>
+      @-moz-document url-prefix() {
+         .list-group .list-group {
+            margin: 0;
+            margin-top: -25px;
+         }
+      }
+      .table > tbody > tr > td {
+         vertical-align:middle;
+      }
+      
+      #accordion .glyphicon { 
+         margin-right:10px; 
+      }
+
+      .panel-collapse>.list-group .list-group-item:first-child {
+         border-top-right-radius: 0;
+         border-top-left-radius: 0;
+      }
+
+      .panel-collapse>.list-group .list-group-item {
+         border-width: 1px 0;
+      }
+      
+      .panel-collapse>.list-group {
+         margin-bottom: 0; 
+      }
+
+      .panel-collapse .list-group-item {
+         border-radius:0;
+      }
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+         .panel-collapse .list-group .list-group {
+            margin: 0;
+            margin-top: -11px;
+         }
+      }
+
+      .panel-collapse .list-group-item li.list-group-item {
+         margin: 0 -15px;
+         border-top: 1px solid #ddd;
+         border-bottom: 0;
+         padding-left: 30px;
+      }
+
+      .panel-collapse .list-group-item li.list-group-item:last-child {
+         padding-bottom: 0;
+      }
+
+      .panel-collapse div.list-group div.list-group{
+         margin: 0;
+      }
+
+      .panel-collapse div.list-group .list-group a.list-group-item {
+         border-top: 1px solid #ddd;
+         border-bottom: 0;
+         padding-left: 30px;
+      }
+
+      .expand-all {
+         color: #999;
+         text-decoration: none;
+         cursor: pointer;
+         font-size: 16px;
+      }
+
+      .expand-all:hover {
+         text-decoration: underline;
+      }
+
+   </style>
+
+   <div class="row">
+      <div class="col-md-3">
+         <div class="panel-group" id="accordion">
+            <div class="panel panel-info" style="background-color:#222;border-color: #080808;">
+               <div class="panel-heading" style="background-color:#222;border-color: #080808;">
+                  <div class="panel-title">
+                    <div class="row">
+                        <div class="col-md-6"> 
+                           <h4 style="color: #999" class="panel-title">
+                              Navigation
+                           </h4>
+                        </div>
+                        <div class="col-md-6" style="margin: 0px; text-align:right"> 
+                           <div class="collapse-all">
+                              <span class="expand-all" id="collapse-init">Collapse All</span>
+                           </div>
+                           <div class="retrack-all">
+                              <span class="expand-all" id="retrack-init">Collapse All</span>
+                           </div>
+                        </div>
+                     </div>
+                        <script>
+                           $('.retrack-all').hide();
+                           $(function () {
+                               $('#collapse-init').click(function () {
+                                 $('.panel-collapse').each(function(){
+                                     if (!$(this).hasClass('in')) {
+                                         $(this).collapse('toggle');
+                                     }
+                                 });
+                                 $('.collapse-all').hide();
+                                 $('.retrack-all').show();
+                              });
+                               $('#retrack-init').click(function () {
+                                 $('.panel-collapse').each(function(){
+                                     if (!$(this).hasClass('out')) {
+                                       if (!$(this).hasClass('first')) $(this).collapse('toggle');
+                                     }
+                                 });
+                                 $('.retrack-all').hide();
+                                 $('.collapse-all').show();
+                              });
+                           });
+                        </script>
+                  </div>
+               </div>
+               {% for product in products %}
+                  <div class="panel-collapse collapse in first">
+                        <ul class="list-group">
+                           <li class="list-group-item">
+                              <h4>
+                                 <a style="color:#999" class="panel-toggle" data-toggle="collapse" 
+                                    href="#{{ product.group_id }}-first">
+                                    {{ product.name }} 
+                                 </a>
+                              </h4> 
+                           </li>
+                           <div class="panel-collapse collapse" id="{{ product.group_id }}-first">
+                              <li class="list-group-item">
+                                 <a  class="panel-toggle" data-toggle="collapse" 
+                                    data-parent="#{{ node.group_id }}-parent" 
+                                    onclick="display_content('{{ product.group_id }}-group-content');"
+                                    href="#">Dashboard
+                                 </a>
+                              </li>
+                              <li class="list-group-item">
+                                 <a onclick="display_content('{{ product.group_id }}-messages');" href="#">
+                                    Messages
+                                 </a>
+                              </li>
+                              <li class="list-group-item">
+                                 <a class="panel-toggle" data-toggle="collapse" 
+                                    href="#{{ product.group_id }}-parent-groups">Groups</a>
+                              </li>
+                              <div class="panel-collapse collapse" id="{{ product.group_id }}-parent-groups" 
+                                 data-parent="#{{ product.group_id }}-parent">
+                                 <li class="list-group-item">
+
+                                    <ul class="list-group firefox-error" role="tablist">
+                                       {% for node in product.groups %}
+                                          {% include "tabs/child.html" %}
+                                       {% endfor %}
+                                    </ul>
+                                 </li>
+                              </div>
+                           </div>
+                        </ul>
+                  </div>
+               {% endfor %}
+            </div>
+         </div>
+      </div>
+      <div class="col-md-9">
+         <div id="main-content">
+            {% for product in products %} 
+
+               {% with node=product template_name="tabs/content.html" %}
+                  {% include template_name %}
+               {% endwith %}
+
+               {% for node in product.groups %}
+                  {% include "tabs/loop.html" %}
+               {% endfor %}
+
+               {% if forloop.first %}
+                  <script>
+                     var current = "{{ product.group_id }}-group-content";
+                     document.getElementById(current).style.display = "block";
+                  </script>
+               {% endif %} 
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+   <script>
+      
+      function add_req(id){
+         document.getElementById(id).submit();
+      }
+       
+      function show_content(id) {
+         document.getElementById(id).style.display = "block";
+      }
+      function hide_content(id) {
+         document.getElementById(id).style.display = "none";
+      }
+      function display_content(id) {
+         hide_content(current);
+         current = id;
+
+         var current_cookie = getCookie("content_state");
+
+         if(String(id) != "undefined"){
+            document.cookie = "content_state=" + id;
+         }
+
+         show_content(current);
+      }
+      function add_variable(id) {
+         value = document.getElementById(id + "-value").value;
+         name = document.getElementById(id + "-name").value;
+         description = document.getElementById(id + "-description").value;
+         select = document.getElementById(id + "-type").options;
+         type = select[select.selectedIndex].value
+         document.getElementById(id + "-add-variable-name").value = name;
+         document.getElementById(id + "-add-variable-value").value = value;
+         document.getElementById(id + "-add-variable-description").value = description;
+         document.getElementById(id + "-add-variable-type").value = type;
+         document.getElementById(id + "-add-variable").submit();
+      }
+
+      function edit_variable(id){
+         name = document.getElementById(id + "-name").value;
+         description = document.getElementById(id + "-description").value;
+         document.getElementById(id + "-edit-variable-name").value = name;
+         document.getElementById(id + "-edit-variable-description").value = description;
+         document.getElementById(id + "-edit-variable").submit();
+      }
+
+      function add_element_to_variable(id){
+         value = document.getElementById(id + "-element-value").value;
+         document.getElementById(id + "-add-value").value = value;
+         document.getElementById(id + "-add-element").submit();
+      }
+
+      function remove_element_from_variable(id, value, index){
+         document.getElementById(id + "-remove-index").value = index;
+         document.getElementById(id + "-remove-value").value = value;
+         document.getElementById(id + "-remove-element").submit();
+      }
+      function edit_element_in_variable(id, index){
+         value = document.getElementById(id + "-" + index +"-new-value").value;
+         document.getElementById(id + "-edit-index").value = index;
+         document.getElementById(id + "-edit-value").value = value;
+         document.getElementById(id + "-edit-element").submit();
+      }
+   </script>
+{% endblock %}

@@ -1,0 +1,128 @@
+<html lang="en">
+   {% load staticfiles %}
+   <head>
+      <h1 align="center">Check Bugzilla Compliance</h1><hr />
+      <link rel="shortcut icon" type="image/png" href="{% static "download/bugzilla-running.png" %}"/>
+   </head>
+   <body>
+      <div id="vanhoof-message">
+         <div class="container">
+         </div>
+      </div>
+
+      <div id="cww-message">
+         <div class="container">
+         </div>
+      </div>
+
+      <div class="container" id="config-menu" style="display:none">
+         {% block config %}
+               {% include "core/config.html" %}
+         {% endblock %}
+      </div>
+
+      {% block results %}
+      {% endblock %}
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+      <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+
+      <link href="{% static "bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" %}" rel="stylesheet">
+      <script src="{% static "bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js" %}"></script>
+
+      {% block main %}
+      {% endblock %}
+
+      <script type="text/javascript">
+         function getCookie(cname){
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+
+            for(var i=0; i<ca.length; i++) {
+              var c = ca[i].trim();
+              if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+            }
+
+            return "";
+         }
+
+         function deleteCookie(cname){
+            document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT"
+         }
+
+         $('.collapse').on('show.bs.collapse', function (event){
+            var nav_state = getCookie("nav_state");
+
+            if (nav_state == ""){
+               document.cookie = "nav_state=" + event.target.id;
+            } else {
+               if (nav_state.indexOf(event.target.id) == -1){
+                  document.cookie = "nav_state=" + nav_state + "|" + event.target.id;
+               }
+            }
+         });
+
+         $('.collapse').on('hide.bs.collapse', function (event){
+            var nav_state = getCookie("nav_state");
+
+            if (nav_state != ""){
+               cookie = nav_state.split("|");
+               new_cookie = "nav_state=";
+               for (var i = 0; i < cookie.length; i++){
+                  if (cookie[i] != event.target.id && cookie[i] != ""){
+                     if (new_cookie == "nav_state="){
+                        new_cookie += cookie[i];
+                     } else {
+                        new_cookie += "|" + cookie[i];
+                     }
+                  }
+               }
+               document.cookie = new_cookie;
+            }
+         });
+
+         $(document).ready(function() {
+            var current_state = getCookie("content_state");
+            if (current_state != "") {
+               display_content(current_state);
+            }
+            
+            var nav_state = getCookie("nav_state");
+            if (nav_state != ""){
+               cookie = nav_state.split("|");
+               for (var i = 0; i < cookie.length; i++){
+                  $("#" + cookie[i]).collapse('show');
+               }
+            } 
+            
+         });
+
+         if(getCookie("rh_user") == ""){
+            var redirect = document.URL;
+            window.location.replace("https://www.redhat.com/wapps/sso/login.html?redirect=" + redirect);
+         } else {
+            var str = getCookie("rh_user");
+            var res = str.split("\|"); 
+            var user = res[0];
+            if (String(user) == "rhn-support-cww" || String(user) == "rhn-support-mowens" ||
+               String(user) == "rhn-support-vanhoof" || String(user) == "rhn-support-skramer" ||
+               String(user) == "rhn-support-tiwillia" || String(user) == "rhn-support-akovari"){
+               document.getElementById("config-menu").style.display = 'block';
+            }
+            else {
+               document.getElementById("config-menu").style.display = 'none';
+            }
+ 
+            if (String(user) == "rhn-support-mowens"){
+               document.getElementById("vanhoof-message").style.display = 'block';
+               document.getElementById("cww-message").style.display = 'block';
+            }
+            else {
+               document.getElementById("vanhoof-message").style.display = 'none';
+               document.getElementById("cww-message").style.display = 'block';
+            }
+         }
+      </script>
+   <body>
+<html>

@@ -1,0 +1,62 @@
+{% block content %}  
+   {% load templatetags %}
+   {% load_nav "messages" node as all_tabs %}
+   {% load_nav "details" node as all_tabs %}
+   {% load_nav "configure" node as all_tabs %}
+   {% load_nav "raw-data" node as all_tabs %}
+   {% load_nav "remove-group" node as all_tabs %}
+   {% load_nav "add-group" node as all_tabs %}
+
+   <form style="width:0px; height:0px; padding:0px; margin:0px;" method="post"
+      id="{{ node.group_id }}-remove-group">
+      <input type="hidden" name="remove_group" id="{{ node.group_id }}-remove-group-input">
+   </form>
+
+   <form style="width:0px; height:0px; padding:0px; margin:0px" method="post" id="{{ node.group_id }}-req">
+      <input type="hidden" name="add_req" value="{{ node.group_id }}">
+      <input type="hidden" name="req_type" value="node">
+   </form>
+
+   <form style="width:0px; height:0px; padding:0px; margin:0px" 
+      method="post" id="{{ node.group_id }}-message">
+      <input type="hidden" name="add_req" value="{{ node.group_id }}">
+      <input type="hidden" name="req_type" value="message">
+   </form>
+
+   {% for i in all_tabs %}
+      {% set_context node as panel %}
+
+      {% if i == "configure" %}
+         {% set_context "Configure" as panel_name %}
+         {% set_context "configure" as panel_id %}
+      {% endif %}
+
+      {% if i == "raw-data" %}
+         {% set_context "Raw&#32;Data" as panel_name %}
+         {% set_context "raw-data" as panel_id %}
+      {% endif %}
+
+      {% if i == "remove-group" %}
+         {% set_context "Remove&#32;Group" as panel_name %}
+         {% set_context "remove-group-view" as panel_id %}
+      {% endif %}
+
+      {% if i == "add-group" %}
+         {% set_context "Add&#32;Group" as panel_name %}
+         {% set_context "add-group-view" as panel_id %}
+      {% endif %}
+
+      {% if i == "messages" %}
+         {% set_context "Messages" as panel_name %}
+         {% set_context "messages" as panel_id %}
+      {% endif %}
+
+      {% if i == "details" %}
+         {% set_context "Dashboard" as panel_name %}
+         {% set_context "group-content" as panel_id %}
+      {% endif %}
+
+      {% include "tabs/panel.html" %}
+   {% endfor %}
+
+{% endblock %}

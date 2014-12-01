@@ -1,7 +1,0 @@
-README
-setup.py
-bzcompliance.egg-info/PKG-INFO
-bzcompliance.egg-info/SOURCES.txt
-bzcompliance.egg-info/dependency_links.txt
-bzcompliance.egg-info/requires.txt
-bzcompliance.egg-info/top_level.txt

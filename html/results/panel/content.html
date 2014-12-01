@@ -1,0 +1,27 @@
+{% block content %}
+   {% load templatetags %}
+   <div id="{{ bug_id }}" class="panel-collapse collapse">
+      <div class="panel-body">
+         {% if panel_type == "passed" %}
+            <p>Bug Passed</p>
+         {% elif panel_type == "ignored" %}
+            <p>Bug was ignored</p>
+         {% else %}
+            {% for i in content.messages %}
+               {% if i.message_type == "Problem" %}
+                  <div class="alert alert-warning">
+               {% else %}
+                  <div class="alert alert-info">
+               {% endif %}
+                     <p><b>Error Type:</b> {{ i.message_name }}</p>
+                     <p><b>Description:</b> {{ i.populated_message }}</p>
+               </div>
+               <p>{{ i.expression }} - {{ i.error }}</p>
+               <br />
+               <pre>{{ i.raw_message_data|json }}</pre>
+               <br />
+            {% endfor %}
+         {% endif %}
+      </div>
+   </div>
+{% endblock %}

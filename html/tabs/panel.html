@@ -1,0 +1,98 @@
+{% block content %}
+   <div id="{{ panel.group_id }}-{{ panel_id }}" style="display:none">
+      <div class="panel panel-default" style="border-color: #080808">
+         <div class="panel-heading" style="background-color:#222; boarder-color:#80808">
+            <div class="row" style="height:36px">
+               {% if panel_name == "Dashboard" %}
+                  <div class="col-md-3">
+               {% else %}
+                  <div class="col-md-4">
+               {% endif %}
+                  <h4 style="color: #999; padding-top:10px;" class="panel-title">
+                     {{ panel.name }} - {{ panel_name }}
+                  </h4>
+               </div>
+
+               {% if panel_name == "Dashboard" %}
+                  <div class="col-md-1" style="padding-top:2px; height: 36px">
+                     <form method="post" style="width:0px; height:0px">
+                        {% if panel.active == "False" %}
+                               
+                           <button class="btn btn-danger" type="submit" 
+                              name="active_group" value="{{ panel.group_id }}">
+                              <span class="glyphicon glyphicon-off"></span> Off
+                           </button>
+                        {% else %}
+                           <button class="btn btn-success" type="submit" 
+                              name="active_group" value="{{ panel.group_id }}">
+                              <span class="glyphicon glyphicon-off"></span> On
+                           </button>
+                        {% endif %}
+                     </form>
+                  </div>
+               {% endif %}
+
+                             
+               <div class="col-md-6">
+                  <ol class="breadcrumb">
+                     {% for i in panel.path %}
+                        <li>
+                           <a href="#" onclick="display_content('{{ i.group_id }}-group-content');">
+                              {{ i.name }}
+                           </a>
+                        </li>
+                     {% endfor %}
+                  </ol>
+               </div>
+                
+               <div class="col-md-2" align="right" style="padding-top:2px">
+                  <div class="btn-group">
+                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Menu <span class="glyphicon glyphicon-align-justify"></span>
+                     </button>
+                     <ul class="dropdown-menu" role="menu" style="text-align:left">
+                        <li>
+                           <a href="#" 
+                              onclick="display_content('{{ panel.group_id }}-add-group-view');">
+                              Add Group
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#" 
+                              onclick="add_req('{{ panel.group_id }}-message');">
+                              Add Message
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#" 
+                              onclick="display_content('{{ panel.group_id }}-remove-group-view');">
+                              Remove Group
+                           </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                           <a href="#" 
+                              onclick="display_content('{{ panel.group_id }}-configure');">
+                              Configure
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#" 
+                              onclick="display_content('{{ panel.group_id }}-raw-data');">
+                              Raw data
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="panel-body">
+            {% load templatetags %}
+            {% with node=panel %}
+               {% build_nav panel_id panel %}
+            {% endwith %}
+         </div>
+      </div>
+   </div>
+{% endblock %}

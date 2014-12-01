@@ -1,0 +1,11 @@
+{% load templatetags %}
+{% if "groups" in node or node.groups != "" %}
+   {% include "tabs/content.html" %}
+   {% for child in node.groups %}
+      {% with node=child template_name="tabs/loop.html" %}
+         {% include template_name %}
+      {% endwith %}
+   {% endfor %}
+{% else %}
+   {% include "tabs/content.html" %}
+{% endif %}
